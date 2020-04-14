@@ -1,0 +1,42 @@
+{
+	"name": "iatanasov77/vs-users-subscriptions-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony IAUsersSubscriptionsBundle",
+    "keywords": ["User management"],
+    "homepage": "https://github.com/iatanasov77/vs-users-subscriptions-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan I. Atanasov",
+            "email": "i.atanasov77@gmail.com"
+        }
+    ],
+    "require": {
+		"iatanasov77/vs-users-bundle": "dev-develop",
+       	"iatanasov77/vs-payment-bundle": "dev-develop"
+    },
+	"repositories": [
+		{
+            "type": "git",
+            "url": "https://github.com/iatanasov77/vs-core-bundle.git"
+        },
+		{
+            "type": "git",
+            "url": "https://github.com/iatanasov77/vs-users-bundle.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/iatanasov77/vs-payment-bundle.git"
+        }
+	],
+    "conflict": {
+        "doctrine/doctrine-bundle": "<1.3",
+        "symfony/doctrine-bridge": "<2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "IA\\UsersSubscriptionsBundle\\": ""
+        }
+    },
+    "minimum-stability" : "dev"
+}
