@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-		"iatanasov77/vs-users-bundle": "dev-develop",
+		"vankosoft/users-bundle": "dev-develop",
        	"iatanasov77/vs-payment-bundle": "dev-develop"
     },
 	"repositories": [
