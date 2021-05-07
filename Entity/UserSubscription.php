@@ -3,13 +3,13 @@
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
 use IA\PaymentBundle\Entity\Payment;
-use IA\UsersBundle\Entity\Model\SubscriptionInterface;
+use VS\UsersBundle\Entity\Model\SubscriptionInterface;
 
 /**
  * Plan
  *
  * @ORM\Table(name="IAUM_UsersSubscriptions")
- * @ORM\Entity(repositoryClass="IA\UsersBundle\Entity\Repository\UserSubscriptionRepository")
+ * @ORM\Entity(repositoryClass="VS\UsersBundle\Entity\Repository\UserSubscriptionRepository")
  */
 class UserSubscription implements SubscriptionInterface
 {
@@ -24,7 +24,7 @@ class UserSubscription implements SubscriptionInterface
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="IA\UsersBundle\Entity\User", mappedBy="subscription")
+     * @ORM\OneToOne(targetEntity="VS\UsersBundle\Entity\User", mappedBy="subscription")
      * @ORM\JoinColumn(name="userId", referencedColumnName="id")
      */
     private $user;

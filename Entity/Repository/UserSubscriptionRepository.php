@@ -2,7 +2,7 @@
 
 use Doctrine\ORM\EntityRepository;
 
-use IA\UsersBundle\Entity\UserSubscription;
+use VS\UsersBundle\Entity\UserSubscription;
 
 class UserSubscriptionRepository extends EntityRepository
 {

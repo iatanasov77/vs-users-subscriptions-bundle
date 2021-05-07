@@ -5,8 +5,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Spatie\Url\Url as SpatieUrl;
 
-use IA\UsersBundle\Entity\Package;
-use IA\UsersBundle\Form\PackageFormType;
+use VS\UsersBundle\Entity\Package;
+use VS\UsersBundle\Form\PackageFormType;
 use App\Component\Url;
 
 class MembershipPackagesController extends ResourceController
@@ -29,7 +29,7 @@ class MembershipPackagesController extends ResourceController
         //$id = Url::ProjectsUrlGetId();
         $id = $this->getId();
         
-        $er = $this->getDoctrine()->getRepository( 'IA\UsersBundle\Entity\Package' );
+        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\Package' );
         $oPackage = $id ? $er->find($id) : new Package();
         
         $form = $this->createForm(PackageFormType::class, $oPackage, ['data' => $oPackage]);

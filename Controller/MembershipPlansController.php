@@ -6,8 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Spatie\Url\Url as SpatieUrl;
 
 use App\Component\Url;
-use IA\UsersBundle\Entity\Plan;
-use IA\UsersBundle\Form\PlanFormType;
+use VS\UsersBundle\Entity\Plan;
+use VS\UsersBundle\Form\PlanFormType;
 
 class MembershipPlansController extends ResourceController
 {
@@ -29,7 +29,7 @@ class MembershipPlansController extends ResourceController
         //$id = Url::ProjectsUrlGetId();
         $id = $this->getId();
         
-        $er = $this->getDoctrine()->getRepository( 'IA\UsersBundle\Entity\Plan' );
+        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\Plan' );
         $oPlan = $id ? $er->find($id) : new Plan();
         
         $form = $this->createForm(PlanFormType::class, $oPlan, ['data' => $oPlan]);
