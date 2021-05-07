@@ -3,7 +3,7 @@
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
 use IA\PaymentBundle\Entity\Payment;
-use VS\UsersBundle\Entity\Model\SubscriptionInterface;
+use VS\UsersBundle\Model\SubscriptionInterface;
 
 /**
  * Plan
