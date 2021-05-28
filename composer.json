@@ -1,0 +1,35 @@
+{
+	"name": "vankosoft/users-subscriptions-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony VSUsersSubscriptionsBundle",
+    "keywords": ["User management"],
+    "homepage": "https://github.com/iatanasov77/vs-users-subscriptions-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan I. Atanasov",
+            "email": "i.atanasov77@gmail.com"
+        }
+    ],
+    "require": {
+    	"php": "^7.2",
+    	
+    	"sylius/resource-bundle": "^1.8",
+    	"welp/mailchimp-bundle": "^1.3",
+    	
+    	"vankosoft/users-bundle": "^0.2"
+    },
+    "suggest": {
+        "iatanasov77/vs-payment-bundle": "Allows to create payed plans and to subcribes to them."
+    },
+    "conflict": {
+        "doctrine/doctrine-bundle": "<1.3",
+        "symfony/doctrine-bridge": "<2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "VS\\UsersSubscriptionsBundle\\": "lib/"
+        }
+    },
+    "minimum-stability" : "dev"
+}

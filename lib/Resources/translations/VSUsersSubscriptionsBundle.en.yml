@@ -1,0 +1,8 @@
+vs_users_subscriptions:
+    form:
+        locale: 'Locale'
+        audienceId: 'Audience ID'
+        description: 'Description'
+        apply: 'Apply'
+        save: 'Save'
+        cancel: 'Cancel'
