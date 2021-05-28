@@ -22,6 +22,6 @@ class VSUsersSubscriptionsExtension extends AbstractResourceExtension
         $loader->load( 'services.yml' );
         
         // Register resources
-        $this->registerResources( 'vs_users', $config['orm_driver'], $config['resources'], $container );
+        $this->registerResources( 'vs_users_subscriptions', $config['orm_driver'], $config['resources'], $container );
     }
 }

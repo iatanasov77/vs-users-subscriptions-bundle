@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder    = new TreeBuilder( 'vs_users' );
+        $treeBuilder    = new TreeBuilder( 'vs_users_subscriptions' );
         $rootNode       = $treeBuilder->getRootNode();
         
         $rootNode
