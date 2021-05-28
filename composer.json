@@ -15,9 +15,7 @@
     	"php": "^7.2",
     	
     	"sylius/resource-bundle": "^1.8",
-    	"welp/mailchimp-bundle": "^1.3",
-    	
-    	"vankosoft/users-bundle": "^0.2"
+    	"welp/mailchimp-bundle": "^1.3"
     },
     "suggest": {
         "iatanasov77/vs-payment-bundle": "Allows to create payed plans and to subcribes to them."
