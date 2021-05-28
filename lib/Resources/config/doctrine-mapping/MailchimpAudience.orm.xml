@@ -5,7 +5,7 @@
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
                   xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping"
 >
-    <mapped-superclass name="VS\UsersBundle\Model\MailchimpAudience">
+    <mapped-superclass name="VS\UsersSubscriptionsBundle\Model\MailchimpAudience">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
