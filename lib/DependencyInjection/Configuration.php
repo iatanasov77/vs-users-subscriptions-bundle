@@ -8,6 +8,12 @@ use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Resource\Factory\Factory;
 
+use VS\UsersSubscriptionsBundle\Controller\MailchimpAudienceController;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
+use VS\UsersSubscriptionsBundle\Model\MailchimpAudience;
+use VS\UsersSubscriptionsBundle\Form\MailchimpAudienceForm;
+
+//use VS\UsersSubscriptionsBundle\Controller\SubscriptionController;
 use VS\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
 use VS\UsersSubscriptionsBundle\Model\NewsletterSubscription;
 use VS\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
@@ -51,11 +57,12 @@ class Configuration implements ConfigurationInterface
                                 ->arrayNode( 'classes' )
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode( 'model' )->defaultValue( NewsletterSubscription::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( NewsletterSubscriptionInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'model' )->defaultValue( MailchimpAudience::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( MailchimpAudienceInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( MailchimpAudienceController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'form' )->defaultValue( NewsletterSubscriptionForm::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( MailchimpAudienceForm::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
