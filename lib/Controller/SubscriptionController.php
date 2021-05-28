@@ -3,10 +3,10 @@
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use VS\UsersBundle\Entity\UserSubscription;
 use VS\UsersBundle\Entity\UserActivity;
-use VS\UsersBundle\Entity\PackagePlan;
-use VS\PaymentBundle\Entity\Payment;
+use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
+use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
+use IA\PaymentBundle\Entity\Payment;
 
 class SubscriptionController extends Controller
 {

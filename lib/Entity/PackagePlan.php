@@ -3,7 +3,7 @@
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use VS\PaymentBundle\Model\CheckoutOrderInterface;
+use IA\PaymentBundle\Model\CheckoutOrderInterface;
 
 /**
  * @ORM\Entity
