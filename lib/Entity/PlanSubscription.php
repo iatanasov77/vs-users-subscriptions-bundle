@@ -1,8 +1,8 @@
-<?php namespace IA\UsersSubscriptionsBundle\Entity;
+<?php namespace VS\UsersSubscriptionsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
-use IA\PaymentBundle\Entity\Payment;
+use VS\PaymentBundle\Entity\Payment;
 use VS\UsersBundle\Model\SubscriptionInterface;
 
 /**
@@ -11,7 +11,7 @@ use VS\UsersBundle\Model\SubscriptionInterface;
  * @ORM\Table(name="IAUM_UsersSubscriptions")
  * @ORM\Entity(repositoryClass="VS\UsersBundle\Entity\Repository\UserSubscriptionRepository")
  */
-class UserSubscription implements SubscriptionInterface
+class PlanSubscription implements SubscriptionInterface
 {
 
     /**
@@ -45,7 +45,7 @@ class UserSubscription implements SubscriptionInterface
 
 
     /**
-     * @ORM\OneToOne(targetEntity="IA\PaymentBundle\Entity\Payment", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="VS\PaymentBundle\Entity\Payment", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="paymentDetailsId", referencedColumnName="id", nullable=true)
      */
     private $paymentDetails;

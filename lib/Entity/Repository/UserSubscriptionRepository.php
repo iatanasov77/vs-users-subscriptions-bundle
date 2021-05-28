@@ -1,4 +1,4 @@
-<?php namespace IA\UsersSubscriptionsBundle\Entity\Repository;
+<?php namespace VS\UsersSubscriptionsBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

@@ -1,4 +1,4 @@
-<?php namespace IA\UsersSubscriptionsBundle\Controller;
+<?php namespace VS\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -9,19 +9,19 @@ use VS\UsersBundle\Entity\Package;
 use VS\UsersBundle\Form\PackageFormType;
 use App\Component\Url;
 
-class MembershipPackagePlansController extends ResourceController
+class MembershipPackagesController extends ResourceController
 {
     
     public function createAction( Request $request ): Response
     {
         $tplVars    = $this->processRequest( $request );
-        return $this->render('IAUsersBundle:PackagePlans:create.html.twig', $tplVars);
+        return $this->render('IAUsersBundle:Packages:create.html.twig', $tplVars);
     }
     
     public function updateAction( Request $request ) : Response
     {
         $tplVars    = $this->processRequest( $request );
-        return $this->render( 'IAUsersBundle:PackagePlans:update.html.twig', $tplVars );
+        return $this->render( 'IAUsersBundle:Packages:update.html.twig', $tplVars );
     }
     
     protected function processRequest( Request $request )
@@ -29,7 +29,7 @@ class MembershipPackagePlansController extends ResourceController
         //$id = Url::ProjectsUrlGetId();
         $id = $this->getId();
         
-        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\PackagePlan' );
+        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\Package' );
         $oPackage = $id ? $er->find($id) : new Package();
         
         $form = $this->createForm(PackageFormType::class, $oPackage, ['data' => $oPackage]);
@@ -41,7 +41,7 @@ class MembershipPackagePlansController extends ResourceController
             $em->persist($form->getData());
             $em->flush();
             
-            return $this->redirect($this->generateUrl('ia_paid_membership_packageplans_index'));
+            return $this->redirect($this->generateUrl('ia_paid_membership_packages_index'));
         }
         
         $tplVars = array(

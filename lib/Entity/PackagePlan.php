@@ -1,9 +1,9 @@
-<?php namespace IA\UsersSubscriptionsBundle\Entity;
+<?php namespace VS\UsersSubscriptionsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\ResourceInterface;
-use IA\PaymentBundle\Model\CheckoutOrderInterface;
+use VS\PaymentBundle\Model\CheckoutOrderInterface;
 
 /**
  * @ORM\Entity

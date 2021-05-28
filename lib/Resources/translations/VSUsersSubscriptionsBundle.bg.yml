@@ -1,0 +1,8 @@
+vs_users_subscriptions:
+    form:
+        locale: 'Език'
+        audienceId: 'Аудиенция Идентификатор'
+        description: 'Описание'
+        apply: 'Въведи'
+        save: 'Запази'
+        cancel: 'Отказ'

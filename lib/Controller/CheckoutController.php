@@ -1,4 +1,4 @@
-<?php namespace IA\UsersSubscriptionsBundle\Controller;
+<?php namespace VS\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

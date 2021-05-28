@@ -1,0 +1,8 @@
+vs_users_subscriptions_mailchimp_audiences:
+    resource: |
+        alias: vs_users_subscriptions.mailchimp_audiences
+        except: ['show']
+        path: /mailchimp-audiences
+        templates: "@VSUsersSubscriptions/MailchimpAudience"
+    type: sylius.resource
+

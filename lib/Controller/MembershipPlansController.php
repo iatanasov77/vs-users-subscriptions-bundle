@@ -1,4 +1,4 @@
-<?php namespace IA\UsersSubscriptionsBundle\Controller;
+<?php namespace VS\UsersSubscriptionsBundle\Controller;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Symfony\Component\HttpFoundation\Request;
