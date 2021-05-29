@@ -13,6 +13,16 @@
         <one-to-many field="newsletterSubscriptions" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface" mapped-by="mailchimpAudience" />
         
         <field name="audienceId" column="audience_id" type="string" length="16" nullable="false" />
-        <field name="description" column="description" type="string" nullable="false" />
+        
+        <field name="description" column="description" type="string" nullable="false">
+        	<gedmo:translatable />
+        </field>
+        
+        <!--
+            Used locale to override Translation listener`s locale
+            this is not a mapped field of entity metadata, just a simple property
+            and it is not necessary because globally locale can be set in listener
+        -->
+        <gedmo:translation entity="VS\ApplicationBundle\Model\Interfaces\TranslationInterface" locale="locale" />
     </mapped-superclass>
 </doctrine-mapping>
