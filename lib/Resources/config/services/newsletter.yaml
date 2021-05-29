@@ -1,0 +1,6 @@
+services:
+    vs_users_subscriptions.newsletter.mailchimp.subscriber:
+        class: VS\UsersSubscriptionsBundle\Component\Mailchimp\SubscriberService
+        arguments:
+            - '@service_container'
+            - '@event_dispatcher'

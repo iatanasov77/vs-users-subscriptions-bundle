@@ -20,31 +20,46 @@ class MailchimpAudience implements MailchimpAudienceInterface
     /** @var string */
     protected $description;
     
-    function getId()
+    /** @var string */
+    protected $locale;
+    
+    public function getId()
     {
         return $this->id;
     }
     
-    function getAudienceId()
+    public function getAudienceId()
     {
         return $this->audienceId;
     }
     
-    function setAudienceId($audienceId)
+    public function setAudienceId($audienceId)
     {
         $this->audienceId   = $audienceId;
         
         return $this;
     }
     
-    function getDescription()
+    public function getDescription()
     {
         return $this->description;
     }
     
-    function setDescription($description)
+    public function setDescription($description)
     {
         $this->description  = $description;
+        
+        return $this;
+    }
+    
+    public function getTranslatableLocale() : ?string
+    {
+        return $this->locale;
+    }
+    
+    public function setTranslatableLocale($locale) : PageInterface
+    {
+        $this->locale = $locale;
         
         return $this;
     }

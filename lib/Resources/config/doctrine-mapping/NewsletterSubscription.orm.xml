@@ -10,8 +10,14 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="user" target-entity="VS\UsersBundle\Model\UserInterface" inversed-by="newsletterSubscriptions" />
-        <many-to-one field="mailchimpAudience" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface" inversed-by="newsletterSubscriptions" />
+        <many-to-one field="user" target-entity="VS\UsersBundle\Model\UserInterface" inversed-by="newsletterSubscriptions">
+        	<join-column nullable="true" />
+        </many-to-one>
+        <field name="userEmail" column="user_email" type="datetime" nullable="false" />
+        
+        <many-to-one field="mailchimpAudience" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface" inversed-by="newsletterSubscriptions">
+        	<join-column nullable="false" />
+        </many-to-one>
         
         <field name="date" column="date" type="datetime" nullable="false">
         	<gedmo:timestampable on="create"/>

@@ -8,7 +8,7 @@ use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
 use IA\PaymentBundle\Entity\Payment;
 
-class SubscriptionController extends Controller
+class PlanSubscriptionController extends Controller
 {
     public function subscribeAction( $planId, Request $request )
     {
@@ -24,7 +24,7 @@ class SubscriptionController extends Controller
         if(!$paymentDetails) {
             throw new Exception('Error with payment.');
         }
-
+        
         $subscription = new UserSubscription();
         $subscription->setPaymentDetails($paymentDetails);
         $subscription->setDate( new \DateTime() );
@@ -33,12 +33,12 @@ class SubscriptionController extends Controller
         $activity   = new UserActivity();
         $activity->setUser( $this->getUser() );
         $activity->setDate( new \DateTime() );
-        $activity->setActivity( 
-            sprintf( 'User subscribed to the "%s". Payed with "%s"', 
-                $paymentDetails->getPackagePlan()->getDescription(), 
-                $paymentDetails->getPaymentMethod() 
-            )
-        );
+        $activity->setActivity(
+            sprintf( 'User subscribed to the "%s". Payed with "%s"',
+                $paymentDetails->getPackagePlan()->getDescription(),
+                $paymentDetails->getPaymentMethod()
+                )
+            );
         
         $user = $this->getUser();
         $user->setSubscription( $subscription );
@@ -56,4 +56,3 @@ class SubscriptionController extends Controller
         
     }
 }
-
