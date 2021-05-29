@@ -4,5 +4,5 @@ services:
         tags:
             - { name: form.type }
         arguments:
-            - '% vs_users_subscriptions.model.mailchimp_audiences.class%'
-            - '@ vs_users_subscriptions.repository.mailchimp_audiences'
+            - '%vs_users_subscriptions.model.mailchimp_audiences.class%'
+            - '@vs_users_subscriptions.repository.mailchimp_audiences'
