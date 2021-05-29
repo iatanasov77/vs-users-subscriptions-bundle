@@ -57,7 +57,7 @@ class MailchimpAudience implements MailchimpAudienceInterface
         return $this->locale;
     }
     
-    public function setTranslatableLocale($locale) : PageInterface
+    public function setTranslatableLocale($locale) : MailchimpAudienceInterface
     {
         $this->locale = $locale;
         
