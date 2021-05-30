@@ -3,6 +3,10 @@
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
+use Welp\MailchimpBundle\Event\SubscriberEvent;
+use Welp\MailchimpBundle\Subscriber\Subscriber;
+use Welp\MailchimpBundle\Exception\MailchimpException;
+
 class SubscriberService
 {
     /** @var ContainerInterface */
@@ -17,46 +21,35 @@ class SubscriberService
         $this->dispatcher   = $dispatcher;
     }
     
-    public function subscribe( $email, $fields, $options )
+    public function subscribe( $audienceId, $email, $fields = [], $options = [] ) : bool
     {
-        $form   = $this->createForm( NewsletterSubscribeFormType::class );
+        $subscriber = new Subscriber( $email, $fields, $options );
         
-        $form->handleRequest( $request );
-        if( $form->isSubmitted() ) {
-            $post   = $form->getData();
-            
-            $subscriber = new Subscriber( $post['email'],
-                [
-                    'FNAME' => 'UNDEFINED-2',
-                    'LNAME' => 'LAST-UNDEFINED-2',
-                ],
-                [
-                    'language' => 'bg',
-                    'tags'      => ['VS_SymfonyBlogExample']
-                ]
-                );
-            
-            try {
-                $dispatcher->dispatch(
-                    new SubscriberEvent( self::MAILCHIMP_LIST_ID, $subscriber ),
-                    SubscriberEvent::EVENT_SUBSCRIBE
-                    );
-                
-            } catch ( MailchimpException $e ) {
-                die( 'MailchimpException: ' . $e->getMessage() );
-            }
+        try {
+            $this->dispatcher->dispatch(
+                new SubscriberEvent( $audienceId, $subscriber ),
+                SubscriberEvent::EVENT_SUBSCRIBE
+            );
+        } catch ( MailchimpException $e ) {
+            die( 'MailchimpException: ' . $e->getMessage() );
         }
         
-        return $this->redirect( $this->generateUrl( 'app_home' ) );
+        return true;
     }
     
-    public function unsubscribe( Request $request ): Response
+    public function unsubscribe( $audienceId, $email ) : bool
     {
-        $subscriber = new Subscriber( $user->getEmail());
+        $subscriber = new Subscriber( $email );
         
-        $this->container->get( 'event_dispatcher')->dispatch(
-            SubscriberEvent::EVENT_UNSUBSCRIBE,
-            new SubscriberEvent( self::MAILCHIMP_LIST_ID, $subscriber )
+        try {
+            $this->dispatcher->dispatch(
+                SubscriberEvent::EVENT_UNSUBSCRIBE,
+                new SubscriberEvent( $audienceId, $subscriber )
             );
+        } catch ( MailchimpException $e ) {
+            die( 'MailchimpException: ' . $e->getMessage() );
+        }
+        
+        return true;
     }
 }
