@@ -1,3 +1,9 @@
+0.2.2	|	Release date: **31.05.2021**
+============================================
+* Bug-Fixes:
+  - Fix Model and Model Interfaces to be compatable and to can add as sylius resources.
+
+
 0.2.1	|	Release date: **31.05.2021**
 ============================================
 * Bug-Fixes:
