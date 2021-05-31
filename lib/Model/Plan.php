@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Entity;
+<?php namespace VS\UsersSubscriptionsBundle\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
