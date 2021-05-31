@@ -1,10 +1,10 @@
 <?php namespace VS\UsersSubscriptionsBundle\Model;
 
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
 use VS\UsersBundle\Model\UeserInterface;
-use VS\UsersBundle\Model\SubscriptionInterface;
 use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 
-class PaymentPlanSubscription implements SubscriptionInterface
+class PaymentPlanSubscription implements PaymentPlanSubscriptionInterface
 {
     /** @var integer */
     protected $id;
