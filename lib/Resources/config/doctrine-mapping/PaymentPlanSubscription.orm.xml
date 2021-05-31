@@ -13,7 +13,9 @@
         <many-to-one field="user" target-entity="VS\UsersBundle\Model\UserInterface" inversed-by="newsletterSubscriptions" />
         
         <one-to-one field="plan" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface" /> <!-- inversed-by="subscription" -->
-        <one-to-one field="paymentDetails" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface" /> <!-- inversed-by="subscription" -->
+        <!--
+        <one-to-one field="paymentDetails" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface" />
+        -->
         
         <field name="date" column="date" type="datetime" nullable="false">
         	<gedmo:timestampable on="create"/>

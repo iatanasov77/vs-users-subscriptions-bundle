@@ -24,7 +24,8 @@ class PaymentPlanSubscription implements PaymentPlanSubscriptionInterface
     protected $plan;
 
     /**
-     * Relation to the PaymentDetails entity ( need Vanksoft/Payment Bundle )
+     * Relation to the PaymentDetails entity
+     * Need Vanksoft/Payment Bundle and need to be mapped to PaymentDetails entity
      *
      * @var PaymentDetailsInterface
      */
