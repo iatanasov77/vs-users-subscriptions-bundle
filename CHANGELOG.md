@@ -1,3 +1,9 @@
+0.2.3	|	Release date: **31.05.2021**
+============================================
+* Bug-Fixes:
+  - Remove Mapping of PaymentPlanSubscription to PaymentDetails
+
+
 0.2.2	|	Release date: **31.05.2021**
 ============================================
 * Bug-Fixes:
