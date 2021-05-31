@@ -1,3 +1,9 @@
+0.1.2	|	Release date: **31.05.2021**
+============================================
+* Bug-Fixes:
+  - Remove ORM Mapping from Old Package and Plan Entities to not add in the migrations for now.
+
+
 0.1.1	|	Release date: **31.05.2021**
 ============================================
 * Many Fixes and Improvements:
