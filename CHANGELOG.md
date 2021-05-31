@@ -1,3 +1,9 @@
+0.2.0	|	Release date: **31.05.2021**
+============================================
+* New Features:
+  - Setup all Payment Plan Subscriptions Models.
+
+
 0.1.2	|	Release date: **31.05.2021**
 ============================================
 * Bug-Fixes:
