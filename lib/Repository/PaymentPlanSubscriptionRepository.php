@@ -1,14 +1,13 @@
-<?php namespace VS\UsersSubscriptionsBundle\Entity\Repository;
+<?php namespace VS\UsersSubscriptionsBundle\Repository;
 
-use Doctrine\ORM\EntityRepository;
+use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
+use VS\UsersBundle\Model\SubscriptionInterface;
 
-use VS\UsersBundle\Entity\UserSubscription;
-
-class UserSubscriptionRepository extends EntityRepository
+class PaymentPlanSubscriptionRepository extends EntityRepository
 {
     public function isActive( $subscription )
     {
-        if ( ! $subscription instanceof UserSubscription ) {
+        if ( ! $subscription instanceof SubscriptionInterface ) {
             return false;
         }
         

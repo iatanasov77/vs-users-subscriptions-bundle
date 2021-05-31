@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use VS\UsersBundle\Entity\UserActivity;
 use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
-use IA\PaymentBundle\Entity\Payment;
+//use IA\PaymentBundle\Entity\Payment;
 
 class PlanSubscriptionController extends Controller
 {
