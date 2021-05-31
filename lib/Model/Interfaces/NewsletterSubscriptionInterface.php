@@ -4,6 +4,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 
 interface NewsletterSubscriptionInterface extends ResourceInterface
 {
-    public function getName();
-    public function getDescription();
+    public function getUser();
+    public function getMailchimpAudience();
+    public function getDate();
 }

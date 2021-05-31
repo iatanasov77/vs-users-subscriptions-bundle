@@ -8,11 +8,18 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
     protected $id;
     
     /**
-     * Relation to the User entity
+     * Relation to the User entity ( May to be Null )
      *
      * @var UserInterface
      */
     protected $user;
+    
+    /**
+     * User Email
+     *
+     * @var string
+     */
+    protected $userEmail;
     
     /**
      * Relation to the MailchimpAudience entity
@@ -37,6 +44,18 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
     function setUser($user)
     {
         $this->user = $user;
+        
+        return $this;
+    }
+    
+    function getUserEmail()
+    {
+        return $this->userEmail;
+    }
+    
+    function setUserEmail($userEmail)
+    {
+        $this->userEmail = $userEmail;
         
         return $this;
     }

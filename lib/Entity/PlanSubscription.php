@@ -2,8 +2,8 @@
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\User;
-use VS\PaymentBundle\Entity\Payment;
 use VS\UsersBundle\Model\SubscriptionInterface;
+use IA\PaymentBundle\Entity\Payment;
 
 /**
  * Plan
@@ -45,7 +45,7 @@ class PlanSubscription implements SubscriptionInterface
 
 
     /**
-     * @ORM\OneToOne(targetEntity="VS\PaymentBundle\Entity\Payment", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="IA\PaymentBundle\Entity\Payment", cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="paymentDetailsId", referencedColumnName="id", nullable=true)
      */
     private $paymentDetails;

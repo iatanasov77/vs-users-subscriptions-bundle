@@ -3,14 +3,12 @@
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use VS\UsersBundle\Entity\UserSubscription;
 use VS\UsersBundle\Entity\UserActivity;
-use VS\UsersBundle\Entity\PackagePlan;
-use VS\PaymentBundle\Entity\Payment;
-/**
- * @TODO Ã�â€�Ã�Â° Ã‘ï¿½Ã�Âµ Ã�Â¿Ã‘â‚¬Ã�ÂµÃ�Â¼Ã�ÂµÃ‘ï¿½Ã‘â€šÃ‘ï¿½Ã‘â€š Ã�ÂºÃ�Â¾Ã�Â½Ã‘â€šÃ‘â‚¬Ã�Â¾Ã�Â»Ã�ÂµÃ‘â‚¬Ã�Â¸Ã‘â€šÃ�Âµ Ã�Â·Ã�Â° Ã�Â¿Ã�Â»Ã�Â°Ã‘â€°Ã�Â°Ã�Â½Ã�ÂµÃ‘â€šÃ�Â¾ Ã�Â² Ã‘â€šÃ�Â¾Ã�Â·Ã�Â¸ Ã�Â±Ã‘Å Ã�Â½Ã�Â´Ã‘Å Ã�Â» (Ã�ÂºÃ�Â°Ã‘â€šÃ�Â¾ Ã�Â½Ã�Â°Ã�Â¿Ã‘â‚¬Ã�Â¸Ã�Â¼Ã�ÂµÃ‘â‚¬ RecurringPaymentController).
- */
-class SubscriptionController extends Controller
+use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
+use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
+use IA\PaymentBundle\Entity\Payment;
+
+class PlanSubscriptionController extends Controller
 {
     public function subscribeAction( $planId, Request $request )
     {
@@ -26,7 +24,7 @@ class SubscriptionController extends Controller
         if(!$paymentDetails) {
             throw new Exception('Error with payment.');
         }
-
+        
         $subscription = new UserSubscription();
         $subscription->setPaymentDetails($paymentDetails);
         $subscription->setDate( new \DateTime() );
@@ -35,12 +33,12 @@ class SubscriptionController extends Controller
         $activity   = new UserActivity();
         $activity->setUser( $this->getUser() );
         $activity->setDate( new \DateTime() );
-        $activity->setActivity( 
-            sprintf( 'User subscribed to the "%s". Payed with "%s"', 
-                $paymentDetails->getPackagePlan()->getDescription(), 
-                $paymentDetails->getPaymentMethod() 
-            )
-        );
+        $activity->setActivity(
+            sprintf( 'User subscribed to the "%s". Payed with "%s"',
+                $paymentDetails->getPackagePlan()->getDescription(),
+                $paymentDetails->getPaymentMethod()
+                )
+            );
         
         $user = $this->getUser();
         $user->setSubscription( $subscription );
@@ -58,4 +56,3 @@ class SubscriptionController extends Controller
         
     }
 }
-

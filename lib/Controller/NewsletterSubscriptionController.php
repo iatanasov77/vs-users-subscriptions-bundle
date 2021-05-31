@@ -7,10 +7,6 @@ class MailchimpAudienceController extends AbstractCrudController
 {
     protected function prepareEntity( &$entity, &$form, Request $request )
     {
-        //$entity->setPreferedLocale( $request->getLocale() );
-        $formPost   = $request->request->get( 'mailchimp_audience_form' );
-        if ( isset( $formPost['locale'] ) ) {
-            $entity->setTranslatableLocale( $formPost['locale'] );
-        }
+        $entity->setPreferedLocale( $request->getLocale() );
     }
 }
