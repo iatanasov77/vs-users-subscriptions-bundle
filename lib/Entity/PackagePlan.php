@@ -6,8 +6,8 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 use IA\PaymentBundle\Model\CheckoutOrderInterface;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="IAUM_Packages_Plans")
+ * 
+ *
  */
 class PackagePlan implements ResourceInterface, CheckoutOrderInterface
 {

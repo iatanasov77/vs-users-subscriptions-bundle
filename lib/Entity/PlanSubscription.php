@@ -8,8 +8,6 @@ use IA\PaymentBundle\Entity\Payment;
 /**
  * Plan
  *
- * @ORM\Table(name="IAUM_UsersSubscriptions")
- * @ORM\Entity(repositoryClass="VS\UsersBundle\Entity\Repository\UserSubscriptionRepository")
  */
 class PlanSubscription implements SubscriptionInterface
 {
