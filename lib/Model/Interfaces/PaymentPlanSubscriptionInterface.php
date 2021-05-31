@@ -3,7 +3,8 @@
 use Sylius\Component\Resource\Model\ResourceInterface;
 use VS\UsersBundle\Model\SubscriptionInterface;
 
-interface NewsletterSubscriptionInterface extends ResourceInterface, SubscriptionInterface
+interface PaymentPlanSubscriptionInterface extends ResourceInterface, SubscriptionInterface
 {
-    public function getMailchimpAudience();
+    public function getPlan();
+    public function getPaymentDetails();
 }
