@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping"
+>
+    <mapped-superclass name="VS\UsersSubscriptionsBundle\Model\PaymentPlanSubscription">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+        
+        <many-to-one field="user" target-entity="VS\UsersBundle\Model\UserInterface" inversed-by="newsletterSubscriptions" />
+        
+        <one-to-one field="plan" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface" /> <!-- inversed-by="subscription" -->
+        <one-to-one field="paymentDetails" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface" /> <!-- inversed-by="subscription" -->
+        
+        <field name="date" column="date" type="datetime" nullable="false">
+        	<gedmo:timestampable on="create"/>
+       	</field>
+    </mapped-superclass>
+</doctrine-mapping>

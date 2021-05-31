@@ -1,35 +1,27 @@
-<?php namespace VS\UsersSubscriptionsBundle\Entity;
+<?php namespace VS\UsersSubscriptionsBundle\Model;
 
-use Sylius\Component\Resource\Model\ResourceInterface;
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 
-/**
- * 
- */
-class Package implements ResourceInterface
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PackageInterface;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface;
+
+class Package implements PackageInterface
 {
     use ToggleableTrait;
 
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+    /** @var integer */
     protected $id;
     
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=64, nullable=false)
-     */
+    /** @var string */
     protected $title;
     
     /**
-     * @ORM\OneToMany(targetEntity="PackagePlan", mappedBy="package", cascade={"persist"})
+     * Relation to the PackagePlan entity
+     *
+     * @var PackagePlanInterface
      */
-    public $plans;
+    protected $plans;
     
     /**
      * Constructor
@@ -39,7 +31,6 @@ class Package implements ResourceInterface
         $this->plans = new ArrayCollection();
     }
 
-    
     /**
      * Get id
      *
@@ -48,6 +39,16 @@ class Package implements ResourceInterface
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
     
     /**
@@ -63,18 +64,7 @@ class Package implements ResourceInterface
         return $this;
     }
 
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-    
-    
-    function getPlans() 
+    public function getPlans() 
     {
         return $this->plans->toArray();
     }
@@ -97,5 +87,4 @@ class Package implements ResourceInterface
         
         return $this;
     }
-    
 }

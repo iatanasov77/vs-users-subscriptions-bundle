@@ -18,6 +18,19 @@ use VS\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface
 use VS\UsersSubscriptionsBundle\Model\NewsletterSubscription;
 use VS\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 
+use VS\UsersSubscriptionsBundle\Model\PaymentPlanSubscription;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
+use VS\UsersSubscriptionsBundle\Repository\PaymentPlanSubscriptionRepository;
+
+use VS\UsersSubscriptionsBundle\Model\PackagePlan;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface;
+
+use VS\UsersSubscriptionsBundle\Model\Package;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PackageInterface;
+
+use VS\UsersSubscriptionsBundle\Model\Plan;
+use VS\UsersSubscriptionsBundle\Model\Interfaces\PlanInterface;
+
 /**
  * This is the class that validates and merges configuration from your app/config files
  *
@@ -79,6 +92,66 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( NewsletterSubscriptionForm::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'payment_plan_subscriptions' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( PaymentPlanSubscription::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PaymentPlanSubscriptionInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( PaymentPlanSubscriptionRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'package_plan' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( PackagePlan::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PackagePlanInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'package' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( Package::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PackageInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'plan' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( Plan::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PlanInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()

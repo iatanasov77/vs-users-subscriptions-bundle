@@ -12,34 +12,22 @@ class Plan implements ResourceInterface
 {
     use ToggleableTrait;
     
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
+    /** @var integer */
+    protected $id;
 
+    /** @var string */
+    protected $title;
+    
+    /** @var string */
+    protected $subscriptionPeriod;
+    
     /**
-     * @var string
+     * Relation to the PackagePlan entity
      *
-     * @ORM\Column(name="title", type="string", length=64, nullable=true)
+     * @var PackagePlanInterface
      */
-    private $title;
+    protected $plans;
     
-    /** 
-     * 
-     * @ORM\Column(type="string") 
-     */
-    private $subscriptionPeriod;
-    
-    /**
-     * @ORM\OneToMany(targetEntity="PackagePlan", mappedBy="plan")
-     */
-    public $plans;
-    
-
     /**
      * Get id
      *
@@ -50,6 +38,16 @@ class Plan implements ResourceInterface
         return $this->id;
     }
 
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    
     /**
      * Set title
      *
@@ -63,30 +61,19 @@ class Plan implements ResourceInterface
         return $this;
     }
 
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-    
-    function getSubscriptionPeriod()
+    public function getSubscriptionPeriod()
     {
         return $this->subscriptionPeriod;
     }
 
-    function setSubscriptionPeriod($subscriptionPeriod)
+    public function setSubscriptionPeriod($subscriptionPeriod)
     {
         $this->subscriptionPeriod = $subscriptionPeriod;
         
         return $this;
     }
 
-        
-    function getFields() 
+    public function getFields() 
     {
         return $this->packagePlans->toArray();
     }
@@ -111,7 +98,7 @@ class Plan implements ResourceInterface
         return $this;
     }
     
-    function getPlans() 
+    public function getPlans() 
     {
         return $this->plans->toArray();
     }
@@ -120,5 +107,4 @@ class Plan implements ResourceInterface
     {
         return $this->title;
     }
-    
 }
