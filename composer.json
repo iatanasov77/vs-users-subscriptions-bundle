@@ -15,11 +15,11 @@
     	"php": "^7.2",
     	
     	"sylius/resource-bundle": "^1.8",
-    	"vankosoft/mailchimp-bundle": "dev-symfony5"
+    	"welp/mailchimp-bundle": "dev-symfony5"
     },
    "repositories": [
 		{
-            "type": "git",
+            "type": "vcs",
             "url": "https://github.com/iatanasov77/mailchimp-bundle.git"
         }
     ],
