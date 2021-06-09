@@ -15,8 +15,14 @@
     	"php": "^7.2",
     	
     	"sylius/resource-bundle": "^1.8",
-    	"welp/mailchimp-bundle": "^1.3"
+    	"welp/mailchimp-bundle": "dev-symfony5"
     },
+   "repositories": [
+		{
+            "type": "git",
+            "url": "https://github.com/iatanasov77/mailchimp-bundle.git"
+        }
+    ],
     "suggest": {
         "iatanasov77/vs-payment-bundle": "Allows to create payed plans and to subcribes to them."
     },

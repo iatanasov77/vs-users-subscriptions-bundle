@@ -1,3 +1,9 @@
+0.2.4	|	Release date: **09.06.2021**
+============================================
+* New Features:
+  - Change Repository of MailchimpBundle. Add VankoSoft Repo that fix for Symfony 5
+
+
 0.2.3	|	Release date: **31.05.2021**
 ============================================
 * Bug-Fixes:
