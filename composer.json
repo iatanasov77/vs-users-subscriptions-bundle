@@ -14,7 +14,8 @@
     "require": {
     	"php": "^7.2",
     	
-    	"sylius/resource-bundle": "^1.8",
+		"vankosoft/users-bundle": "^0.3",
+		
     	"welp/mailchimp-bundle": "dev-symfony5"
     },
     "suggest": {
