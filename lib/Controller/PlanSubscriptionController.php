@@ -1,6 +1,6 @@
 <?php namespace VS\UsersSubscriptionsBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use VS\UsersBundle\Entity\UserActivity;
@@ -8,7 +8,7 @@ use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
 //use IA\PaymentBundle\Entity\Payment;
 
-class PlanSubscriptionController extends Controller
+class PlanSubscriptionController extends AbstractController
 {
     public function subscribeAction( $planId, Request $request )
     {

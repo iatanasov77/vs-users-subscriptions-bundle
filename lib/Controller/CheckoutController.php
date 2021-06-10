@@ -1,10 +1,10 @@
 <?php namespace VS\UsersSubscriptionsBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckoutController extends Controller
+class CheckoutController extends AbstractController
 {
     public function selectMethodAction($planId, Request $request)
     {
