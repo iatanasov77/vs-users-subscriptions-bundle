@@ -1,3 +1,10 @@
+0.3.0	|	Release date: **11.06.2021**
+============================================
+* New Features:
+  - Add New Composer Dependencies.
+  - Forked Welp/MailchimpBundle Repository Should be added on the concrete project composer.json
+
+
 0.2.6	|	Release date: **09.06.2021**
 ============================================
 * Try To Get Fork
