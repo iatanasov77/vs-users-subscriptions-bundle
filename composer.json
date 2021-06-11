@@ -14,7 +14,7 @@
     "require": {
     	"php": "^7.2",
     	
-		"vankosoft/users-bundle": "^0.3",
+		"vankosoft/users-bundle": "dev-debug_packages",
 		
     	"welp/mailchimp-bundle": "dev-symfony5"
     },
