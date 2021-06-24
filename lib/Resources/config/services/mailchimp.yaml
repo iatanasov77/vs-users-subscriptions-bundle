@@ -1,0 +1,38 @@
+parameters:
+    vs_users_subscriptions.list_synchronizer_class: VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListSynchronizer
+    vs_users_subscriptions.list_repository_class: VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListRepository
+    vs_users_subscriptions.subscriber_listener_class: VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberListener
+
+services:
+    # MailChimp
+    vs_users_subscriptions.mailchimp_master:
+        class: DrewM\MailChimp\MailChimp
+        public: true
+        arguments: ['%vs_users_subscriptions.mailchimp_api_key%']
+
+    vs_users_subscriptions.list_repository:
+        class: "%vs_users_subscriptions.list_repository_class%"
+        public: true
+        arguments:
+            - '@vs_users_subscriptions.mailchimp_master'
+
+    vs_users_subscriptions.list_synchronizer:
+        class: "%vs_users_subscriptions.list_synchronizer_class%"
+        public: true
+        arguments:
+            - '@vs_users_subscriptions.list_repository'
+
+    # Events
+    vs_users_subscriptions.subscriber_listener:
+        class: "%vs_users_subscriptions.subscriber_listener_class%"
+        arguments:
+            - '@vs_users_subscriptions.list_repository'
+        tags:
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.subscribe, method: onSubscribe }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.unsubscribe, method: onUnsubscribe }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.pending, method: onPending }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.clean, method: onClean }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.update, method: onUpdate }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.change_email, method: onChangeEmail }
+            - { name: kernel.event_listener, event: vs_users_subscriptions.mailchimp.delete, method: onDelete }
+

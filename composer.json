@@ -16,7 +16,7 @@
     	
 		"vankosoft/users-bundle": "^0.3",
 		
-    	"welp/mailchimp-bundle": "dev-symfony5"
+    	"drewm/mailchimp-api": "2.5.*"
     },
     "suggest": {
         "iatanasov77/vs-payment-bundle": "Allows to create payed plans and to subcribes to them."
