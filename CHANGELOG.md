@@ -1,3 +1,9 @@
+0.3.3	|	Release date: **24.06.2021**
+============================================
+* Bug-Fixes:
+  - Fix Mailchimp Components Namespaces.
+
+
 0.3.2	|	Release date: **24.06.2021**
 ============================================
 * New Features and Improvements:

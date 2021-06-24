@@ -1,7 +1,7 @@
 <?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use Welp\MailchimpBundle\Subscriber\Subscriber;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
 
 /**
  * Event for User unit sync
