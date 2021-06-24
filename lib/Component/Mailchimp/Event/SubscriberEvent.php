@@ -1,6 +1,6 @@
 <?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Event;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
 
 /**
