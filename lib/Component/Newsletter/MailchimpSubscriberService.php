@@ -1,11 +1,12 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp;
+<?php namespace VS\UsersSubscriptionsBundle\Component\Newsletter;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-use Welp\MailchimpBundle\Event\SubscriberEvent;
-use Welp\MailchimpBundle\Subscriber\Subscriber;
-use Welp\MailchimpBundle\Exception\MailchimpException;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
+
 use VS\UsersSubscriptionsBundle\Component\Exception\SubscriberException;
 
 /**
@@ -14,7 +15,7 @@ use VS\UsersSubscriptionsBundle\Component\Exception\SubscriberException;
  * @author ivan.atanasov
  * @doc https://welpdev.github.io/mailchimp-bundle/usage/
  */
-class SubscriberService
+class MailchimpSubscriberService
 {
     /** @var ContainerInterface */
     protected $container;

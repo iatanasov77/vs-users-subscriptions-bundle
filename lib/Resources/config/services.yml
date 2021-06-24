@@ -1,6 +1,7 @@
 imports:
     - { resource: services/form.yaml }
     - { resource: services/newsletter.yaml }
+    - { resource: services/mailchimp.yaml }
 
 services:
     _defaults:

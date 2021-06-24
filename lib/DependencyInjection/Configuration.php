@@ -48,7 +48,12 @@ class Configuration implements ConfigurationInterface
         
         $rootNode
             ->children()
-                ->scalarNode( 'orm_driver' )->defaultValue( SyliusResourceBundle::DRIVER_DOCTRINE_ORM )->cannotBeEmpty()->end()
+                ->scalarNode( 'mailchimp_api_key' )
+                    ->isRequired()
+                ->end()
+                ->scalarNode( 'orm_driver' )
+                    ->defaultValue( SyliusResourceBundle::DRIVER_DOCTRINE_ORM )->cannotBeEmpty()
+                ->end()
             ->end()
         ;
         $this->addResourcesSection( $rootNode );
