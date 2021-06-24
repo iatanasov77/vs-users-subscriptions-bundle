@@ -6,11 +6,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-use Welp\MailchimpBundle\Event\SubscriberEvent;
-use Welp\MailchimpBundle\Subscriber\Subscriber;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
 
 use App\Form\NewsletterSubscribeFormType;
-use Welp\MailchimpBundle\Exception\MailchimpException;
+
 
 class NewsletterSubscriptionExtController extends Controller
 {

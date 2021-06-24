@@ -1,7 +1,7 @@
 <?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Event;
 
-use Welp\MailchimpBundle\Subscriber\ListRepository;
-use Welp\MailchimpBundle\Event\SubscriberEvent;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListRepository;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
 
 /**
  * Listener for subscriber unit synchronization
@@ -16,9 +16,9 @@ class SubscriberListener
     /**
      * @param ListRepository $listRepository
      */
-    public function __construct(ListRepository $listRepository)
+    public function __construct( ListRepository $listRepository )
     {
-        $this->listRepository = $listRepository;
+        $this->listRepository   = $listRepository;
     }
 
     /**

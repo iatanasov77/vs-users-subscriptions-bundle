@@ -3,7 +3,7 @@
 use VS\ApplicationBundle\Controller\AbstractCrudController;
 use Symfony\Component\HttpFoundation\Request;
 
-class MailchimpAudienceController extends AbstractCrudController
+class NewsletterSubscriptionController extends AbstractCrudController
 {
     protected function prepareEntity( &$entity, &$form, Request $request )
     {

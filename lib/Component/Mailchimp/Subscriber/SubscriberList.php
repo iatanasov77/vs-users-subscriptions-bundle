@@ -1,7 +1,7 @@
 <?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
 
-use Welp\MailchimpBundle\Provider\ProviderInterface;
-use Welp\MailchimpBundle\Provider\DynamicProviderInterface;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Provider\ProviderInterface;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Provider\DynamicProviderInterface;
 
 /**
  * SubscriberList linked a MailChimpList with a SubscriberProvider

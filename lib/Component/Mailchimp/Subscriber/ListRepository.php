@@ -2,7 +2,7 @@
 
 use DrewM\MailChimp\MailChimp;
 use phpDocumentor\Reflection\Types\Void_;
-use Welp\MailchimpBundle\Exception\MailchimpException;
+use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
 
 /**
  * Handle action on MailChimp List
