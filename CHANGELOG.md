@@ -1,3 +1,9 @@
+0.3.2	|	Release date: **24.06.2021**
+============================================
+* New Features and Improvements:
+  - Move Mailchimp Components from WelpDev.
+
+
 0.3.1	|	Release date: **11.06.2021**
 ============================================
 * New Features:
