@@ -1,3 +1,9 @@
+0.4.0	|	Release date: **02.07.2021**
+============================================
+* New Features:
+  - Update VsUsersBundle version.
+
+
 0.3.4	|	Release date: **24.06.2021**
 ============================================
 * Bug-Fixes:
