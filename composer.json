@@ -14,7 +14,7 @@
     "require": {
     	"php": "^7.2",
     	
-		"vankosoft/users-bundle": "^0.4",
+		"vankosoft/users-bundle": "^1.0",
 		
     	"drewm/mailchimp-api": "2.5.*"
     },
