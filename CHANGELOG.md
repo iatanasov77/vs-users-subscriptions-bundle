@@ -1,3 +1,9 @@
+2.0.0	|	Release date: **15.02.2022**
+============================================
+* Refactoring:
+  - Full Refactoring of Whole Bundle.
+
+
 1.0.0	|	Release date: **21.09.2021**
 ============================================
 * New Features:

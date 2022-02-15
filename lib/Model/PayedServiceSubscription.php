@@ -1,27 +1,27 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
-use VS\UsersBundle\Model\UeserInterface;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 
-class PaymentPlanSubscription implements PaymentPlanSubscriptionInterface
+class PayedServiceSubscription implements PaymentPlanSubscriptionInterface
 {
     /** @var integer */
     protected $id;
-
-    /**
-     * Relation to the User entity
-     *
-     * @var UserInterface
-     */
-    protected $user;
 
     /**
      * Relation to the PackagePlan entity
      *
      * @var PackagePlanInterface
      */
-    protected $plan;
+    protected $payedService;
+    
+    /**
+     * Relation to the User entity
+     *
+     * @var SubscribedUserInterface
+     */
+    protected $user;
 
     /**
      * Relation to the PaymentDetails entity
@@ -39,6 +39,18 @@ class PaymentPlanSubscription implements PaymentPlanSubscriptionInterface
         return $this->id;
     }
 
+    public function getPayedService()
+    {
+        return $this->payedService;
+    }
+    
+    public function setPayedService($payedService)
+    {
+        $this->payedService = $payedService;
+        
+        return $this;
+    }
+    
     public function getUser()
     {
         return $this->user;
@@ -47,18 +59,6 @@ class PaymentPlanSubscription implements PaymentPlanSubscriptionInterface
     public function setUser($user)
     {
         $this->user = $user;
-        
-        return $this;
-    }
-    
-    public function getPlan()
-    {
-        return $this->plan;
-    }
-
-    public function setPlan($plan)
-    {
-        $this->plan = $plan;
         
         return $this;
     }

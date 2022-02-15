@@ -1,15 +1,10 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model\Interfaces;
 
-interface CheckoutOrderInterface
+use Sylius\Component\Resource\Model\ResourceInterface;
+
+interface PayedServiceInterface extends ResourceInterface
 {
     public function getDescription();
-    
     public function getPrice();
-    
     public function getCurrency();
-    
-    public function getBillingPeriod();
-    
-    public function getBillingFrequency();
 }
-    

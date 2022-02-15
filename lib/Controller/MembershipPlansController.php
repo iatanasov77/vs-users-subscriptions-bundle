@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Symfony\Component\HttpFoundation\Request;
@@ -6,8 +6,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Spatie\Url\Url as SpatieUrl;
 
 use App\Component\Url;
-use VS\UsersBundle\Entity\Plan;
-use VS\UsersBundle\Form\PlanFormType;
+use Vankosoft\UsersBundle\Entity\Plan;
+use Vankosoft\UsersBundle\Form\PlanFormType;
 
 class MembershipPlansController extends ResourceController
 {
@@ -29,7 +29,7 @@ class MembershipPlansController extends ResourceController
         //$id = Url::ProjectsUrlGetId();
         $id = $this->getId();
         
-        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\Plan' );
+        $er = $this->getDoctrine()->getRepository( 'Vankosoft\UsersBundle\Entity\Plan' );
         $oPlan = $id ? $er->find($id) : new Plan();
         
         $form = $this->createForm(PlanFormType::class, $oPlan, ['data' => $oPlan]);

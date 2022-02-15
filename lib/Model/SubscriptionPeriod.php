@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sylius\Component\Resource\Model\ResourceInterface;
@@ -8,7 +8,7 @@ use Sylius\Component\Resource\Model\ToggleableTrait;
  * Plan
  *
  */
-class Plan implements ResourceInterface
+class SubscriptionPeriod implements ResourceInterface
 {
     use ToggleableTrait;
     
@@ -52,7 +52,7 @@ class Plan implements ResourceInterface
      * Set title
      *
      * @param string $title
-     * @return Plan
+     * @return SubscriptionPeriod
      */
     public function setTitle($title)
     {

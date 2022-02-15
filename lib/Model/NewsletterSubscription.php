@@ -1,6 +1,6 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
-use VS\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
 
 class NewsletterSubscription implements NewsletterSubscriptionInterface
 {

@@ -1,7 +1,7 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
 
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Provider\ProviderInterface;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Provider\DynamicProviderInterface;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Provider\ProviderInterface;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Provider\DynamicProviderInterface;
 
 /**
  * SubscriberList linked a MailChimpList with a SubscriberProvider

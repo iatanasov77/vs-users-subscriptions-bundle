@@ -1,7 +1,7 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Event;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event;
 
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListRepository;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListRepository;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
 
 /**
  * Listener for subscriber unit synchronization

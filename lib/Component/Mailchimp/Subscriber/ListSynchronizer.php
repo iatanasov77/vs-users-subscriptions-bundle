@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
 
 /**
  * Handle Synchronization between SubscriberList and specific MailChimp List
