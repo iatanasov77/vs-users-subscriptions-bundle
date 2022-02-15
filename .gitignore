@@ -50,3 +50,7 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# VisualParadigm Meta Files
+/doc/technical/.UsersSubscriptionsBundle.vpp.lck
+/doc/technical/UsersSubscriptionsBundle.vpp.back_*
