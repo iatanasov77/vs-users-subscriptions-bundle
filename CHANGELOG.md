@@ -1,3 +1,9 @@
+2.0.1	|	Release date: **15.02.2022**
+============================================
+* Refactoring:
+  - Remove VisualParadigm Meta Files From Repository.
+
+
 2.0.0	|	Release date: **15.02.2022**
 ============================================
 * Refactoring:
