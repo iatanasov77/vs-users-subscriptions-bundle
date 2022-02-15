@@ -1,18 +1,19 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 
-class PayedServiceSubscription implements PaymentPlanSubscriptionInterface
+class PayedServiceSubscription implements PayedServiceSubscriptionInterface
 {
     /** @var integer */
     protected $id;
 
     /**
-     * Relation to the PackagePlan entity
+     * Relation to the PayedService entity
      *
-     * @var PackagePlanInterface
+     * @var PayedServiceInterface
      */
     protected $payedService;
     

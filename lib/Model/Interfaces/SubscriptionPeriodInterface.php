@@ -5,6 +5,5 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 interface SubscriptionPeriodInterface extends ResourceInterface
 {
     public function getTitle();
-    public function getPlans();
     public function getSubscriptionPeriod();
 }

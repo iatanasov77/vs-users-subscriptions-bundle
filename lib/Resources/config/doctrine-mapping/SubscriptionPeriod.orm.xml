@@ -10,12 +10,6 @@
             <generator strategy="AUTO" />
         </id>
         
-        <one-to-many field="plans" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface" mapped-by="package">
-        	<cascade>
-                <cascade-persist/>
-            </cascade>
-        </one-to-many>
-        
         <field name="title" type="string" length="64" nullable="false">
         	<gedmo:translatable />
         </field>

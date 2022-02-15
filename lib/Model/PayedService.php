@@ -1,12 +1,11 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
 use Sylius\Component\Resource\Model\ToggleableTrait;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\CheckoutOrderInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PackageInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PlanInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface;
 
-class PayedService implements PackagePlanInterface, CheckoutOrderInterface
+class PayedService implements PayedServiceInterface, CheckoutOrderInterface
 {
     use ToggleableTrait;
 
@@ -36,9 +35,9 @@ class PayedService implements PackagePlanInterface, CheckoutOrderInterface
     }
 
     /**
-     * Get plan
+     * Get SubscriptionPeriod
      *
-     * @return PayedService
+     * @return SubscriptionPeriod
      */
     public function getSubscriptionPeriod()
     {
@@ -48,7 +47,7 @@ class PayedService implements PackagePlanInterface, CheckoutOrderInterface
     /**
      * Set plan
      *
-     * @param Plan $plan
+     * @param SubscriptionPeriod $subscriptionPeriod
      * @return PayedService
      */
     public function setSubscriptionPeriod(SubscriptionPeriod $subscriptionPeriod)
