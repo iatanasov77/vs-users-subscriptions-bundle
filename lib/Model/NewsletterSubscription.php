@@ -8,9 +8,9 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
     protected $id;
     
     /**
-     * Relation to the User entity ( May to be Null )
+     * Relation to the User entity
      *
-     * @var UserInterface
+     * @var Interfaces\SubscribedUserInterface
      */
     protected $user;
     
@@ -24,7 +24,7 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
     /**
      * Relation to the MailchimpAudience entity
      *
-     * @var MailchimpListInterface
+     * @var Interfaces\MailchimpAudienceInterface
      */
     protected $mailchimpAudience;
     

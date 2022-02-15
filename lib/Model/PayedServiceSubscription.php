@@ -32,7 +32,7 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
      */
     protected $paymentDetails;
     
-    /** @var datetime */
+    /** @var \DateTimeInterface */
     protected $date;
 
     public function getId()
