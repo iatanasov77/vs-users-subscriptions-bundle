@@ -1,3 +1,11 @@
+2.0.2	|	Release date: **15.02.2022**
+============================================
+* New Features:
+  - Add NewsletterSubscriptionForm.
+* Bug-Fixes:
+  - More Fixes About Refactoring
+
+
 2.0.1	|	Release date: **15.02.2022**
 ============================================
 * Refactoring:

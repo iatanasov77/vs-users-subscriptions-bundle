@@ -5,7 +5,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 
 /**
- * Plan
+ * SubscriptionPeriod
  *
  */
 class SubscriptionPeriod implements ResourceInterface
@@ -20,13 +20,6 @@ class SubscriptionPeriod implements ResourceInterface
     
     /** @var string */
     protected $subscriptionPeriod;
-    
-    /**
-     * Relation to the PackagePlan entity
-     *
-     * @var PackagePlanInterface
-     */
-    protected $plans;
     
     /**
      * Get id
@@ -71,36 +64,6 @@ class SubscriptionPeriod implements ResourceInterface
         $this->subscriptionPeriod = $subscriptionPeriod;
         
         return $this;
-    }
-
-    public function getFields() 
-    {
-        return $this->packagePlans->toArray();
-    }
-    
-    public function addField(PackagePlan $packagePlan)
-    {
-        if($packagePlan->getTitle() 
-                && !$this->packagePlans->contains($packagePlan)) {
-            $packagePlan->setPlan($this);
-            $this->packagePlans->add($packagePlan);
-        }
-        
-        return $this;
-    }
-    
-    public function removeField(PackagePlan $packagePlan)
-    {
-        if ($this->packagePlans->contains($packagePlan)) {
-            $this->packagePlans->removeElement($packagePlan);
-        }
-        
-        return $this;
-    }
-    
-    public function getPlans() 
-    {
-        return $this->plans->toArray();
     }
     
     public function __toString()
