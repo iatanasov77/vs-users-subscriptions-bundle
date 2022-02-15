@@ -1,11 +1,11 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use VS\UsersBundle\Entity\UserActivity;
-use VS\UsersSubscriptionsBundle\Entity\PlanSubscription;
-use VS\UsersSubscriptionsBundle\Entity\PackagePlan;
+use Vankosoft\UsersBundle\Entity\UserActivity;
+use Vankosoft\UsersSubscriptionsBundle\Entity\PlanSubscription;
+use Vankosoft\UsersSubscriptionsBundle\Entity\PackagePlan;
 //use IA\PaymentBundle\Entity\Payment;
 
 class PlanSubscriptionController extends AbstractController

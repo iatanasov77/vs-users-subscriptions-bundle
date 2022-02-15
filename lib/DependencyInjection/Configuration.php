@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\DependencyInjection;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -8,28 +8,25 @@ use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Resource\Factory\Factory;
 
-use VS\UsersSubscriptionsBundle\Controller\MailchimpAudienceController;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
-use VS\UsersSubscriptionsBundle\Model\MailchimpAudience;
-use VS\UsersSubscriptionsBundle\Form\MailchimpAudienceForm;
+use Vankosoft\UsersSubscriptionsBundle\Controller\MailchimpAudienceController;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\MailchimpAudience;
+use Vankosoft\UsersSubscriptionsBundle\Form\MailchimpAudienceForm;
 
-//use VS\UsersSubscriptionsBundle\Controller\SubscriptionController;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
-use VS\UsersSubscriptionsBundle\Model\NewsletterSubscription;
-use VS\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
+//use Vankosoft\UsersSubscriptionsBundle\Controller\SubscriptionController;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\NewsletterSubscription;
+use Vankosoft\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 
-use VS\UsersSubscriptionsBundle\Model\PaymentPlanSubscription;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PaymentPlanSubscriptionInterface;
-use VS\UsersSubscriptionsBundle\Repository\PaymentPlanSubscriptionRepository;
+use Vankosoft\UsersSubscriptionsBundle\Model\SubscriptionPeriod;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface;
 
-use VS\UsersSubscriptionsBundle\Model\PackagePlan;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedService;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 
-use VS\UsersSubscriptionsBundle\Model\Package;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PackageInterface;
-
-use VS\UsersSubscriptionsBundle\Model\Plan;
-use VS\UsersSubscriptionsBundle\Model\Interfaces\PlanInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscription;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -101,67 +98,51 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode( 'payment_plan_subscriptions' )
+                        ->arrayNode( 'subscription_period' )
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode( 'options' )->end()
                                 ->arrayNode( 'classes' )
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode( 'model' )->defaultValue( PaymentPlanSubscription::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PaymentPlanSubscriptionInterface::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'repository' )->defaultValue( PaymentPlanSubscriptionRepository::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
-                                    ->end()
-                                ->end()
-                            ->end()
-                        ->end()
-                        ->arrayNode( 'package_plan' )
-                            ->addDefaultsIfNotSet()
-                            ->children()
-                                ->variableNode( 'options' )->end()
-                                ->arrayNode( 'classes' )
-                                    ->addDefaultsIfNotSet()
-                                    ->children()
-                                        ->scalarNode( 'model' )->defaultValue( PackagePlan::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PackagePlanInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'model' )->defaultValue( SubscriptionPeriod::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( SubscriptionPeriodInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode( 'package' )
+                        ->arrayNode( 'payed_service' )
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode( 'options' )->end()
                                 ->arrayNode( 'classes' )
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode( 'model' )->defaultValue( Package::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PackageInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'model' )->defaultValue( PayedService::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode( 'plan' )
+                        ->arrayNode( 'payed_service_subscriptions' )
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode( 'options' )->end()
                                 ->arrayNode( 'classes' )
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode( 'model' )->defaultValue( Plan::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PlanInterface::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'model' )->defaultValue( PayedServiceSubscription::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( PayedServiceSubscriptionRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
                         ->end()
-                        
                     ->end()
                 ->end()
             ->end()

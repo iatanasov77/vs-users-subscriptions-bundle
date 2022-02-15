@@ -1,12 +1,12 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Spatie\Url\Url as SpatieUrl;
 
-use VS\UsersBundle\Entity\Package;
-use VS\UsersBundle\Form\PackageFormType;
+use Vankosoft\UsersBundle\Entity\Package;
+use Vankosoft\UsersBundle\Form\PackageFormType;
 use App\Component\Url;
 
 class MembershipPackagesController extends ResourceController
@@ -29,7 +29,7 @@ class MembershipPackagesController extends ResourceController
         //$id = Url::ProjectsUrlGetId();
         $id = $this->getId();
         
-        $er = $this->getDoctrine()->getRepository( 'VS\UsersBundle\Entity\Package' );
+        $er = $this->getDoctrine()->getRepository( 'Vankosoft\UsersBundle\Entity\Package' );
         $oPackage = $id ? $er->find($id) : new Package();
         
         $form = $this->createForm(PackageFormType::class, $oPackage, ['data' => $oPackage]);

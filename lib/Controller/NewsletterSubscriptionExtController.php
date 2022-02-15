@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -6,9 +6,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
 
 use App\Form\NewsletterSubscribeFormType;
 

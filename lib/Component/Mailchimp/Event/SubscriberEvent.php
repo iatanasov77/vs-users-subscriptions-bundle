@@ -1,7 +1,7 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Event;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event;
 
 use Symfony\Contracts\EventDispatcher\Event;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
 
 /**
  * Event for User unit sync

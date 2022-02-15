@@ -1,13 +1,13 @@
-<?php namespace VS\UsersSubscriptionsBundle\Form;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Form;
 
-use VS\ApplicationBundle\Form\AbstractForm;
+use Vankosoft\ApplicationBundle\Form\AbstractForm;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-use VS\ApplicationBundle\Component\I18N;
+use Vankosoft\ApplicationBundle\Component\I18N;
 
 class MailchimpAudienceForm extends AbstractForm
 {

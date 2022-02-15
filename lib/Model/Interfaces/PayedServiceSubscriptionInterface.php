@@ -3,7 +3,8 @@
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionInterface;
 
-interface NewsletterSubscriptionInterface extends ResourceInterface, SubscriptionInterface
+interface PayedServiceSubscriptionInterface extends ResourceInterface, SubscriptionInterface
 {
-    public function getMailchimpAudience();
+    public function getPlan();
+    public function getPaymentDetails();
 }

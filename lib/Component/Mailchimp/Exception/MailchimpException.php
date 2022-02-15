@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Exception;
 
 /**
  * Handle MailChimp API errors

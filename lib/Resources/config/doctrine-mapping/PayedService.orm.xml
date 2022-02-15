@@ -5,28 +5,31 @@
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
                   xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping"
 >
-    <mapped-superclass name="VS\UsersSubscriptionsBundle\Model\Plan">
+    <mapped-superclass name="Vankosoft\UsersSubscriptionsBundle\Model\PackagePlan">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO" />
         </id>
         
-        <one-to-many field="plans" target-entity="VS\UsersSubscriptionsBundle\Model\Interfaces\PackagePlanInterface" mapped-by="package">
-        	<cascade>
-                <cascade-persist/>
-            </cascade>
-        </one-to-many>
+        <many-to-one field="subscriptionPeriod" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface" inversed-by="plans">
+        	<join-column nullable="false" />
+        </many-to-one>
         
         <field name="title" type="string" length="64" nullable="false">
+            <gedmo:translatable />
+        </field>
+        
+        <field name="description" column="description" type="string" nullable="false">
         	<gedmo:translatable />
         </field>
         
-        <field name="subscriptionPeriod" type="string" length="64" nullable="false" />
+        <field name="price" type="string" nullable="false" />
+        <field name="currency" type="string" nullable="false" />
         
         <!--
             Used locale to override Translation listener`s locale
             this is not a mapped field of entity metadata, just a simple property
             and it is not necessary because globally locale can be set in listener
         -->
-        <gedmo:translation entity="VS\ApplicationBundle\Model\Interfaces\TranslationInterface" locale="locale" />
+        <gedmo:translation entity="Vankosoft\ApplicationBundle\Model\Interfaces\TranslationInterface" locale="locale" />
     </mapped-superclass>
 </doctrine-mapping>

@@ -1,13 +1,13 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Newsletter;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Newsletter;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberEvent;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\Subscriber;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
 
-use VS\UsersSubscriptionsBundle\Component\Exception\SubscriberException;
+use Vankosoft\UsersSubscriptionsBundle\Component\Exception\SubscriberException;
 
 /**
  * 

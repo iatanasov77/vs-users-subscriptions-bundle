@@ -1,8 +1,8 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model\Interfaces;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model\Interfaces;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 
-interface PlanInterface extends ResourceInterface
+interface SubscriptionPeriodInterface extends ResourceInterface
 {
     public function getTitle();
     public function getPlans();

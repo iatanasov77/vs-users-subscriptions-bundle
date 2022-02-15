@@ -1,13 +1,13 @@
-<?php namespace VS\UsersSubscriptionsBundle\Repository;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Repository;
 
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
-use VS\UsersBundle\Model\SubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
 
-class PaymentPlanSubscriptionRepository extends EntityRepository
+class PayedServiceSubscriptionRepository extends EntityRepository
 {
     public function isActive( $subscription )
     {
-        if ( ! $subscription instanceof SubscriptionInterface ) {
+        if ( ! $subscription instanceof PayedServiceSubscriptionInterface ) {
             return false;
         }
         

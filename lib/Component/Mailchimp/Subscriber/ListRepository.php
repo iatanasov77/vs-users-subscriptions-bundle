@@ -1,8 +1,8 @@
-<?php namespace VS\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber;
 
 use DrewM\MailChimp\MailChimp;
 use phpDocumentor\Reflection\Types\Void_;
-use VS\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
+use Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Exception\MailchimpException;
 
 /**
  * Handle action on MailChimp List

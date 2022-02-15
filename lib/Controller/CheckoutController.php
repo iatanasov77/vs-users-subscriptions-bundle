@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

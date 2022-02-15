@@ -1,6 +1,6 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
-use VS\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
 
 class MailchimpAudience implements MailchimpAudienceInterface
 {

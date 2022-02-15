@@ -1,6 +1,6 @@
-<?php namespace VS\UsersSubscriptionsBundle\Controller;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
-use VS\ApplicationBundle\Controller\AbstractCrudController;
+use Vankosoft\ApplicationBundle\Controller\AbstractCrudController;
 use Symfony\Component\HttpFoundation\Request;
 
 class NewsletterSubscriptionController extends AbstractCrudController

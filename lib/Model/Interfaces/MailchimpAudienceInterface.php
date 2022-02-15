@@ -1,4 +1,4 @@
-<?php namespace VS\UsersSubscriptionsBundle\Model\Interfaces;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Model\Interfaces;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 
