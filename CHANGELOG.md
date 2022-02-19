@@ -1,3 +1,14 @@
+2.0.3	|	Release date: **19.02.2022**
+============================================
+* New Features and Improvements:
+  - Add A Needed Service Parameter.
+  - Add Return Type of VSUsersSubscriptionsBundle::getContainerExtension().
+  - Update README file.
+  - Gitignore.
+  - Update Some DocBlocks.
+  - Update VisualParadigm ERD Diagram.
+
+
 2.0.2	|	Release date: **15.02.2022**
 ============================================
 * New Features:
