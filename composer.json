@@ -17,6 +17,7 @@
     	"drewm/mailchimp-api": "2.5.*"
     },
     "suggest": {
+        "vankosoft/users-bundle": "Required this one or some another bundle that provide an User Entity.",
         "vankosoft/payment-bundle": "Allows to create payed plans and to subcribes to them."
     },
     "conflict": {
