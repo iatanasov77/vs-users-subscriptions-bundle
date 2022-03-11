@@ -5,6 +5,7 @@ use Sylius\Component\Resource\Model\TranslatableTrait;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
 
 class PayedService implements PayedServiceInterface
 {
@@ -13,6 +14,11 @@ class PayedService implements PayedServiceInterface
 
     /** @var integer */
     protected $id;
+    
+    /**
+     * @var PayedServiceCategoryInterface
+     */
+    protected $category;
     
     /**
      * @var PayedServiceSubscriptionPeriodInterface
@@ -32,6 +38,18 @@ class PayedService implements PayedServiceInterface
         return $this->id;
     }
 
+    public function getCategory()
+    {
+        return $this->category;
+    }
+    
+    public function setCategory( PayedServiceCategoryInterface $category ): self
+    {
+        $this->category = $category;
+        
+        return $this;
+    }
+    
     /**
      * @return SubscriptionPeriod
      */
