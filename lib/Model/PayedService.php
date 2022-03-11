@@ -1,21 +1,23 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
 use Sylius\Component\Resource\Model\ToggleableTrait;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\CheckoutOrderInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface;
+use Sylius\Component\Resource\Model\TranslatableTrait;
 
-class PayedService implements PayedServiceInterface, CheckoutOrderInterface
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+
+class PayedService implements PayedServiceInterface
 {
     use ToggleableTrait;
+    use TranslatableTrait;
 
     /** @var integer */
     protected $id;
     
     /**
-     * @var SubscriptionPeriodInterface
+     * @var PayedServiceSubscriptionPeriodInterface
      */
-    protected $subscriptionPeriod;
+    protected $subscriptionPeriods;
     
     /** @var string */
     protected $title;
@@ -23,11 +25,7 @@ class PayedService implements PayedServiceInterface, CheckoutOrderInterface
     /** @var string */
     protected $description;
     
-    /** @var float */
-    protected $price;
     
-    /** @var string */
-    protected $currency;
     
     public function getId()
     {
@@ -35,24 +33,20 @@ class PayedService implements PayedServiceInterface, CheckoutOrderInterface
     }
 
     /**
-     * Get SubscriptionPeriod
-     *
      * @return SubscriptionPeriod
      */
-    public function getSubscriptionPeriod()
+    public function getSubscriptionPeriods()
     {
-        return $this->subscriptionPeriod;
+        return $this->subscriptionPeriods;
     }
     
     /**
-     * Set plan
-     *
      * @param SubscriptionPeriod $subscriptionPeriod
      * @return PayedService
      */
-    public function setSubscriptionPeriod(SubscriptionPeriod $subscriptionPeriod)
+    public function setSubscriptionPeriods(SubscriptionPeriod $subscriptionPeriod)
     {
-        $this->subscriptionPeriod = $subscriptionPeriod;
+        $this->subscriptionPeriods = $subscriptionPeriods;
 
         return $this;
     }
@@ -81,38 +75,23 @@ class PayedService implements PayedServiceInterface, CheckoutOrderInterface
         return $this;
     }
     
-    public function getPrice()
+    public function getTranslatableLocale(): ?string
     {
-        return $this->price;
+        return $this->locale;
     }
-
-    public function setPrice($price)
+    
+    public function setTranslatableLocale($locale): PageInterface
     {
-        $this->price = $price;
+        $this->locale = $locale;
         
         return $this;
     }
 
-    public function getCurrency()
+    /*
+     * @NOTE: Decalared abstract in TranslatableTrait
+     */
+    protected function createTranslation(): TranslationInterface
     {
-        return $this->currency;
-    }
-    
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
         
-        return $this;
     }
-    
-    public function getBillingPeriod()
-    {
-        return $this->subscriptionPeriod ? $this->subscriptionPeriod->getSubscriptionPeriod() : null;
-    }
-    
-    public function getBillingFrequency()
-    {
-        return 1;
-    }
-
 }
