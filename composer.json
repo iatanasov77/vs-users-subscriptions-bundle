@@ -14,7 +14,8 @@
     "require": {
     	"php": "^7.2",
 		
-    	"drewm/mailchimp-api": "2.5.*"
+    	"drewm/mailchimp-api": "2.5.*",
+    	"payum/core": "^1.7"
     },
     "suggest": {
         "vankosoft/users-bundle": "Required this one or some another bundle that provide an User Entity.",
