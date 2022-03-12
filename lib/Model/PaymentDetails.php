@@ -1,10 +1,11 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
 use Payum\Core\Model\ArrayObject;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
-
 
 class PaymentDetails extends ArrayObject implements PaymentDetailsInterface
 {
@@ -18,6 +19,18 @@ class PaymentDetails extends ArrayObject implements PaymentDetailsInterface
     protected $paymentMethod;
     
     protected $type;
+    
+    /**
+     * NOTE: mapped-by="paymentDetails" in Vankosoft\PaymentBundle\Model\Payment
+     * 
+     * @var Collection|PaymentInterface[]
+     */
+    protected $payments;
+    
+    public function __construct()
+    {
+        $this->payments = new ArrayCollection();
+    }
     
     public function getId()
     {
@@ -73,5 +86,10 @@ class PaymentDetails extends ArrayObject implements PaymentDetailsInterface
         $this->type = $type;
         
         return $this;
+    }
+    
+    public function getPayments()
+    {
+        return $this->payments;
     }
 }

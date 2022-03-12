@@ -15,6 +15,7 @@
     	"php": "^7.2",
 		
     	"drewm/mailchimp-api": "2.5.*",
+    	"nyholm/psr7": "^1.5",
     	"payum/core": "^1.7"
     },
     "suggest": {
