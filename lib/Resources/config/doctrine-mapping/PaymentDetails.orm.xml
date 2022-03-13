@@ -12,8 +12,11 @@
         <many-to-one field="user" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface" inversed-by="paymentDetails" />
         
         <field name="paymentMethod" column="payment_method" type="integer" nullable="false" />
+        
+        <!-- Mapping Defined In: /vendor/payum/core/Payum/Core/Bridge/Doctrine/Resources/mapping/ArrayObject.orm.xml
         <field name="details" column="details" type="json" nullable="false" />
+        -->
+        
         <field name="type" column="type" type="string" column-definition="ENUM('agreement', 'payment')" nullable="false" />
-
     </mapped-superclass>
 </doctrine-mapping>
