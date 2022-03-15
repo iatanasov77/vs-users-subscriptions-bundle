@@ -2,6 +2,7 @@
 
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\TranslatableTrait;
+use Sylius\Component\Resource\Model\TranslationInterface;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
@@ -14,6 +15,9 @@ class PayedService implements PayedServiceInterface
 
     /** @var integer */
     protected $id;
+    
+    /** @var string */
+    protected $locale;
     
     /**
      * @var PayedServiceCategoryInterface
@@ -93,12 +97,17 @@ class PayedService implements PayedServiceInterface
         return $this;
     }
     
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+    
     public function getTranslatableLocale(): ?string
     {
         return $this->locale;
     }
     
-    public function setTranslatableLocale($locale): PageInterface
+    public function setTranslatableLocale($locale): self
     {
         $this->locale = $locale;
         
