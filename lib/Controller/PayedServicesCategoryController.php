@@ -15,7 +15,6 @@ class PayedServicesCategoryController extends AbstractCrudController
         $translatableLocale = $form['currentLocale']->getData();
         $categoryName       = $form['name']->getData();
         
-        $parentGroup        = null;
         $entity->setName( $categoryName );
         
         if ( $entity->getTaxon() ) {
@@ -24,10 +23,6 @@ class PayedServicesCategoryController extends AbstractCrudController
             $entityTaxon->setCurrentLocale( $translatableLocale );
             $entityTaxon->setName( $categoryName );
             $entityTaxon->setCode( $this->get( 'vs_application.slug_generator' )->generate( $categoryName ) );
-            
-            if ( $parentGroup ) {
-                $entityTaxon->setParent( $parentGroup->getTaxon() );
-            }
         } else {
             $taxonomy   = $this->get( 'vs_application.repository.taxonomy' )->findByCode(
                 $this->getParameter( 'vs_users_subscriptions.paid-service-categories.taxonomy_code' )
@@ -36,13 +31,12 @@ class PayedServicesCategoryController extends AbstractCrudController
             $entityTaxon    = $this->createTaxon(
                 $categoryName,
                 $translatableLocale,
-                $parentGroup ? $parentGroup->getTaxon() : null,
+                null,
                 $taxonomy->getId()
             );
         }
         
         $entity->setTaxon( $entityTaxon );
-        $entity->setParent( $parentGroup );
         
         $this->getDoctrine()->getManager()->persist( $entityTaxon );
     }
