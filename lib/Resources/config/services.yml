@@ -3,6 +3,7 @@ imports:
     - { resource: services/menu.yaml }
     - { resource: services/newsletter.yaml }
     - { resource: services/mailchimp.yaml }
+    - { resource: services/payed_service.yaml }
 
 services:
     _defaults:
