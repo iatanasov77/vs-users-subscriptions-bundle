@@ -1,8 +1,13 @@
 vs_users_subscriptions:
     form:
         locale: 'Език'
+        active: Активен
+        name: Име
         audienceId: 'Аудиенция Идентификатор'
         description: 'Описание'
         apply: 'Въведи'
         save: 'Запази'
         cancel: 'Отказ'
+    template:
+        category: Категория
+        category_placeholder: '-- Избери Категория --'

@@ -8,7 +8,7 @@ use Vankosoft\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Entity\PackagePlan;
 //use IA\PaymentBundle\Entity\Payment;
 
-class PlanSubscriptionController extends AbstractController
+class PayedServiceSubscriptionController extends AbstractController
 {
     public function subscribeAction( $planId, Request $request )
     {

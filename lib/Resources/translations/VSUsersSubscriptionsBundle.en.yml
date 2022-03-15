@@ -1,8 +1,13 @@
 vs_users_subscriptions:
     form:
         locale: 'Locale'
+        active: Active
+        name: Name
         audienceId: 'Audience ID'
         description: 'Description'
         apply: 'Apply'
         save: 'Save'
         cancel: 'Cancel'
+    template:
+        category: Category
+        category_placeholder: '-- Select Category --'

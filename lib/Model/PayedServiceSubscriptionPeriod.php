@@ -16,6 +16,19 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
 {
     use ToggleableTrait;
     
+    const SUBSCRIPTION_PERIOD_DAY       = 'Day';
+    
+    const SUBSCRIPTION_PERIOD_WEEK      = 'Week';
+    
+    /**
+     * For SemiMonth, billing is done on the 1st and 15th of each month.
+     */
+    const SUBSCRIPTION_PERIOD_SEMIMONTH = 'SemiMonth';
+    
+    const SUBSCRIPTION_PERIOD_MONTH     = 'Month';
+    
+    const SUBSCRIPTION_PERIOD_YEAR      = 'Year';
+    
     /** @var integer */
     protected $id;
 

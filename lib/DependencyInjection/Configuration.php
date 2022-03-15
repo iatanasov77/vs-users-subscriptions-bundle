@@ -30,6 +30,10 @@ use Vankosoft\UsersSubscriptionsBundle\Model\PaymentDetails;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
+use App\Controller\AdminPanel\PayedServicesController;
+use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -110,6 +114,8 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceCategory::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceCategoryInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesCategoryController::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( PayedServiceCategoryForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
@@ -125,6 +131,8 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedService::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesController::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( PayedServiceForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
