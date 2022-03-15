@@ -32,7 +32,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
-use App\Controller\AdminPanel\PayedServicesController;
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 
 /**

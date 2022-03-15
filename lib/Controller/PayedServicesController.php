@@ -1,4 +1,4 @@
-<?php namespace App\Controller\AdminPanel;
+<?php namespace Vankosoft\UsersSubscriptionsBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Vankosoft\ApplicationBundle\Controller\AbstractCrudController;
