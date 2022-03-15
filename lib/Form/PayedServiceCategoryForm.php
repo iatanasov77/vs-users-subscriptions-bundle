@@ -27,13 +27,10 @@ class PayedServiceCategoryForm extends AbstractForm
     {
         parent::buildForm( $builder, $options );
         
-        $entity         = $builder->getData();
-        $currentLocale  = $entity->getLocale() ?: $this->requestStack->getCurrentRequest()->getLocale();
-        
         $builder
             ->add( 'currentLocale', ChoiceType::class, [
                 'choices'               => \array_flip( I18N::LanguagesAvailable() ),
-                'data'                  => $currentLocale,
+                'data'                  => $this->requestStack->getCurrentRequest()->getLocale(),
                 'mapped'                => false,
                 'label'                 => 'vs_users_subscriptions.form.locale',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
