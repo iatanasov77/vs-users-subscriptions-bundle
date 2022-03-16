@@ -42,7 +42,7 @@
                         {% for item in items %}
                             <tr>
                                 <td>
-                                	<a href="{{ path('vsorg_projects_update', {'id': item.id()}) }}">
+                                	<a href="{{ path('vs_users_subscriptions_payed_service_update', {'id': item.id()}) }}">
                                 	    {{ item.getTitle() }}
                                 	</a>
                                 </td>
@@ -55,11 +55,11 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                    	<a class="btn btn-primary" href="{{ path('vsorg_projects_update', {'id': item.id}) }}">
+                                    	<a class="btn btn-primary" href="{{ path('vs_users_subscriptions_payed_service_update', {'id': item.id}) }}">
                                             <i class="fas fa-edit"></i>
                                         </a>
                                         <a class="btn btn-danger btnDelete" 
-                                        	href="{{ path('vsorg_projects_delete', {'id': item.id}) }}"
+                                        	href="{{ path('vs_users_subscriptions_payed_service_delete', {'id': item.id}) }}"
                                         	data-csrfToken="{{ csrf_token( item.id ) }}"
                                         	title="Delete Page"
                                         >
@@ -90,5 +90,5 @@
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/projects' ) }}
+
 {% endblock %}
