@@ -1,3 +1,20 @@
+2.1.0	|	Release date: **16.03.2022**
+============================================
+* New Features and Refactoring:
+  - Add a Composer Suggestion.
+  - Big Refactoring of PayedServices.
+  - Create Paid Services Controllers-Forms-Vies.
+  - Make Static Method For Subscription Periods Form Choices.
+* Bug-Fixes and Improvements:
+  - Fix PayedService Form.
+  - Fix PayedService Model.
+  - Fix PayedServiceSubscriptionPeriodType Form Type.
+  - Fix PayedServiceSubscriptionPeriod Model Doctrine Mapping.
+  - Fix PayedService index Template.
+  - Add All Translations.
+
+
+
 2.0.3	|	Release date: **19.02.2022**
 ============================================
 * New Features and Improvements:
