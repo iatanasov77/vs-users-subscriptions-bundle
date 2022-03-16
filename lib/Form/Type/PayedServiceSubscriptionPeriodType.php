@@ -7,6 +7,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
+use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 
 class PayedServiceSubscriptionPeriodType extends AbstractType
@@ -16,13 +17,7 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
         $builder
             ->add( 'subscriptionPeriod', ChoiceType::class, [
                 'required'              => true,
-                'choices'               => [
-                    PayedServiceSubscriptionPeriod::SUBSCRIPTION_PERIOD_DAY         => 'vs_users_subscriptions.form.period.day',
-                    PayedServiceSubscriptionPeriod::SUBSCRIPTION_PERIOD_WEEK        => 'vs_users_subscriptions.form.period.week',
-                    PayedServiceSubscriptionPeriod::SUBSCRIPTION_PERIOD_SEMIMONTH   => 'vs_users_subscriptions.form.period.semimonth',
-                    PayedServiceSubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH       => 'vs_users_subscriptions.form.period.month',
-                    PayedServiceSubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR        => 'vs_users_subscriptions.form.period.year',
-                ],
+                'choices'               => \array_flip( SubscriptionPeriod::periods() ),
                 'placeholder'           => 'vankosoft_org.form.project.attribute_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
