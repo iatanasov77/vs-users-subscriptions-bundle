@@ -31,3 +31,7 @@ vs_users_subscriptions:
         paid_service_categories: Paid Service Categories
         edit_paid_service_category: Edit Paid Service Category
         paid_service_category: Paid Service Category
+        subscription_periods: Subscription Periods
+        mailchimp_audiences: Mailchimp Audiences
+        mailchimp_audience_id: Audience ID
+        edit_audience: Edit Audience

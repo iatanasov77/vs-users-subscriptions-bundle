@@ -74,7 +74,7 @@
                         </div>
               
 						<fieldset class="fieldset-project-attributes">
-                            <legend class="w-auto">Subscription Periods</legend>
+                            <legend class="w-auto">{{ 'vs_users_subscriptions.template.subscription_periods' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
                             <div class="SubscriptionPeriodsContainer"
                                 data-prototype="{% apply escape %}{% include '@VSUsersSubscriptions/Pages/PayedServices/add-period-prototype.html.twig' with {'form': form.subscriptionPeriods.vars.prototype} %}{% endapply %}"
                             > 
