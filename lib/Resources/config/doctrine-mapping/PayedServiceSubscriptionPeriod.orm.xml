@@ -9,7 +9,11 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" inversed-by="subscriptionPeriods" />
+        <many-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" inversed-by="subscriptionPeriods">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </many-to-one>
         
         <field name="subscriptionPeriod" type="string" length="64" nullable="false" />
         
