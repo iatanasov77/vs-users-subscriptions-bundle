@@ -78,7 +78,10 @@ class PayedService implements PayedServiceInterface
     
     public function removeSubscriptionPeriod( PayedServiceSubscriptionPeriodInterface $subscriptionPeriod )
     {
-        
+        if( $this->subscriptionPeriods->contains( $subscriptionPeriod ) ) {
+            $this->subscriptionPeriods->removeElement( $subscriptionPeriod );
+            $subscriptionPeriod->setPayedService( null );
+        }
     }
     
     /**
