@@ -40,7 +40,7 @@ class PayedServiceForm extends AbstractForm
         
         $builder
             ->add( 'enabled', CheckboxType::class, [
-                'label'                 => 's_users_subscriptions.form.active',
+                'label'                 => 'vs_users_subscriptions.form.active',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
             

@@ -25,4 +25,13 @@ class SubscriptionPeriod
             self::SUBSCRIPTION_PERIOD_YEAR        => 'vs_users_subscriptions.form.period.year',
         ];
     }
+    
+    public static function currencies()
+    {
+        return [
+            'USD'   => 'USD',
+            'EUR'   => 'EUR',
+            'BGN'   => 'BGN',
+        ];
+    }
 }

@@ -23,15 +23,17 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
             ->add( 'subscriptionPeriod', ChoiceType::class, [
                 'required'              => true,
                 'choices'               => \array_flip( SubscriptionPeriod::periods() ),
-                'placeholder'           => 'vankosoft_org.form.project.attribute_placeholder',
+                'placeholder'           => 'vs_users_subscriptions.form.subscription_period_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
             ->add( 'price', TextType::class, [
                 'required'              => true,
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
-            ->add( 'currency', TextType::class, [
+            ->add( 'currency', ChoiceType::class, [
                 'required'              => true,
+                'choices'               => \array_flip( SubscriptionPeriod::currencies() ),
+                'placeholder'           => 'vs_users_subscriptions.form.currency_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
         ;

@@ -4,8 +4,8 @@
 {% from '@SyliusResource/Macros/actions.html.twig' import create %}
 {% import "@VSApplication/Macros/form.html.twig" as vs_form %}
 
-{% block title %}{{ parent() }} :: Edit Paid Service{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> Edit Paid Service{% endblock %}
+{% block title %}{{ parent() }} :: {{ 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) }}{% endblock %}
 {% block content %}
     <div class="row">
         <!-- ============================================================== -->
@@ -13,7 +13,7 @@
         <!-- ============================================================== -->
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-            	<h5 class="card-header">Project Details</h5>
+            	<h5 class="card-header">{{ 'vs_users_subscriptions.template.details' | trans( {},'VSUsersSubscriptionsBundle' ) }}</h5>
             	<div class="card-body">
             	
             		{% if useFormMethod is defined %}{% set formMethod = useFormMethod %}{% else %}{% set formMethod = 'PUT' %}{% endif %}
@@ -23,7 +23,8 @@
                                 <button type="button" class="close close-sm" data-dismiss="alert">
                                     <i class="icon-remove"></i>
                                 </button>
-                                <strong>Error!</strong> {{ form_errors(form) }}
+                                <strong>{{ 'vs_users_subscriptions.template.error' | trans( {},'VSUsersSubscriptionsBundle' ) }}!</strong> 
+                                {{ form_errors(form) }}
                             </div>
                         {% endif %}
     					
@@ -34,7 +35,7 @@
                                 value="{{ item.enabled }}"
                                 {% if item.enabled %}checked="checked"{% endif %}
                             />
-                            <span class="custom-control-label">{{ 'vankosoft_org.form.published'|trans({}, 'VankoSoftOrg') }}</span>
+                            <span class="custom-control-label">{{ 'vs_users_subscriptions.form.active' | trans( {},'VSUsersSubscriptionsBundle' ) }}</span>
                         </label>
                         
     					<div class="form-group">
