@@ -1,5 +1,6 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
 
 class NewsletterSubscription implements NewsletterSubscriptionInterface
@@ -10,7 +11,7 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
     /**
      * Relation to the User entity
      *
-     * @var Interfaces\SubscribedUserInterface
+     * @var SubscribedUserInterface
      */
     protected $user;
     

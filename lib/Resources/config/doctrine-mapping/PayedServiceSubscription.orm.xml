@@ -11,11 +11,8 @@
         </id>
         
         <many-to-one field="user" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface" inversed-by="subscriptions" />
-        
-        <one-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" /> <!-- inversed-by="subscription" -->
-        <!--
-        <one-to-one field="paymentDetails" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface" />
-        -->
+        <many-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" inversed-by="subscriptions" />
+        <many-to-one field="paymentDetails" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface" />
         
         <field name="date" column="date" type="datetime" nullable="false">
         	<gedmo:timestampable on="create"/>

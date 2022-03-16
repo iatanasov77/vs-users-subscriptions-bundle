@@ -1,0 +1,10 @@
+parameters:
+     vs_application.main_menus: ['profileMenu', 'mainSystemMenu', 'mainCmsMenu', 'mainUsersSubscriptionsMenu']
+services:
+    vs_users_subscriptions.main_menu_users_subscriptions:
+        autowire: false
+        class: Knp\Menu\MenuItem
+        factory: ["@vs_app.menu_builder", mainMenu]
+        arguments: ["@knp_menu.factory", 'mainUsersSubscriptionsMenu']
+        tags:
+            - { name: knp_menu.menu, alias: mainUsersSubscriptions }

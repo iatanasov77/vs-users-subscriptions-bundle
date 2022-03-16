@@ -1,21 +1,35 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ToggleableTrait;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\CheckoutOrderInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface;
+use Sylius\Component\Resource\Model\TranslatableTrait;
+use Sylius\Component\Resource\Model\TranslationInterface;
 
-class PayedService implements PayedServiceInterface, CheckoutOrderInterface
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
+
+class PayedService implements PayedServiceInterface
 {
     use ToggleableTrait;
+    use TranslatableTrait;
 
     /** @var integer */
     protected $id;
     
+    /** @var string */
+    protected $locale;
+    
     /**
-     * @var SubscriptionPeriodInterface
+     * @var PayedServiceCategoryInterface
      */
-    protected $subscriptionPeriod;
+    protected $category;
+    
+    /**
+     * @var Collection|PayedServiceSubscriptionPeriodInterface[]
+     */
+    protected $subscriptionPeriods;
     
     /** @var string */
     protected $title;
@@ -23,36 +37,60 @@ class PayedService implements PayedServiceInterface, CheckoutOrderInterface
     /** @var string */
     protected $description;
     
-    /** @var float */
-    protected $price;
-    
-    /** @var string */
-    protected $currency;
+    public function __construct()
+    {
+        $this->subscriptionPeriods  = new ArrayCollection();
+    }
     
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * Get SubscriptionPeriod
-     *
-     * @return SubscriptionPeriod
-     */
-    public function getSubscriptionPeriod()
+    public function getCategory()
     {
-        return $this->subscriptionPeriod;
+        return $this->category;
+    }
+    
+    public function setCategory( PayedServiceCategoryInterface $category ): self
+    {
+        $this->category = $category;
+        
+        return $this;
     }
     
     /**
-     * Set plan
-     *
+     * @return Collection|PayedServiceSubscriptionPeriodInterface[]
+     */
+    public function getSubscriptionPeriods()
+    {
+        return $this->subscriptionPeriods;
+    }
+    
+    public function addSubscriptionPeriod( PayedServiceSubscriptionPeriodInterface $subscriptionPeriod )
+    {
+        if( ! $this->subscriptionPeriods->contains( $subscriptionPeriod ) ) {
+            $this->subscriptionPeriods->add( $subscriptionPeriod );
+            $subscriptionPeriod->setPayedService( $this );
+            
+        }
+    }
+    
+    public function removeSubscriptionPeriod( PayedServiceSubscriptionPeriodInterface $subscriptionPeriod )
+    {
+        if( $this->subscriptionPeriods->contains( $subscriptionPeriod ) ) {
+            $this->subscriptionPeriods->removeElement( $subscriptionPeriod );
+            $subscriptionPeriod->setPayedService( null );
+        }
+    }
+    
+    /**
      * @param SubscriptionPeriod $subscriptionPeriod
      * @return PayedService
      */
-    public function setSubscriptionPeriod(SubscriptionPeriod $subscriptionPeriod)
+    public function setSubscriptionPeriods(Collection $subscriptionPeriods)
     {
-        $this->subscriptionPeriod = $subscriptionPeriod;
+        $this->subscriptionPeriods = $subscriptionPeriods;
 
         return $this;
     }
@@ -81,38 +119,28 @@ class PayedService implements PayedServiceInterface, CheckoutOrderInterface
         return $this;
     }
     
-    public function getPrice()
+    public function getLocale()
     {
-        return $this->price;
+        return $this->locale;
     }
-
-    public function setPrice($price)
+    
+    public function getTranslatableLocale(): ?string
     {
-        $this->price = $price;
+        return $this->locale;
+    }
+    
+    public function setTranslatableLocale($locale): self
+    {
+        $this->locale = $locale;
         
         return $this;
     }
 
-    public function getCurrency()
+    /*
+     * @NOTE: Decalared abstract in TranslatableTrait
+     */
+    protected function createTranslation(): TranslationInterface
     {
-        return $this->currency;
-    }
-    
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
         
-        return $this;
     }
-    
-    public function getBillingPeriod()
-    {
-        return $this->subscriptionPeriod ? $this->subscriptionPeriod->getSubscriptionPeriod() : null;
-    }
-    
-    public function getBillingFrequency()
-    {
-        return 1;
-    }
-
 }

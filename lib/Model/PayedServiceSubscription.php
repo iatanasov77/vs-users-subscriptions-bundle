@@ -4,6 +4,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscription
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 
 class PayedServiceSubscription implements PayedServiceSubscriptionInterface
 {
@@ -11,9 +12,9 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     protected $id;
 
     /**
-     * Relation to the PayedService entity
+     * Relation to the PayedServiceSubscriptionPeriod entity
      *
-     * @var PayedServiceInterface
+     * @var PayedServiceSubscriptionPeriodInterface
      */
     protected $payedService;
     
@@ -40,12 +41,12 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         return $this->id;
     }
 
-    public function getPayedService()
+    public function getPayedService(): PayedServiceSubscriptionPeriodInterface
     {
         return $this->payedService;
     }
     
-    public function setPayedService($payedService)
+    public function setPayedService( PayedServiceSubscriptionPeriodInterface $payedService )
     {
         $this->payedService = $payedService;
         

@@ -10,9 +10,13 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="subscriptionPeriod" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface" inversed-by="plans">
-        	<join-column nullable="false" />
-        </many-to-one>
+        <many-to-one field="category" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface" inversed-by="services" />
+        <one-to-many field="subscriptionPeriods" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface" mapped-by="payedService" orphan-removal="true">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
         
         <field name="title" type="string" length="64" nullable="false">
             <gedmo:translatable />
@@ -21,9 +25,6 @@
         <field name="description" column="description" type="string" nullable="false">
         	<gedmo:translatable />
         </field>
-        
-        <field name="price" type="string" nullable="false" />
-        <field name="currency" type="string" nullable="false" />
         
         <!--
             Used locale to override Translation listener`s locale

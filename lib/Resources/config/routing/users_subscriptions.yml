@@ -3,6 +3,22 @@ vs_users_subscriptions_mailchimp_audiences:
         alias: vs_users_subscriptions.mailchimp_audiences
         except: ['show']
         path: /mailchimp-audiences
-        templates: "@VSUsersSubscriptions/MailchimpAudience"
+        templates: "@VSUsersSubscriptions/Pages/MailchimpAudience"
     type: sylius.resource
 
+
+vs_users_subscriptions_payed_service_category:
+    resource: |
+        alias: vs_users_subscriptions.payed_service_category
+        except: ['show']
+        path: /paid-services-categories
+        templates: "@VSUsersSubscriptions/Pages/PayedServicesCategories"
+    type: sylius.resource
+
+vs_users_subscriptions_payed_service:
+    resource: |
+        alias: vs_users_subscriptions.payed_service
+        except: ['show']
+        path: /paid-services
+        templates: "@VSUsersSubscriptions/Pages/PayedServices"
+    type: sylius.resource

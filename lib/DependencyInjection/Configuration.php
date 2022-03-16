@@ -18,15 +18,22 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionIn
 use Vankosoft\UsersSubscriptionsBundle\Model\NewsletterSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 
-use Vankosoft\UsersSubscriptionsBundle\Model\SubscriptionPeriod;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionPeriodInterface;
-
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedService;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
 use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\PaymentDetails;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesController;
+use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -98,15 +105,17 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode( 'subscription_period' )
+                        ->arrayNode( 'payed_service_category' )
                             ->addDefaultsIfNotSet()
                             ->children()
                                 ->variableNode( 'options' )->end()
                                 ->arrayNode( 'classes' )
                                     ->addDefaultsIfNotSet()
                                     ->children()
-                                        ->scalarNode( 'model' )->defaultValue( SubscriptionPeriod::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( SubscriptionPeriodInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'model' )->defaultValue( PayedServiceCategory::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceCategoryInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesCategoryController::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( PayedServiceCategoryForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
@@ -122,6 +131,23 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedService::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesController::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( PayedServiceForm::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'payed_service_subscription_period' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( PayedServiceSubscriptionPeriod::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionPeriodInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
@@ -139,6 +165,19 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( PayedServiceSubscriptionRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'payment_details' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( PaymentDetails::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PaymentDetailsInterface::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()

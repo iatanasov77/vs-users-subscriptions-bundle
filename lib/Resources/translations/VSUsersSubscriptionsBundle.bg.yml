@@ -1,8 +1,37 @@
 vs_users_subscriptions:
     form:
         locale: 'Език'
+        active: Активен
+        name: Име
         audienceId: 'Аудиенция Идентификатор'
         description: 'Описание'
         apply: 'Въведи'
         save: 'Запази'
         cancel: 'Отказ'
+        subscription_period_placeholder: '-- Избери Период --'
+        currency_placeholder: '-- Избери Валута --'
+        period:
+            day:  Ден
+            week: Седмица
+            semimonth: Половин Месец
+            month: Месец
+            year: Година
+    template:
+        category: Категория
+        category_placeholder: '-- Избери Категория --'
+        paid_services: Платени Услуги
+        title: Име
+        active: Активиран
+        action: Действие
+        edit: Редакция
+        delete: Изтриване
+        edit_paid_service: Редактиране на Платена Услуга
+        details: Детайли
+        error: Грешка
+        paid_service_categories: Категории за Платени Услуги
+        edit_paid_service_category: Редактиране на Категория за Платени Услуги
+        paid_service_category: Категория за Платени Услуги
+        subscription_periods: Периоди за Абонамент
+        mailchimp_audiences: Mailchimp Аудиенции
+        mailchimp_audience_id: Аудиенция Идентификатор
+        edit_audience: Редактиране на Аудиенция
