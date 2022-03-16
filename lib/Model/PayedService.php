@@ -27,7 +27,7 @@ class PayedService implements PayedServiceInterface
     protected $category;
     
     /**
-     * @var Collection|PayedServiceSubscriptionPeriodInterface
+     * @var Collection|PayedServiceSubscriptionPeriodInterface[]
      */
     protected $subscriptionPeriods;
     
@@ -60,14 +60,14 @@ class PayedService implements PayedServiceInterface
     }
     
     /**
-     * @return SubscriptionPeriod
+     * @return Collection|PayedServiceSubscriptionPeriodInterface[]
      */
     public function getSubscriptionPeriods()
     {
         return $this->subscriptionPeriods;
     }
     
-    public function addSubscriptionPeriod( PayedServiceSubscriptionPeriod $subscriptionPeriod )
+    public function addSubscriptionPeriod( PayedServiceSubscriptionPeriodInterface $subscriptionPeriod )
     {
         if( ! $this->subscriptionPeriods->contains( $subscriptionPeriod ) ) {
             $this->subscriptionPeriods->add( $subscriptionPeriod );
@@ -76,7 +76,7 @@ class PayedService implements PayedServiceInterface
         }
     }
     
-    public function removeSubscriptionPeriod( PayedServiceSubscriptionPeriod $subscriptionPeriod )
+    public function removeSubscriptionPeriod( PayedServiceSubscriptionPeriodInterface $subscriptionPeriod )
     {
         
     }
