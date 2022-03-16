@@ -62,11 +62,25 @@ class PayedService implements PayedServiceInterface
         return $this->subscriptionPeriods;
     }
     
+    public function addSubscriptionPeriod( PayedServiceSubscriptionPeriod $subscriptionPeriod )
+    {
+        if( ! $this->subscriptionPeriods->contains( $subscriptionPeriod ) ) {
+            $this->subscriptionPeriods->add( $subscriptionPeriod );
+            $subscriptionPeriod->setPayedService( $this );
+            
+        }
+    }
+    
+    public function removeSubscriptionPeriod( PayedServiceSubscriptionPeriod $subscriptionPeriod )
+    {
+        
+    }
+    
     /**
      * @param SubscriptionPeriod $subscriptionPeriod
      * @return PayedService
      */
-    public function setSubscriptionPeriods(SubscriptionPeriod $subscriptionPeriod)
+    public function setSubscriptionPeriods(Collection $subscriptionPeriods)
     {
         $this->subscriptionPeriods = $subscriptionPeriods;
 
