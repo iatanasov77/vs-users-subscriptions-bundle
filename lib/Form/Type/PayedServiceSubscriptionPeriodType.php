@@ -8,10 +8,15 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
-use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 
 class PayedServiceSubscriptionPeriodType extends AbstractType
 {
+    protected $dataClass;
+    
+    public function __construct( string $dataClass ) {
+        $this->dataClass    = $dataClass;
+    }
+    
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder
@@ -34,9 +39,9 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     
     public function configureOptions( OptionsResolver $resolver )
     {
-        $resolver->setDefaults(array(
-            'data_class' => PayedServiceSubscriptionPeriod::class
-        ));
+        $resolver->setDefaults([
+            'data_class' => $this->dataClass
+        ]);
     }
     
     public function getName()
