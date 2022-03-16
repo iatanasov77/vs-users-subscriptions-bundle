@@ -1,5 +1,7 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ToggleableTrait;
 use Sylius\Component\Resource\Model\TranslatableTrait;
 use Sylius\Component\Resource\Model\TranslationInterface;
@@ -25,7 +27,7 @@ class PayedService implements PayedServiceInterface
     protected $category;
     
     /**
-     * @var PayedServiceSubscriptionPeriodInterface
+     * @var Collection|PayedServiceSubscriptionPeriodInterface
      */
     protected $subscriptionPeriods;
     
@@ -35,7 +37,10 @@ class PayedService implements PayedServiceInterface
     /** @var string */
     protected $description;
     
-    
+    public function __construct()
+    {
+        $this->subscriptionPeriods  = new ArrayCollection();
+    }
     
     public function getId()
     {
