@@ -1,3 +1,9 @@
+2.1.1	|	Release date: **18.03.2022**
+============================================
+* New Features:
+  - Add FosCKEditor Field for PaidService Description.
+
+
 2.1.0	|	Release date: **16.03.2022**
 ============================================
 * New Features and Refactoring:
