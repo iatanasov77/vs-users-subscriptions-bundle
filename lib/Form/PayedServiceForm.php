@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 use Vankosoft\ApplicationBundle\Component\I18N;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType;
@@ -67,9 +68,17 @@ class PayedServiceForm extends AbstractForm
                 'required'              => true
             ])
             
-            ->add( 'description', TextType::class, [
+            ->add( 'description', CKEditorType::class, [
                 'label'                 => 'vs_users_subscriptions.form.description',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'config'                => [
+                    'uiColor'                           => $options['ckeditor_uiColor'],
+                    'extraAllowedContent'               => $options['ckeditor_extraAllowedContent'],
+                    
+                    'toolbar'                           => $options['ckeditor_toolbar'],
+                    'extraPlugins'                      => array_map( 'trim', explode( ',', $options['ckeditor_extraPlugins'] ) ),
+                    'removeButtons'                     => $options['ckeditor_removeButtons'],
+                ],
             ])
             
             ->add( 'subscriptionPeriods', CollectionType::class, [
@@ -85,6 +94,35 @@ class PayedServiceForm extends AbstractForm
     public function configureOptions( OptionsResolver $resolver ): void
     {
         parent::configureOptions( $resolver );
+        
+        $resolver
+            ->setDefaults([
+                'csrf_protection'   => false,
+                
+                // CKEditor Options
+                'ckeditor_uiColor'              => '#ffffff',
+                'ckeditor_extraAllowedContent'  => '*[*]{*}(*)',
+                
+                'ckeditor_toolbar'              => 'full',
+                'ckeditor_extraPlugins'         => '',
+                'ckeditor_removeButtons'        => ''
+            ])
+            
+            ->setDefined([
+                // CKEditor Options
+                'ckeditor_uiColor',
+                'ckeditor_extraAllowedContent',
+                'ckeditor_toolbar',
+                'ckeditor_extraPlugins',
+                'ckeditor_removeButtons',
+            ])
+            
+            ->setAllowedTypes( 'ckeditor_uiColor', 'string' )
+            ->setAllowedTypes( 'ckeditor_extraAllowedContent', 'string' )
+            ->setAllowedTypes( 'ckeditor_toolbar', 'string' )
+            ->setAllowedTypes( 'ckeditor_extraPlugins', 'string' )
+            ->setAllowedTypes( 'ckeditor_removeButtons', 'string' )
+        ;
     }
     
     public function getName()
