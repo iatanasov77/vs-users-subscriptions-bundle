@@ -21,4 +21,11 @@ vs_users_subscriptions_payed_service:
         except: ['show']
         path: /paid-services
         templates: "@VSUsersSubscriptions/Pages/PayedServices"
+        form:
+            options:
+                ckeditor_uiColor: '%vs_users_subscriptions.form.payed_service.ckeditor_uiColor%'
+                ckeditor_extraAllowedContent: '%vs_users_subscriptions.form.payed_service.ckeditor_extraAllowedContent%'
+                ckeditor_toolbar: '%vs_users_subscriptions.form.payed_service.ckeditor_toolbar%'
+                ckeditor_extraPlugins: '%vs_users_subscriptions.form.payed_service.ckeditor_extraPlugins%'
+                ckeditor_removeButtons: '%vs_users_subscriptions.form.payed_service.ckeditor_removeButtons%'
     type: sylius.resource

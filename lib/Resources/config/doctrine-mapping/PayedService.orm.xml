@@ -22,7 +22,7 @@
             <gedmo:translatable />
         </field>
         
-        <field name="description" column="description" type="string" nullable="false">
+        <field name="description" column="description" type="text" nullable="false">
         	<gedmo:translatable />
         </field>
         
