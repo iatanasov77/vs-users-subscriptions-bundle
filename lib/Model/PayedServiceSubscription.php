@@ -70,7 +70,7 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         return $this->paymentDetails;
     }
     
-    public function setPaymentDetails(Payment $paymentDetails)
+    public function setPaymentDetails(PaymentDetailsInterface $paymentDetails)
     {
         $this->paymentDetails = $paymentDetails;
         
