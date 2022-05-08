@@ -1,3 +1,9 @@
+2.1.2	|	Release date: **08.05.2022**
+============================================
+* Bug-Fixes:
+  - Fix Model Method Paarameter Typehint.
+
+
 2.1.1	|	Release date: **18.03.2022**
 ============================================
 * New Features:
