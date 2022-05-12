@@ -26,8 +26,6 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscription
 use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\PaymentDetails;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
@@ -165,19 +163,6 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( PayedServiceSubscriptionRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
-                                    ->end()
-                                ->end()
-                            ->end()
-                        ->end()
-                        ->arrayNode( 'payment_details' )
-                            ->addDefaultsIfNotSet()
-                            ->children()
-                                ->variableNode( 'options' )->end()
-                                ->arrayNode( 'classes' )
-                                    ->addDefaultsIfNotSet()
-                                    ->children()
-                                        ->scalarNode( 'model' )->defaultValue( PaymentDetails::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PaymentDetailsInterface::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
