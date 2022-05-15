@@ -2,6 +2,8 @@
 
 class SubscriptionPeriod
 {
+    const SUBSCRIPTION_PERIOD_UNLIMITED = 'Unlimited';
+    
     const SUBSCRIPTION_PERIOD_DAY       = 'Day';
     
     const SUBSCRIPTION_PERIOD_WEEK      = 'Week';
@@ -18,11 +20,12 @@ class SubscriptionPeriod
     public static function periods()
     {
         return [
-            self::SUBSCRIPTION_PERIOD_DAY         => 'vs_users_subscriptions.form.period.day',
-            self::SUBSCRIPTION_PERIOD_WEEK        => 'vs_users_subscriptions.form.period.week',
-            self::SUBSCRIPTION_PERIOD_SEMIMONTH   => 'vs_users_subscriptions.form.period.semimonth',
-            self::SUBSCRIPTION_PERIOD_MONTH       => 'vs_users_subscriptions.form.period.month',
-            self::SUBSCRIPTION_PERIOD_YEAR        => 'vs_users_subscriptions.form.period.year',
+            self::SUBSCRIPTION_PERIOD_UNLIMITED =>  'vs_users_subscriptions.form.period.unlimited',
+            self::SUBSCRIPTION_PERIOD_DAY       => 'vs_users_subscriptions.form.period.day',
+            self::SUBSCRIPTION_PERIOD_WEEK      => 'vs_users_subscriptions.form.period.week',
+            self::SUBSCRIPTION_PERIOD_SEMIMONTH => 'vs_users_subscriptions.form.period.semimonth',
+            self::SUBSCRIPTION_PERIOD_MONTH     => 'vs_users_subscriptions.form.period.month',
+            self::SUBSCRIPTION_PERIOD_YEAR      => 'vs_users_subscriptions.form.period.year',
         ];
     }
     
