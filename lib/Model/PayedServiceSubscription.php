@@ -3,8 +3,9 @@
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PaymentDetailsInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+
+use Vankosoft\PaymentBundle\Model\Interfaces\PaymentDetailsInterface;
 
 class PayedServiceSubscription implements PayedServiceSubscriptionInterface
 {

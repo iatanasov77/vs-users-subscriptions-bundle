@@ -11,6 +11,7 @@ vs_users_subscriptions:
         subscription_period_placeholder: '-- Select a Period --'
         currency_placeholder: '-- Select Currency --'
         period:
+            unlimited: Unlimited
             day:  Day
             week: Week
             semimonth: Semi-Month

@@ -6,5 +6,4 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionInterface;
 interface PayedServiceSubscriptionInterface extends ResourceInterface, SubscriptionInterface
 {
     public function getPayedService();
-    public function getPaymentDetails();
 }
