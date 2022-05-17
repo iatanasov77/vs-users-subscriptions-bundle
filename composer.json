@@ -20,7 +20,7 @@
     },
     "suggest": {
         "vankosoft/users-bundle": "Required this one or some another bundle that provide an User Entity.",
-        "vankosoft/payment-bundle": "Allows to create payed plans and to subcribes to them. It is required to can Use of PayedServiceSubscription Resource."
+        "vankosoft/payment-bundle": "Allows to create payed services and to subcribes to them. It is required to can Use of PayedServiceSubscription Resource."
     },
     "conflict": {
         "doctrine/doctrine-bundle": "<1.3",
