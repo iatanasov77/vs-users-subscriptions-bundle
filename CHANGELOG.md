@@ -1,3 +1,15 @@
+2.2.0	|	Release date: **17.05.2022**
+============================================
+* New Features:
+  - Remove Model PaymentDetDetails from this Bundle.
+  - Add Unlimited Period Into SubscriptionPeriod Model.
+  - Update VisuallParadigm Diagrams.
+  - Update Composer suggestion.
+  - Remove composer requirement payum/core .
+  - Add SubscribedUserPaymentsTrait for payments property if Used Paid Services.
+
+
+
 2.1.2	|	Release date: **08.05.2022**
 ============================================
 * Bug-Fixes:
