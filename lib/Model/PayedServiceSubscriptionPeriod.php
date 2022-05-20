@@ -28,7 +28,7 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     protected $price;
     
     /** @var string */
-    protected $currency;
+    protected $currencyCode;
     
     /** @var Collection|PayedServiceSubscriptionInterface[] */
     protected $subscriptions;
@@ -85,14 +85,14 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         return $this;
     }
     
-    public function getCurrency()
+    public function getCurrencyCode()
     {
-        return $this->currency;
+        return $this->currencyCode;
     }
     
-    public function setCurrency($currency)
+    public function setCurrencyCode($currencyCode)
     {
-        $this->currency = $currency;
+        $this->currencyCode = $currencyCode;
         
         return $this;
     }
