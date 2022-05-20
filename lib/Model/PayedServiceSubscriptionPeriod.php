@@ -97,16 +97,6 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         return $this;
     }
     
-    public function getBillingPeriod()
-    {
-        return $this->subscriptionPeriod ? $this->subscriptionPeriod->getSubscriptionPeriod() : null;
-    }
-    
-    public function getBillingFrequency()
-    {
-        return 1;
-    }
-    
     /**
      * @return Collection|PayedServiceSubscriptionInterface[]
      */
