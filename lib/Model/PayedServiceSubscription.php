@@ -5,8 +5,6 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 
-use Vankosoft\PaymentBundle\Model\Interfaces\PaymentDetailsInterface;
-
 class PayedServiceSubscription implements PayedServiceSubscriptionInterface
 {
     /** @var integer */
@@ -25,14 +23,6 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
      * @var SubscribedUserInterface
      */
     protected $user;
-
-    /**
-     * Relation to the PaymentDetails entity
-     * Need Vanksoft/Payment Bundle and need to be mapped to PaymentDetails entity
-     *
-     * @var PaymentDetailsInterface
-     */
-    protected $paymentDetails;
     
     /** @var \DateTimeInterface */
     protected $date;
@@ -66,18 +56,6 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         return $this;
     }
     
-    public function getPaymentDetails()
-    {
-        return $this->paymentDetails;
-    }
-    
-    public function setPaymentDetails(PaymentDetailsInterface $paymentDetails)
-    {
-        $this->paymentDetails = $paymentDetails;
-        
-        return $this;
-    }
-    
     public function getDate()
     {
         return $this->date;
@@ -88,10 +66,5 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         $this->date = $date;
         
         return $this;
-    }
-
-    public function getPaymentMethod()
-    {
-        return $this->paymentDetails->getPaymentMethod();
     }
 }

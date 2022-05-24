@@ -6,7 +6,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Vankosoft\UsersBundle\Entity\UserActivity;
 use Vankosoft\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Entity\PackagePlan;
-//use IA\PaymentBundle\Entity\Payment;
 
 class PayedServiceSubscriptionController extends AbstractController
 {

@@ -1,3 +1,12 @@
+2.2.1	|	Release date: **24.05.2022**
+============================================
+* Bug-Fixes:
+  - Update VisualParadigm Diagram.
+  - Detach this bundle from PaymentBundle.
+  - Fix PayedServiceSubscriptionPeriod Model.
+  - Fix PayedServiceSubscriptionPeriod Model and Interface.
+
+
 2.2.0	|	Release date: **17.05.2022**
 ============================================
 * New Features:
