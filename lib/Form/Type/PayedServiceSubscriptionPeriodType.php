@@ -30,7 +30,7 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
                 'required'              => true,
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
-            ->add( 'currency', ChoiceType::class, [
+            ->add( 'currencyCode', ChoiceType::class, [
                 'required'              => true,
                 'choices'               => \array_flip( SubscriptionPeriod::currencies() ),
                 'placeholder'           => 'vs_users_subscriptions.form.currency_placeholder',
