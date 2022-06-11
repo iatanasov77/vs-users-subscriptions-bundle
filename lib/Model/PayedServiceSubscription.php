@@ -78,7 +78,7 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     public function isActive(): bool
     {
         $active = false;
-        switch( payedService ) {
+        switch( $this->payedService->getSubscriptionPeriod() ) {
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
                 $active = ( ( new \DateTime( $this->date ) )->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
                 break;
