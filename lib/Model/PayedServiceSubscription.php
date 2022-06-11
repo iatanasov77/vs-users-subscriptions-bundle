@@ -80,10 +80,10 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         $active = false;
         switch( $this->payedService->getSubscriptionPeriod() ) {
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
-                $active = ( ( new \DateTime( $this->date ) )->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
+                $active = ( $this->date->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
                 break;
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
-                $active = ( ( new \DateTime( $this->date ) )->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
+                $active = ( $this->date->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
                 break;
             default:
                 $active = false;
