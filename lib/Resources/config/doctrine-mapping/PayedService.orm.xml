@@ -38,7 +38,7 @@
             </options>
         </field>
         <unique-constraints>
-            <unique-constraint columns="subscription_code, subscription_priority" name="subscription_idx" />
+            <unique-constraint columns="subscription_code,subscription_priority" name="subscription_idx" />
         </unique-constraints>
         
         <!--
