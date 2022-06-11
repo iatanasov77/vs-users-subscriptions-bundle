@@ -4,6 +4,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscription
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
+use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
 
 class PayedServiceSubscription implements PayedServiceSubscriptionInterface
 {
@@ -72,6 +73,23 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         $this->date = $date;
         
         return $this;
+    }
+    
+    public function isActive(): bool
+    {
+        $active = false;
+        switch( payedService ) {
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
+                $active = ( ( new \DateTime( $this->date ) )->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
+                $active = ( ( new \DateTime( $this->date ) )->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
+                break;
+            default:
+                $active = false;
+        }
+        
+        return $active;
     }
     
     public function getSubscriptionCode(): ?string
