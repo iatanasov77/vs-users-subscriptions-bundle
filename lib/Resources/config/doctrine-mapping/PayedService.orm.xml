@@ -27,7 +27,7 @@
         </field>
         
         <!-- Subscription Grouping Fields -->
-        <field name="subscriptionCode" column="subscription_code" type="text" nullable="false">
+        <field name="subscriptionCode" column="subscription_code" type="text" length="64" nullable="false">
             <options>
                 <option name="comment">Subscription Code Group Payed Services for an identical parameter but with differents levels(priority).</option>
             </options>
