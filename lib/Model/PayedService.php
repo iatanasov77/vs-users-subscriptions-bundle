@@ -37,9 +37,16 @@ class PayedService implements PayedServiceInterface
     /** @var string */
     protected $description;
     
+    /** @var string */
+    protected $subscriptionCode;
+    
+    /** @var integer */
+    protected $subscriptionPriority;
+    
     public function __construct()
     {
         $this->subscriptionPeriods  = new ArrayCollection();
+        $this->subscriptionPriority = 0;
     }
     
     public function getId()
@@ -132,6 +139,30 @@ class PayedService implements PayedServiceInterface
     public function setTranslatableLocale($locale): self
     {
         $this->locale = $locale;
+        
+        return $this;
+    }
+    
+    public function getSubscriptionCode(): ?string
+    {
+        return $this->subscriptionCode;
+    }
+    
+    public function setSubscriptionCode($subscriptionCode): self
+    {
+        $this->subscriptionCode = $subscriptionCode;
+        
+        return $this;
+    }
+    
+    public function getSubscriptionPriority(): ?int
+    {
+        return $this->subscriptionPriority;
+    }
+    
+    public function setSubscriptionPriority($subscriptionPriority): self
+    {
+        $this->subscriptionPriority = $subscriptionPriority;
         
         return $this;
     }

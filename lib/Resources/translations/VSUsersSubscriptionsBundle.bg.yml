@@ -17,6 +17,12 @@ vs_users_subscriptions:
             semimonth: Половин Месец
             month: Месец
             year: Година
+        paid_service:
+            subscription_code: Абонамент Код
+            subscription_code_help: Абонамент Код се използва за групиране на Платени Услуги.
+            subscription_priority: Абонамент Приоритет
+            subscription_priority_help: Абонамент Приоритет е уникален за всеки Абонамент Код!
+            
     template:
         category: Категория
         category_placeholder: '-- Избери Категория --'
@@ -36,3 +42,4 @@ vs_users_subscriptions:
         mailchimp_audiences: Mailchimp Аудиенции
         mailchimp_audience_id: Аудиенция Идентификатор
         edit_audience: Редактиране на Аудиенция
+        paid_services_grouping: Групиране на Платени Услуги

@@ -26,6 +26,12 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     
     /** @var \DateTimeInterface */
     protected $date;
+    
+    /** @var string */
+    protected $subscriptionCode;
+    
+    /** @var integer */
+    protected $subscriptionPriority;
 
     public function getId()
     {
@@ -64,6 +70,30 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     public function setDate($date)
     {
         $this->date = $date;
+        
+        return $this;
+    }
+    
+    public function getSubscriptionCode(): ?string
+    {
+        return $this->subscriptionCode;
+    }
+    
+    public function setSubscriptionCode($subscriptionCode): self
+    {
+        $this->subscriptionCode = $subscriptionCode;
+        
+        return $this;
+    }
+    
+    public function getSubscriptionPriority(): ?int
+    {
+        return $this->subscriptionPriority;
+    }
+    
+    public function setSubscriptionPriority($subscriptionPriority): self
+    {
+        $this->subscriptionPriority = $subscriptionPriority;
         
         return $this;
     }
