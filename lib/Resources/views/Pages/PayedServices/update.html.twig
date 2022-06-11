@@ -83,7 +83,8 @@
                                 {% endfor %}
                             </div>
                         </fieldset>
-
+                        <div class="row">&nbsp;</div>
+                        
                         <fieldset class="fieldset-project-attributes">
                             <legend class="w-auto">{{ 'vs_users_subscriptions.template.paid_services_grouping' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
                             
@@ -106,8 +107,8 @@
                             </div>
                         
                          </fieldset>
-                         
             			<div class="row">&nbsp;</div>
+            			
             			{{ vs_form.buttons( form ) }}
                     {{ form_end(form, {'render_rest': false}) }}
                 </div>
