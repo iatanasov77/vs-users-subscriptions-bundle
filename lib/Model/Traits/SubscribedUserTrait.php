@@ -8,9 +8,6 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionInterface;
 
 trait SubscribedUserTrait
 {
-    const SUBSCRIPTION_TYPE_NEWSLETTER  = 'newsletter_subscriptions';
-    const SUBSCRIPTION_TYPE_PAID        = 'paid_service_subscriptions';
-    
     /**
      * @var Collection|SubscriptionInterface[]
      *
@@ -28,7 +25,7 @@ trait SubscribedUserTrait
     /**
      * @return Collection|SubscriptionInterface[]
      */
-    public function getSubscriptions( $type ): Collection
+    public function getSubscriptions( string $type ): Collection
     {
         switch ( $type ) {
             case self::SUBSCRIPTION_TYPE_NEWSLETTER:

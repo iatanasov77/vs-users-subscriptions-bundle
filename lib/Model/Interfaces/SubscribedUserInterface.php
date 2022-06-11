@@ -6,5 +6,8 @@ use Doctrine\Common\Collections\Collection;
 
 interface SubscribedUserInterface extends BaseUserInterface, ResourceInterface
 {
-    public function getSubscriptions(): Collection;
+    const SUBSCRIPTION_TYPE_NEWSLETTER  = 'newsletter_subscriptions';
+    const SUBSCRIPTION_TYPE_PAID        = 'paid_service_subscriptions';
+    
+    public function getSubscriptions( string $type ): Collection;
 }
