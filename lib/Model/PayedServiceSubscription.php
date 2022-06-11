@@ -92,6 +92,23 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         return $active;
     }
     
+    public function getExpireAt(): ?\DateTime
+    {
+        $expireAt   = null;
+        switch( $this->payedService->getSubscriptionPeriod() ) {
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
+                $expireAt   = $this->date->add( new \DateInterval( 'P1Y' ) );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
+                $expireAt   = $this->date->add( new \DateInterval( 'P1M' ) );
+                break;
+            default:
+                $expireAt   = null;
+        }
+        
+        return $expireAt;
+    }
+    
     public function getSubscriptionCode(): ?string
     {
         return $this->subscriptionCode;
