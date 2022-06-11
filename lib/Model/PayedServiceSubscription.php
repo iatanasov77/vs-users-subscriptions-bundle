@@ -77,13 +77,14 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     
     public function isActive(): bool
     {
-        $active = false;
+        $active     = false;
+        $thisDate   = clone $this->date;
         switch( $this->payedService->getSubscriptionPeriod() ) {
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
-                $active = ( $this->date->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
+                $active = ( $thisDate->add( new \DateInterval( 'P1Y' ) ) ) > ( new \DateTime() );
                 break;
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
-                $active = ( $this->date->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
+                $active = ( $thisDate->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
                 break;
             default:
                 $active = false;
@@ -95,12 +96,13 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     public function getExpireAt(): ?\DateTime
     {
         $expireAt   = null;
+        $thisDate   = clone $this->date;
         switch( $this->payedService->getSubscriptionPeriod() ) {
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_YEAR:
-                $expireAt   = $this->date->add( new \DateInterval( 'P1Y' ) );
+                $expireAt   = $thisDate->add( new \DateInterval( 'P1Y' ) );
                 break;
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
-                $expireAt   = $this->date->add( new \DateInterval( 'P1M' ) );
+                $expireAt   = $thisDate->add( new \DateInterval( 'P1M' ) );
                 break;
             default:
                 $expireAt   = null;
