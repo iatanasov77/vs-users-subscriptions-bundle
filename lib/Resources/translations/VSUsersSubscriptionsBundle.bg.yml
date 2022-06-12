@@ -22,6 +22,10 @@ vs_users_subscriptions:
             subscription_code_help: Абонамент Код се използва за групиране на Платени Услуги.
             subscription_priority: Абонамент Приоритет
             subscription_priority_help: Абонамент Приоритет е уникален за всеки Абонамент Код!
+            attribute_name: Име на Атрибут
+            attribute_name_placeholder: Име на Атрибут
+            attribute_value: Стойност на Атрибут
+            attribute_value_placeholder: Стойност на Атрибут
             
     template:
         category: Категория
@@ -43,3 +47,4 @@ vs_users_subscriptions:
         mailchimp_audience_id: Аудиенция Идентификатор
         edit_audience: Редактиране на Аудиенция
         paid_services_grouping: Групиране на Платени Услуги
+        attributes: Атрибути за Платена Услуга

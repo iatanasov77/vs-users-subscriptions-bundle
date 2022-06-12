@@ -41,6 +41,12 @@
             <unique-constraint columns="subscription_code,subscription_priority" name="subscription_idx" />
         </unique-constraints>
         
+        <one-to-many field="attributes" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface" mapped-by="payedService" orphan-removal="true">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
         <!--
             Used locale to override Translation listener`s locale
             this is not a mapped field of entity metadata, just a simple property

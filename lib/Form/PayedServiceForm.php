@@ -15,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 use Vankosoft\ApplicationBundle\Component\I18N;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType;
+use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType;
 
 class PayedServiceForm extends AbstractForm
 {
@@ -84,6 +85,14 @@ class PayedServiceForm extends AbstractForm
             
             ->add( 'subscriptionPeriods', CollectionType::class, [
                 'entry_type'   => PayedServiceSubscriptionPeriodType::class,
+                'allow_add'    => true,
+                'allow_delete' => true,
+                'prototype'    => true,
+                'by_reference' => false
+            ])
+            
+            ->add( 'attributes', CollectionType::class, [
+                'entry_type'   => PayedServiceAttributeType::class,
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'prototype'    => true,

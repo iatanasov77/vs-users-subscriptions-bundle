@@ -33,7 +33,7 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
     
     /** @var integer */
     protected $subscriptionPriority;
-
+    
     public function getId()
     {
         return $this->id;

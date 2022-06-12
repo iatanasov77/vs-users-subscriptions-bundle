@@ -38,4 +38,11 @@ services:
             - { name: form.type }
         arguments:
             - '%vs_users_subscriptions.model.payed_service_subscription_period.class%'
+            
+    vs_users_subscriptions.resources.payed_service_attribute.form:
+        class: Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType
+        tags:
+            - { name: form.type }
+        arguments:
+            - '%vs_users_subscriptions.model.payed_service_attribute.class%'
 

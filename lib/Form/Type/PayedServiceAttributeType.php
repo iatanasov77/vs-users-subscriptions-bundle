@@ -3,13 +3,9 @@
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
-
-class PayedServiceSubscriptionPeriodType extends AbstractType
+class PayedServiceAttributeType extends AbstractType
 {
     protected $dataClass;
     
@@ -20,20 +16,16 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder
-            ->add( 'subscriptionPeriod', ChoiceType::class, [
+            ->add( 'name', TextType::class, [
                 'required'              => true,
-                'choices'               => \array_flip( SubscriptionPeriod::periods() ),
-                'placeholder'           => 'vs_users_subscriptions.form.subscription_period_placeholder',
+                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_name',
+                'placeholder'           => 'vs_users_subscriptions.form.paid_service.attribute_name_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
-            ->add( 'price', TextType::class, [
+            ->add( 'value', TextType::class, [
                 'required'              => true,
-                'translation_domain'    => 'VSUsersSubscriptionsBundle',
-            ])
-            ->add( 'currencyCode', ChoiceType::class, [
-                'required'              => true,
-                'choices'               => \array_flip( SubscriptionPeriod::currencies() ),
-                'placeholder'           => 'vs_users_subscriptions.form.currency_placeholder',
+                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_value',
+                'placeholder'           => 'vs_users_subscriptions.form.paid_service.attribute_value_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
         ;
@@ -48,6 +40,6 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     
     public function getName()
     {
-        return 'PayedServiceSubscriptionPeriodField';
+        return 'PayedServiceAttributeField';
     }
 }

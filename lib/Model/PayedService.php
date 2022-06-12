@@ -9,6 +9,7 @@ use Sylius\Component\Resource\Model\TranslationInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface;
 
 class PayedService implements PayedServiceInterface
 {
@@ -43,10 +44,16 @@ class PayedService implements PayedServiceInterface
     /** @var integer */
     protected $subscriptionPriority;
     
+    /**
+     * @var PayedServiceAttributeInterface
+     */
+    protected $attributes;
+    
     public function __construct()
     {
         $this->subscriptionPeriods  = new ArrayCollection();
         $this->subscriptionPriority = 0;
+        $this->attributes           = new ArrayCollection();
     }
     
     public function getId()
@@ -167,6 +174,41 @@ class PayedService implements PayedServiceInterface
         return $this;
     }
 
+    /**
+     * @return Collection|PayedServiceAttributeInterface[]
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+    
+    public function addAttribute( PayedServiceAttributeInterface $attribute )
+    {
+        if( ! $this->attributes->contains( $attribute ) ) {
+            $this->attributes->add( $attribute );
+            $attribute->setPayedService( $this );
+        }
+    }
+    
+    public function removeAttribute( PayedServiceAttributeInterface $attribute )
+    {
+        if( $this->attributes->contains( $attribute ) ) {
+            $this->attributes->removeElement( $attribute );
+            $attribute->setPayedService( null );
+        }
+    }
+    
+    /**
+     * @param SubscriptionPeriod $subscriptionPeriod
+     * @return PayedService
+     */
+    public function setAttributes(Collection $attributes)
+    {
+        $this->attributes = $attributes;
+        
+        return $this;
+    }
+    
     /*
      * @NOTE: Decalared abstract in TranslatableTrait
      */

@@ -22,6 +22,10 @@ vs_users_subscriptions:
             subscription_code_help: Subscription Code is using for grouping Paid Services.
             subscription_priority: Subscription Priority
             subscription_priority_help: Subscription Priority is unique for every Subscription Code!
+            attribute_name: Attribute Name
+            attribute_name_placeholder: Attribute Name
+            attribute_value: Attribute Value
+            attribute_value_placeholder: Attribute Value
             
     template:
         category: Category
@@ -43,3 +47,4 @@ vs_users_subscriptions:
         mailchimp_audience_id: Audience ID
         edit_audience: Edit Audience
         paid_services_grouping: Paid Service Grouping
+        attributes: Paid Service Attributes
