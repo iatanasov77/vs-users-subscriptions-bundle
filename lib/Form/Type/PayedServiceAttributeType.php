@@ -18,15 +18,19 @@ class PayedServiceAttributeType extends AbstractType
         $builder
             ->add( 'name', TextType::class, [
                 'required'              => true,
-                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_name',
-                'placeholder'           => 'vs_users_subscriptions.form.paid_service.attribute_name_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_name',
+                'attr'                  => [
+                    'placeholder'   => 'vs_users_subscriptions.form.paid_service.attribute_name_placeholder',
+                ],
             ])
             ->add( 'value', TextType::class, [
                 'required'              => true,
-                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_value',
-                'placeholder'           => 'vs_users_subscriptions.form.paid_service.attribute_value_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'label'                 => 'vs_users_subscriptions.form.paid_service.attribute_value',
+                'attr'                  => [
+                    'placeholder'   => 'vs_users_subscriptions.form.paid_service.attribute_value_placeholder',
+                ],
             ])
         ;
     }
