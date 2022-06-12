@@ -11,9 +11,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 use Vankosoft\ApplicationBundle\Component\I18N;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType;
+use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType;
 
 class PayedServiceForm extends AbstractForm
 {
@@ -87,6 +89,29 @@ class PayedServiceForm extends AbstractForm
                 'allow_delete' => true,
                 'prototype'    => true,
                 'by_reference' => false
+            ])
+            
+            ->add( 'attributes', CollectionType::class, [
+                'entry_type'   => PayedServiceAttributeType::class,
+                'allow_add'    => true,
+                'allow_delete' => true,
+                'prototype'    => true,
+                'by_reference' => false
+            ])
+            
+            ->add( 'subscriptionCode', TextType::class, [
+                'label'                 => 'vs_users_subscriptions.form.paid_service.subscription_code',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'required'              => true,
+                'help'                  => 'vs_users_subscriptions.form.paid_service.subscription_code_help'
+            ])
+            
+            ->add( 'subscriptionPriority', IntegerType::class, [
+                'label'                 => 'vs_users_subscriptions.form.paid_service.subscription_priority',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'required'              => true,
+                'attr'                  => ['min' => 0, 'max' => 100, 'step' => 1],
+                'help'                  => 'vs_users_subscriptions.form.paid_service.subscription_priority_help'
             ])
         ;
     }

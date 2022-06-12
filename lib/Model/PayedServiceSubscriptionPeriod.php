@@ -124,4 +124,14 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         
         return $this;
     }
+    
+    public function getTitle()
+    {
+        return $this->payedService->getTitle();
+    }
+    
+    public function getDescription()
+    {
+        return $this->payedService->getDescription();
+    }
 }

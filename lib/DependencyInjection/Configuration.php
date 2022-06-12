@@ -32,6 +32,8 @@ use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceAttribute;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -162,6 +164,21 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceSubscription::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( PayedServiceSubscriptionRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode( 'payed_service_attribute' )
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->variableNode( 'options' )->end()
+                                ->arrayNode( 'classes' )
+                                    ->addDefaultsIfNotSet()
+                                    ->children()
+                                        ->scalarNode( 'model' )->defaultValue( PayedServiceAttribute::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceAttributeInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()

@@ -1,3 +1,16 @@
+2.3.0	|	Release date: **12.06.2022**
+============================================
+* New Features:
+  - Add Grouping Fields to Paid Services.
+  - Add Proxy Methos of the model PayedServiceSubscriptionPeriod.
+  - PaidSubscription Model Add Check For Active.
+  -  PaidSubscription Model Add Get Expiration Date.
+  - Add Attributes for Paid Services.
+* Bug-Fixes:
+  - Fix and Improve SubscribedUserTrait.
+  - Fix PaidSubscription Model.
+
+
 2.2.3	|	Release date: **25.05.2022**
 ============================================
 * Bug-Fixes:

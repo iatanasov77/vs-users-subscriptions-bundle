@@ -26,6 +26,27 @@
         	<gedmo:translatable />
         </field>
         
+        <!-- Subscription Grouping Fields -->
+        <field name="subscriptionCode" column="subscription_code" type="string" length="64" nullable="false">
+            <options>
+                <option name="comment">Subscription Code Group Payed Services for an identical parameter but with differents levels(priority).</option>
+            </options>
+        </field>
+        <field name="subscriptionPriority" column="subscription_priority" type="integer" length="2" nullable="false">
+            <options>
+                <option name="comment">Subscription Priority is the level of a Subscription Code.</option>
+            </options>
+        </field>
+        <unique-constraints>
+            <unique-constraint columns="subscription_code,subscription_priority" name="subscription_idx" />
+        </unique-constraints>
+        
+        <one-to-many field="attributes" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface" mapped-by="payedService" orphan-removal="true" index-by="name">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
+        
         <!--
             Used locale to override Translation listener`s locale
             this is not a mapped field of entity metadata, just a simple property

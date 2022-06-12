@@ -8,4 +8,7 @@ interface PayedServiceInterface extends ResourceInterface
     public function getDescription();
     public function getCategory();
     public function getSubscriptionPeriods();
+    
+    public function getAttribute( string $name);
+    public function getAttributes();
 }
