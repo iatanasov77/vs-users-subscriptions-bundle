@@ -86,6 +86,15 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
                 $active = ( $thisDate->add( new \DateInterval( 'P1M' ) ) ) > ( new \DateTime() );
                 break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_SEMIMONTH:
+                $active = ( $thisDate->add( new \DateInterval( 'P15D' ) ) ) > ( new \DateTime() );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_WEEK:
+                $active = ( $thisDate->add( new \DateInterval( 'P1W' ) ) ) > ( new \DateTime() );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_DAY:
+                $active = ( $thisDate->add( new \DateInterval( 'P1D' ) ) ) > ( new \DateTime() );
+                break;
             default:
                 $active = false;
         }
@@ -103,6 +112,15 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
                 break;
             case SubscriptionPeriod::SUBSCRIPTION_PERIOD_MONTH:
                 $expireAt   = $thisDate->add( new \DateInterval( 'P1M' ) );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_SEMIMONTH:
+                $expireAt   = $thisDate->add( new \DateInterval( 'P15D' ) );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_WEEK:
+                $expireAt   = $thisDate->add( new \DateInterval( 'P1W' ) );
+                break;
+            case SubscriptionPeriod::SUBSCRIPTION_PERIOD_DAY:
+                $expireAt   = $thisDate->add( new \DateInterval( 'P1D' ) );
                 break;
             default:
                 $expireAt   = null;
