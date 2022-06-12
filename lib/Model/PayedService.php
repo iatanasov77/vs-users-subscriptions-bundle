@@ -174,6 +174,11 @@ class PayedService implements PayedServiceInterface
         return $this;
     }
 
+    public function getAttribute( string $name)
+    {
+        return $this->attributes[$name];
+    }
+    
     /**
      * @return Collection|PayedServiceAttributeInterface[]
      */
