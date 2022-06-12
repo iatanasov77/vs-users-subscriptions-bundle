@@ -41,7 +41,7 @@
             <unique-constraint columns="subscription_code,subscription_priority" name="subscription_idx" />
         </unique-constraints>
         
-        <one-to-many field="attributes" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface" mapped-by="payedService" orphan-removal="true">
+        <one-to-many field="attributes" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface" mapped-by="payedService" orphan-removal="true" index-by="name">
             <cascade>
                 <cascade-all/>
             </cascade>
