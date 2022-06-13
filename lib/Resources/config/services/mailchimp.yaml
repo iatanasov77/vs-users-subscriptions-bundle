@@ -1,17 +1,21 @@
 parameters:
     # Configure In Your Application Configuration
+    vs_users_subscriptions.enable_mail_chimp: false
     vs_users_subscriptions.mailchimp_api_key: ''
     
     vs_users_subscriptions.list_synchronizer_class: Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListSynchronizer
     vs_users_subscriptions.list_repository_class: Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Subscriber\ListRepository
     vs_users_subscriptions.subscriber_listener_class: Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\Event\SubscriberListener
-
+    
 services:
     # MailChimp
     vs_users_subscriptions.mailchimp_master:
-        class: DrewM\MailChimp\MailChimp
+        #class: DrewM\MailChimp\MailChimp
+        class: Vankosoft\UsersSubscriptionsBundle\Component\Mailchimp\MailChimp
         public: true
-        arguments: ['%vs_users_subscriptions.mailchimp_api_key%']
+        arguments:
+            - '%vs_users_subscriptions.enable_mail_chimp%'
+            - '%vs_users_subscriptions.mailchimp_api_key%'
 
     vs_users_subscriptions.list_repository:
         class: "%vs_users_subscriptions.list_repository_class%"

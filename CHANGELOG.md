@@ -1,3 +1,9 @@
+2.3.1	|	Release date: **13.06.2022**
+============================================
+* New Features:
+  - Add a Wrapper MailChimp Class To Be Used To Can Disable Initialization of The MailChimp API If Not Needed.
+
+
 2.3.0	|	Release date: **12.06.2022**
 ============================================
 * New Features:
