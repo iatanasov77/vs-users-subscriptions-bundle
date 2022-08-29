@@ -1,0 +1,7 @@
+vs_application:
+    menu:
+        users_subscriptions: Потребителски Aбонаменти
+        newsletter: Бюлетин
+        list_mailchimp_audiences: Списък Мейлчимп Аудитории
+        create_new_mailchimp_audience: Създай Нова Мейлчимп Аудитория
+
