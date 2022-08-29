@@ -4,4 +4,11 @@ vs_application:
         newsletter: Newsletter
         list_mailchimp_audiences: List Mailchimp Audiences
         create_new_mailchimp_audience: Create New Mailchimp Audience
+        
+        paid_services: Paid Services
+        categories: Categories
+        create_a_category: Create a Category
+        edit_a_category: Edit a Category
+        create_a_paid_service: Create a Paid Service
+        edit_a_paid_service: Edit a Paid Service
 
