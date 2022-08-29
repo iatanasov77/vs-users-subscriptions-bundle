@@ -1,3 +1,10 @@
+2.4.0	|	Release date: **29.08.2022**
+============================================
+* New Features:
+  - Begin Suport for PHP 8
+  - Add VankoSoft Menu Translations.
+
+
 2.3.1	|	Release date: **13.06.2022**
 ============================================
 * New Features:
