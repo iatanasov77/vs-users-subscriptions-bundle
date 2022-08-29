@@ -1,0 +1,7 @@
+vs_application:
+    menu:
+        users_subscriptions: Users Subscriptions
+        newsletter: Newsletter
+        list_mailchimp_audiences: List Mailchimp Audiences
+        create_new_mailchimp_audience: Create New Mailchimp Audience
+
