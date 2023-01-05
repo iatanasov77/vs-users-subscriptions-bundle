@@ -1,3 +1,9 @@
+2.4.3	|	Release date: **05.01.2023**
+============================================
+* Bug-Fixes:
+  - Fix Main Menu Template Abour Bootstrap 5
+
+
 2.4.2	|	Release date: **06.09.2022**
 ============================================
 * New Features:
