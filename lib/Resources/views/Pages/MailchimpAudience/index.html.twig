@@ -7,12 +7,15 @@
         <div class="col-lg-12">
             <section class="panel">
                 <table class="table table-striped table-advance table-hover">
-                    <tr>
-                        <th width="50">N</th>
-                        <th>{{ 'vs_users_subscriptions.template.mailchimp_audience_id' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
-                        <th>{{ 'vs_users_subscriptions.form.description' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
-                        <th width="150">{{ 'vs_users_subscriptions.template.action' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th width="50">N</th>
+                            <th>{{ 'vs_users_subscriptions.template.mailchimp_audience_id' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
+                            <th>{{ 'vs_users_subscriptions.form.description' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
+                            <th width="150">{{ 'vs_users_subscriptions.template.action' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     {% for item in items %}
                         <tr>
                             <td>
@@ -50,6 +53,7 @@
                             </td>
                         </tr>
                     {% endfor %}
+                    </tbody>
                 </table>
             </section>
         </div>
