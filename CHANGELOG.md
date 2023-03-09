@@ -1,3 +1,10 @@
+2.4.5	|	Release date: **09.03.2023**
+============================================
+* Bug-Fixes:
+  - Fix a Deprecation.
+  - Fix All Forms That Extend AbstractForm.
+
+
 2.4.4	|	Release date: **06.01.2023**
 ============================================
 * Bug-Fixes:
