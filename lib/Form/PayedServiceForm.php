@@ -34,7 +34,7 @@ class PayedServiceForm extends AbstractForm
         $this->categoryClass    = $categoryClass;
     }
     
-    public function buildForm( FormBuilderInterface $builder, array $options )
+    public function buildForm( FormBuilderInterface $builder, array $options ): void
     {
         parent::buildForm( $builder, $options );
         
