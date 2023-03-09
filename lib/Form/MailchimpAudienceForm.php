@@ -11,7 +11,7 @@ use Vankosoft\ApplicationBundle\Component\I18N;
 
 class MailchimpAudienceForm extends AbstractForm
 {
-    public function buildForm( FormBuilderInterface $builder, array $options )
+    public function buildForm( FormBuilderInterface $builder, array $options ): void
     {
         parent::buildForm( $builder, $options );
         
