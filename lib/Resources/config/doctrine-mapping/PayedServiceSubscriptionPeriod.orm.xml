@@ -22,7 +22,7 @@
         
         <field name="subscriptionPeriod" type="string" length="64" nullable="false" />
         
-        <field name="price" type="string" nullable="false" />
+        <field name="price" type="decimal" scale="2" precision="8" nullable="false" />
         <field name="currencyCode" column="currency_code" type="string" nullable="false" />
     </mapped-superclass>
 </doctrine-mapping>
