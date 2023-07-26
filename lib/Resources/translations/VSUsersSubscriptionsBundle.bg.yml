@@ -54,3 +54,5 @@ vs_users_subscriptions:
         edit_audience: Редактиране на Аудиенция
         paid_services_grouping: Групиране на Платени Услуги
         attributes: Атрибути за Платена Услуга
+        create_paid_service_subscription_period: Създаване на Платена Услуга Период за Абонамент
+        edit_paid_service_subscription_period: Редактиране на Платена Услуга Период за Абонамент

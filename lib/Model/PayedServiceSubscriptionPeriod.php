@@ -19,6 +19,7 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     /** @var integer */
     protected $id;
 
+    /** @var PayedService */
     protected $payedService;
     
     /** @var string */
@@ -32,6 +33,12 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     
     /** @var Collection|PayedServiceSubscriptionInterface[] */
     protected $subscriptions;
+    
+    /** @var string */
+    protected $title;
+    
+    /** @var string */
+    protected $description;
     
     public function __construct()
     {
@@ -127,11 +134,25 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     
     public function getTitle()
     {
-        return $this->payedService->getTitle();
+        return $this->title ?: $this->payedService->getTitle();
+    }
+    
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        
+        return $this;
     }
     
     public function getDescription()
     {
-        return $this->payedService->getDescription();
+        return $this->description ?: $this->payedService->getDescription();
+    }
+    
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        
+        return $this;
     }
 }

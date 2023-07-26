@@ -35,6 +35,9 @@ use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceAttribute;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface;
 
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesSubscriptionPeriodsController;
+use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm;
+
 /**
  * This is the class that validates and merges configuration from your app/config files
  *
@@ -148,6 +151,8 @@ class Configuration implements ConfigurationInterface
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceSubscriptionPeriod::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionPeriodInterface::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesSubscriptionPeriodsController::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'form' )->defaultValue( PayedServiceSubscriptionPeriodForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()

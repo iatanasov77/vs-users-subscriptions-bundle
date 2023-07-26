@@ -32,6 +32,14 @@ services:
             - '%vs_users_subscriptions.model.payed_service_category.class%'
             - "@request_stack"
             
+    vs_users_subscriptions.resources.payed_service_subscription_period.edit_form:
+        class: Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm
+        tags:
+            - { name: form.type }
+        arguments:
+            - '%vs_users_subscriptions.model.payed_service_subscription_period.class%'
+            - "@request_stack"
+            
     vs_users_subscriptions.resources.payed_service_subscription_period.form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType
         tags:
