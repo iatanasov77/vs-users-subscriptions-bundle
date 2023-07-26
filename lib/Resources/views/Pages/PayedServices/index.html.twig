@@ -23,11 +23,7 @@
                     <tbody>
                     {% for item in items %}
                         <tr>
-                            <td>
-                            	<a href="{{ path('vs_users_subscriptions_payed_service_update', {'id': item.id()}) }}">
-                            	    {{ item.getTitle() }}
-                            	</a>
-                            </td>
+                            <td>{{ item.title }}</td>
                             <td style="text-align: center;">
                                 {% if item.enabled %}
                                 	<i class="fas fa-check" style="color: #82c91e;">
@@ -43,7 +39,7 @@
                                     >
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a class="btn btn-danger btnDelete" 
+                                    <a class="btn btn-danger btnDeleteResource" 
                                     	href="{{ path('vs_users_subscriptions_payed_service_delete', {'id': item.id}) }}"
                                     	data-csrfToken="{{ csrf_token( item.id ) }}"
                                     	title="{{ 'vs_users_subscriptions.template.delete' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
@@ -57,23 +53,24 @@
                     </tbody>
                 </table>
             {% else %}
-                {{ alerts.info('sylius.ui.there_are_no_mappers_to_display'|trans) }}
+                {{ alerts.info( 'vs_application.template.items_index_there_are_no_mappers_to_display' | trans( {},'VSApplicationBundle' ) ) }}
             {% endif %}
         
             {{ pagination(items) }}
         </div>
     </div>
     
-    <div style="display: none;">
-        <form id="deleteForm" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" id="project_delete__token" name="_csrf_token" value="">
-        </form>
-    </div>
+    {% include '@VSApplication/Partial/resource-delete.html.twig' %}
+{% endblock %}
+
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/payed-services-listing' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-
+    {{ encore_entry_script_tags( 'js/payed-services-listing' ) }}
 {% endblock %}

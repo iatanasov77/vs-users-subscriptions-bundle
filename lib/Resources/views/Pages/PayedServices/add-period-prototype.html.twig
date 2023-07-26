@@ -1,6 +1,9 @@
 <div class="row">
+    <div class="col-lg-4">
+        {{ form_widget(form.title, {'attr': {'class': 'form-control fieldTitle'}}) }}
+    </div>
 	<div class="col-lg-4">
-		{{ form_widget(form.subscriptionPeriod, {'attr': {'class': 'form-control fieldTitle'}}) }}
+		{{ form_widget(form.subscriptionPeriod, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
     </div>
     <div class="col-lg-2">
         {{ form_widget(form.price, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
@@ -9,6 +12,15 @@
         {{ form_widget(form.currencyCode, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
     </div>
 	<div class="col-lg-1">
+    {% if period %}
+        <a class="btn btn-primary" 
+           href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': item.id}) }}"
+           title="{{ 'vs_users_subscriptions.template.edit' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
+        >
+            <i class="fas fa-edit"></i>
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	{% endif %}
 	    <a href="javascript:;" class="btn btn-success btnAddField"><i class="icon_plus_alt2"></i></a>
 	    <a href="javascript:;" class="btn btn-danger btnRemoveField"><i class="icon_close_alt2"></i></a>
 	</div>

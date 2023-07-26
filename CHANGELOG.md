@@ -1,3 +1,12 @@
+2.4.8	|	Release date: **26.07.2023**
+============================================
+* New Features:
+  - Improve Pages Titles.
+  - Improve Listing Pages Templates.
+  - Add Delete Functionality For Index Pages.
+  - Improve Managing Subscription Periods.
+
+
 2.4.7	|	Release date: **26.07.2023**
 ============================================
 * New Features:

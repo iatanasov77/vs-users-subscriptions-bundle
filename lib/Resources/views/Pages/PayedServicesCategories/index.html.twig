@@ -30,7 +30,7 @@
                                         >
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <a class="btn btn-danger btnDelete"
+                                        <a class="btn btn-danger btnDeleteResource"
                                             href="{{ path('vs_users_subscriptions_payed_service_category_delete', {'id': item.id}) }}"
                                             data-csrfToken="{{ csrf_token( item.id ) }}"
                                             title="{{ 'vs_users_subscriptions.template.delete' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
@@ -44,26 +44,24 @@
                     </tbody>
                 </table>
             {% else %}
-                {{ alerts.info('sylius.ui.there_are_no_mappers_to_display'|trans) }}
+                {{ alerts.info( 'vs_application.template.items_index_there_are_no_mappers_to_display' | trans( {},'VSApplicationBundle' ) ) }}
             {% endif %}
         
             {{ pagination(items) }}
         </div>
     </div>
-    <div style="display: none;">
-        <form id="deleteForm" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" id="project_category_delete__token" name="_csrf_token" value="">
-        </form>
-    </div>
+    
+    {% include '@VSApplication/Partial/resource-delete.html.twig' %}
 {% endblock %}
 
 {% block head_styles %}	
 	{{ parent() }}
 	
+	{{ encore_entry_link_tags( 'js/payed-services-categories-listing' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
+    {{ encore_entry_script_tags( 'js/payed-services-categories-listing' ) }}
 {% endblock %}

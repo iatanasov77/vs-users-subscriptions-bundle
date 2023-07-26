@@ -18,19 +18,9 @@
                     <tbody>
                     {% for item in items %}
                         <tr>
-                            <td>
-                                {{ loop.index }} ({{ item.id }})
-                            </td>
-                            <td>
-                                <a href="{{ path('vs_users_subscriptions_mailchimp_audiences_update', {'id': item.id}) }}">
-                                    {{ item.audienceId }}
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ path('vs_users_subscriptions_mailchimp_audiences_update', {'id': item.id}) }}">
-                                    {{ item.description }}
-                                </a>
-                            </td>
+                            <td>{{ loop.index }} ({{ item.id }})</td>
+                            <td>{{ item.audienceId }}</td>
+                            <td>{{ item.description }}</td>
 
                             <td>
                                 <div class="btn-group">
@@ -41,7 +31,7 @@
                                         >
                                             <i class="glyphicon glyphicon-pencil"></i>
                                         </a>
-                                        <a class="btn btn-danger btnDelete"
+                                        <a class="btn btn-danger btnDeleteResource"
                                             href="{{ path('vs_users_subscriptions_mailchimp_audiences_delete', {'id': item.id}) }}"
                                             data-csrfToken="{{ csrf_token( item.id ) }}"
                                             title="{{ 'vs_users_subscriptions.template.delete' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
@@ -59,16 +49,17 @@
         </div>
     </div>
     
-    <div style="display: none;">
-        <form id="deleteForm" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" id="project_delete__token" name="_csrf_token" value="">
-        </form>
-    </div>
+    {% include '@VSApplication/Partial/resource-delete.html.twig' %}
+{% endblock %}
+
+{% block head_styles %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/mailchimp-audiences-listing' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-
+    {{ encore_entry_script_tags( 'js/mailchimp-audiences-listing' ) }}
 {% endblock %}

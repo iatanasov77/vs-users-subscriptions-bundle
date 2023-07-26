@@ -20,6 +20,11 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder
+            ->add( 'title', TextType::class, [
+                'required'              => true,
+                'placeholder'           => 'vs_users_subscriptions.template.title',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+            ])
             ->add( 'subscriptionPeriod', ChoiceType::class, [
                 'required'              => true,
                 'choices'               => \array_flip( SubscriptionPeriod::periods() ),
@@ -28,7 +33,8 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
             ])
             ->add( 'price', TextType::class, [
                 'required'              => true,
-                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'placeholder'           => 'vs_payment.form.price',
+                'translation_domain'    => 'VSPaymentBundle',
             ])
             ->add( 'currencyCode', ChoiceType::class, [
                 'required'              => true,
