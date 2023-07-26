@@ -16,7 +16,10 @@ vs_users_subscriptions:
             week: Седмица
             semimonth: Половин Месец
             month: Месец
+            quarteryear: Четвърт Година
+            halfyear: Половин Година
             year: Година
+            custom: Персонализиран
         paid_service:
             subscription_code: Абонамент Код
             subscription_code_help: Абонамент Код се използва за групиране на Платени Услуги.

@@ -16,7 +16,10 @@ vs_users_subscriptions:
             week: Week
             semimonth: Semi-Month
             month: Month
+            quarteryear: Quarter Year
+            halfyear: Half Year
             year: Year
+            custom: Custom
         paid_service:
             subscription_code: Subscription Code
             subscription_code_help: Subscription Code is using for grouping Paid Services.
