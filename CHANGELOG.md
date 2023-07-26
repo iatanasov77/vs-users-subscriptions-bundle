@@ -1,3 +1,9 @@
+2.4.7	|	Release date: **26.07.2023**
+============================================
+* New Features:
+  - Add A Missing Taxonomy Exception for Paid Service Categories.
+
+
 2.4.6	|	Release date: **13.03.2023**
 ============================================
 * New Features:
