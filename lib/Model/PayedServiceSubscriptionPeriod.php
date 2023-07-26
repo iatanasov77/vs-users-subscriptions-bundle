@@ -21,6 +21,9 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     
     /** @var integer */
     protected $id;
+    
+    /** @var string */
+    protected $locale;
 
     /** @var PayedService */
     protected $payedService;
