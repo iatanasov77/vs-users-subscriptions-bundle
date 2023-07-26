@@ -1,3 +1,9 @@
+2.4.12	|	Release date: **26.07.2023**
+============================================
+* Bug-Fixes:
+  - Fix Sub-Template 'add-period-prototype.html.twig'
+
+
 2.4.11	|	Release date: **26.07.2023**
 ============================================
 * Bug-Fixes:

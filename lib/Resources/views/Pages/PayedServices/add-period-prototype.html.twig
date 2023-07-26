@@ -12,9 +12,9 @@
         {{ form_widget(form.currencyCode, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
     </div>
 	<div class="col-lg-1">
-    {% if period %}
+    {% if period is defined %}
         <a class="btn btn-primary" 
-           href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': item.id}) }}"
+           href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': period.id}) }}"
            title="{{ 'vs_users_subscriptions.template.edit' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
         >
             <i class="fas fa-edit"></i>
