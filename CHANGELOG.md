@@ -1,3 +1,9 @@
+2.4.11	|	Release date: **26.07.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServiceSubscriptionPeriod Doctrine Mapping For Translations.
+
+
 2.4.10	|	Release date: **26.07.2023**
 ============================================
 * Bug-Fixes:
