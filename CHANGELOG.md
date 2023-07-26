@@ -1,3 +1,9 @@
+2.4.9	|	Release date: **26.07.2023**
+============================================
+* Bug-Fixes:
+  - Fix The Form Type PayedServiceSubscriptionPeriodType .
+
+
 2.4.8	|	Release date: **26.07.2023**
 ============================================
 * New Features:
