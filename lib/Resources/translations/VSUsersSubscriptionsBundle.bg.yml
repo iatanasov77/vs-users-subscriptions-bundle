@@ -36,15 +36,18 @@ vs_users_subscriptions:
         action: Действие
         edit: Редакция
         delete: Изтриване
+        create_paid_service: Създаване на Платена Услуга
         edit_paid_service: Редактиране на Платена Услуга
         details: Детайли
         error: Грешка
         paid_service_categories: Категории за Платени Услуги
+        create_paid_service_category: Създаване на Категория за Платени Услуги
         edit_paid_service_category: Редактиране на Категория за Платени Услуги
         paid_service_category: Категория за Платени Услуги
         subscription_periods: Периоди за Абонамент
         mailchimp_audiences: Mailchimp Аудиенции
         mailchimp_audience_id: Аудиенция Идентификатор
+        create_audience: Създаване на Аудиенция
         edit_audience: Редактиране на Аудиенция
         paid_services_grouping: Групиране на Платени Услуги
         attributes: Атрибути за Платена Услуга

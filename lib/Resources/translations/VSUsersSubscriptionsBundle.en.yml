@@ -36,15 +36,18 @@ vs_users_subscriptions:
         action: Action
         edit: Edit
         delete: Delete
+        create_paid_service: Create a Paid Service
         edit_paid_service: Edit Paid Service
         details: Details
         error: Error
         paid_service_categories: Paid Service Categories
+        create_paid_service_category: Create a Paid Service Category
         edit_paid_service_category: Edit Paid Service Category
         paid_service_category: Paid Service Category
         subscription_periods: Subscription Periods
         mailchimp_audiences: Mailchimp Audiences
         mailchimp_audience_id: Audience ID
+        create_audience: Create an Audience
         edit_audience: Edit Audience
         paid_services_grouping: Paid Service Grouping
         attributes: Paid Service Attributes

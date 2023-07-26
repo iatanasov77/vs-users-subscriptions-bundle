@@ -4,8 +4,15 @@
 {% from '@SyliusResource/Macros/actions.html.twig' import create %}
 {% import "@VSApplication/Macros/form.html.twig" as vs_form %}
 
-{% block title %}{{ parent() }} :: {{ 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) }}{% endblock %}
-{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) }}{% endblock %}
+{% if( item.id ) %}
+    {% set pageTitle = 'vs_users_subscriptions.template.edit_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% else %}
+    {% set pageTitle = 'vs_users_subscriptions.template.create_paid_service' | trans( {},'VSUsersSubscriptionsBundle' ) %}
+{% endif %}
+
+{% block title %}{{ parent() }} :: {{ pageTitle }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ pageTitle }}{% endblock %}
+
 {% block content %}
     <div class="row">
         <!-- ============================================================== -->
