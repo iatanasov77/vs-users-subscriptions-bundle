@@ -4,6 +4,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Resource\Model\ResourceInterface;
 use Sylius\Component\Resource\Model\ToggleableTrait;
+use Sylius\Component\Resource\Model\TranslatableTrait;
+use Sylius\Component\Resource\Model\TranslationInterface;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
@@ -15,6 +17,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscription
 class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodInterface
 {
     use ToggleableTrait;
+    use TranslatableTrait;
     
     /** @var integer */
     protected $id;
@@ -154,5 +157,30 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         $this->description = $description;
         
         return $this;
+    }
+    
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+    
+    public function getTranslatableLocale(): ?string
+    {
+        return $this->locale;
+    }
+    
+    public function setTranslatableLocale($locale): self
+    {
+        $this->locale = $locale;
+        
+        return $this;
+    }
+    
+    /*
+     * @NOTE: Decalared abstract in TranslatableTrait
+     */
+    protected function createTranslation(): TranslationInterface
+    {
+        
     }
 }
