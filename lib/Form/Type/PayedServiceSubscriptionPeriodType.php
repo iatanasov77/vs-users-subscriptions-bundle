@@ -4,6 +4,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
@@ -20,6 +21,8 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder
+            ->add( 'id', HiddenType::class )
+            
             ->add( 'title', TextType::class, [
                 'required'              => true,
                 'attr'                  => ['placeholder'   => 'vs_users_subscriptions.template.title'],
