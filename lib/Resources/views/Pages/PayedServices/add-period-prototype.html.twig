@@ -1,4 +1,6 @@
 <div class="row">
+    {{ form_widget(form.id) }}
+    
     <div class="col-lg-4">
         {{ form_widget(form.title, {'attr': {'class': 'form-control fieldTitle'}}) }}
     </div>
@@ -14,7 +16,7 @@
 	<div class="col-lg-1">
     {% if period is defined %}
         <a class="btn btn-primary" 
-           href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': period.id}) }}"
+           href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': form.vars.value.id}) }}"
            title="{{ 'vs_users_subscriptions.template.edit' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
         >
             <i class="fas fa-edit"></i>
