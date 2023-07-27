@@ -21,7 +21,7 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
     public function buildForm( FormBuilderInterface $builder, array $options )
     {
         $builder
-            ->add( 'id', HiddenType::class )
+            ->add( 'id', HiddenType::class, ['mapped' => false] )
             
             ->add( 'title', TextType::class, [
                 'required'              => true,

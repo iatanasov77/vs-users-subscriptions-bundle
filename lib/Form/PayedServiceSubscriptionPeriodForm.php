@@ -5,7 +5,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class PayedServiceSubscriptionPeriodForm extends AbstractForm
 {

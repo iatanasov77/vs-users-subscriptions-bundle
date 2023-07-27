@@ -4,7 +4,7 @@
     <div class="col-lg-4">
         {{ form_widget(form.title, {'attr': {'class': 'form-control fieldTitle'}}) }}
     </div>
-	<div class="col-lg-4">
+	<div class="col-lg-2">
 		{{ form_widget(form.subscriptionPeriod, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
     </div>
     <div class="col-lg-2">
@@ -13,17 +13,19 @@
     <div class="col-lg-2">
         {{ form_widget(form.currencyCode, {'attr': {'class': 'form-control m-bot15 fieldType'}}) }}
     </div>
-	<div class="col-lg-1">
-    {% if period is defined %}
+	<div class="col-lg-2">
+	    <a href="javascript:;" class="btn btn-success btnAddField"><i class="icon_plus_alt2"></i></a>
+	    <a href="javascript:;" class="btn btn-danger btnRemoveField"><i class="icon_close_alt2"></i></a>
+	    
+	{% if period is defined %}
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="btn btn-primary" 
            href="{{ path('vs_users_subscriptions_payed_service_subscription_period_update', {'id': form.vars.value.id}) }}"
            title="{{ 'vs_users_subscriptions.template.edit' | trans( {},'VSUsersSubscriptionsBundle' ) }}"
         >
             <i class="fas fa-edit"></i>
         </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	{% endif %}
-	    <a href="javascript:;" class="btn btn-success btnAddField"><i class="icon_plus_alt2"></i></a>
-	    <a href="javascript:;" class="btn btn-danger btnRemoveField"><i class="icon_close_alt2"></i></a>
+    {% endif %}
+    
 	</div>
 </div>

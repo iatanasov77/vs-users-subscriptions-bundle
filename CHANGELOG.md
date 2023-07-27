@@ -1,3 +1,11 @@
+2.4.14	|	Release date: **27.07.2023**
+============================================
+* New Features:
+  - Improve CkEditor Toolbar For Description Fields.
+* Bug-Fixes:
+  - Fix PayedServiceSubscriptionPeriodForm .
+
+
 2.4.13	|	Release date: **27.07.2023**
 ============================================
 * New Features:
