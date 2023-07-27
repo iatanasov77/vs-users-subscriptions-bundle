@@ -3,7 +3,7 @@ parameters:
     ##########################################################
     vs_users_subscriptions.form.payed_service.ckeditor_uiColor: '#ffffff'
     vs_users_subscriptions.form.payed_service.ckeditor_extraAllowedContent: '*[*]{*}(*)'
-    vs_users_subscriptions.form.payed_service.ckeditor_toolbar: document_toolbar
+    vs_users_subscriptions.form.payed_service.ckeditor_toolbar: description_toolbar
     vs_users_subscriptions.form.payed_service.ckeditor_extraPlugins: 'font, justify'
     vs_users_subscriptions.form.payed_service.ckeditor_removeButtons: ''
     
