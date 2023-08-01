@@ -1,3 +1,9 @@
+2.5.0	|	Release date: **01.08.2023**
+============================================
+* New Features and Improvement:
+  - Improve GitIgnore .
+
+
 2.4.14	|	Release date: **27.07.2023**
 ============================================
 * New Features:
