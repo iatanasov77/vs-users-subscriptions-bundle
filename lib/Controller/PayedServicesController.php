@@ -29,6 +29,13 @@ ANYTHING;
     
     protected function prepareEntity( &$entity, &$form, Request $request )
     {
+        $paidServiceSlug    = $this->get( 'vs_application.slug_generator' )->generate( $entity->getTitle() );
         
+        foreach ( $entity->getSubscriptionPeriods() as $period ) {
+            
+            $paidServicePeriodCode  = $paidServiceSlug . '-' . \strtolower( $period->getSubscriptionPeriod() );
+            
+            $period->setPaidServicePeriodCode( $paidServicePeriodCode );
+        }
     }
 }

@@ -46,6 +46,9 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     /** @var string */
     protected $description;
     
+    /** @var string */
+    protected $paidServicePeriodCode;
+    
     public function __construct()
     {
         $this->subscriptions    = new ArrayCollection();
@@ -73,7 +76,6 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         return $this;
     }
     
-
     public function getSubscriptionPeriod()
     {
         return $this->subscriptionPeriod;
@@ -166,6 +168,18 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     public function setDescription($description)
     {
         $this->description = $description;
+        
+        return $this;
+    }
+    
+    public function getPaidServicePeriodCode()
+    {
+        return $this->paidServicePeriodCode;
+    }
+    
+    public function setPaidServicePeriodCode($paidServicePeriodCode)
+    {
+        $this->paidServicePeriodCode = $paidServicePeriodCode;
         
         return $this;
     }
