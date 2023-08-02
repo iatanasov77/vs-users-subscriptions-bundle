@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
+use Vankosoft\UsersSubscriptionsBundle\Form\DataTransformer\CurrencyTransformer;
 
 class PayedServiceSubscriptionPeriodType extends AbstractType
 {
@@ -53,6 +54,7 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
         
         $installedBundles   = $this->container->getParameter( 'kernel.bundles' );
         if ( \array_key_exists( 'VSPaymentBundle', $installedBundles ) ) {
+            
             $builder->add( 'currencyCode', EntityType::class, [
                 'label'                 => 'vs_payment.form.currency_label',
                 'required'              => true,
@@ -61,6 +63,10 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
                 'placeholder'           => 'vs_payment.form.currency_placeholder',
                 'translation_domain'    => 'VSPaymentBundle',
             ]);
+            
+            $builder->get( 'currencyCode' )->addModelTransformer(
+                new CurrencyTransformer( $this->container->get( 'vs_payment.repository.currency' ) )
+            );
         } else {
             $builder->add( 'currencyCode', ChoiceType::class, [
                 'required'              => true,
