@@ -1,3 +1,13 @@
+2.5.1	|	Release date: **02.08.2023**
+============================================
+* New Features:
+  - Improve Paid Services index page.
+  - In Paid Service Period FormType Use Currency Entity if Payment Bundle is Installed.
+  - Add a Code Field into PayedServiceSubscriptionPeriod Model.
+* Bug-Fixes:
+  - Fix PayedServiceSubscriptionPeriod Model.
+
+
 2.5.0	|	Release date: **01.08.2023**
 ============================================
 * New Features and Improvement:
