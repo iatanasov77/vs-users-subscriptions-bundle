@@ -1,3 +1,9 @@
+2.5.2	|	Release date: **02.08.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServiceSubscriptionPeriodType .
+
+
 2.5.1	|	Release date: **02.08.2023**
 ============================================
 * New Features:
