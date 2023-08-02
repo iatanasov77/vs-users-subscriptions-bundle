@@ -46,6 +46,7 @@ services:
             - { name: form.type }
         arguments:
             - '%vs_users_subscriptions.model.payed_service_subscription_period.class%'
+            - '@service_container'
             
     vs_users_subscriptions.resources.payed_service_attribute.form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType

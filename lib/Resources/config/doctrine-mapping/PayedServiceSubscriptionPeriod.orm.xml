@@ -34,6 +34,12 @@
             <gedmo:translatable />
         </field>
         
+        <field name="paidServicePeriodCode" type="string" nullable="false">
+            <options>
+                <option name="comment">The Code Used To Find The Subscription Period in Fixture Factory when Creating Pricing Plans.</option>
+            </options>
+        </field>
+        
         <!--
             Used locale to override Translation listener`s locale
             this is not a mapped field of entity metadata, just a simple property
