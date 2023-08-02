@@ -140,6 +140,10 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     
     public function getTitle()
     {
+        if( ! $this->title && ! $this->payedService ) {
+            return null;
+        }
+        
         return $this->title ?: $this->payedService->getTitle();
     }
     
@@ -152,6 +156,10 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
     
     public function getDescription()
     {
+        if( ! $this->description && ! $this->payedService ) {
+            return null;
+        }
+        
         return $this->description ?: $this->payedService->getDescription();
     }
     
