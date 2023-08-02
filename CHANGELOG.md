@@ -1,3 +1,9 @@
+2.5.3	|	Release date: **02.08.2023**
+============================================
+* New Features:
+  - Create a DataTransformer for PaidService Periods Currency Field.
+
+
 2.5.2	|	Release date: **02.08.2023**
 ============================================
 * Bug-Fixes:
