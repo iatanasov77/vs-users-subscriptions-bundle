@@ -1,3 +1,9 @@
+2.5.4	|	Release date: **06.08.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServiceSubscription ORM Mapping.
+
+
 2.5.3	|	Release date: **02.08.2023**
 ============================================
 * New Features:
