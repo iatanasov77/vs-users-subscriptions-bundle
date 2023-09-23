@@ -26,6 +26,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscription
 use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
+use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceCategoryRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
@@ -119,7 +120,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceCategoryInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'controller' )->defaultValue( PayedServicesCategoryController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( PayedServiceCategoryForm::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'repository' )->defaultValue( PayedServiceCategoryRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
