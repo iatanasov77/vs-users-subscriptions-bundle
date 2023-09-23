@@ -1,3 +1,9 @@
+2.5.7	|	Release date: **23.09.2023**
+============================================
+* New Features:
+  - Add PayedServiceCategoryRepository .
+
+
 2.5.6	|	Release date: **29.08.2023**
 ============================================
 * New Features and Improvements:
