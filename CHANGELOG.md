@@ -1,3 +1,9 @@
+2.5.8	|	Release date: **26.09.2023**
+============================================
+* Bug-Fixes:
+  - Fix All Forms About Locale Choices.
+
+
 2.5.7	|	Release date: **23.09.2023**
 ============================================
 * New Features:
