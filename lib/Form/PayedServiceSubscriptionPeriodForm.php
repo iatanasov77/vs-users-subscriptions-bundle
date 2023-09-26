@@ -4,6 +4,7 @@ use Vankosoft\ApplicationBundle\Form\AbstractForm;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,15 +12,15 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class PayedServiceSubscriptionPeriodForm extends AbstractForm
 {
-    protected $requestStack;
-    
     public function __construct(
         string $dataClass,
-        RequestStack $requestStack
+        RequestStack $requestStack,
+        RepositoryInterface $localesRepository
     ) {
         parent::__construct( $dataClass );
         
-        $this->requestStack = $requestStack;
+        $this->requestStack         = $requestStack;
+        $this->localesRepository    = $localesRepository;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -33,7 +34,7 @@ class PayedServiceSubscriptionPeriodForm extends AbstractForm
             ->add( 'locale', ChoiceType::class, [
                 'label'                 => 'vs_users_subscriptions.form.locale',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
-                'choices'               => \array_flip( \Vankosoft\ApplicationBundle\Component\I18N::LanguagesAvailable() ),
+                'choices'               => \array_flip( $this->fillLocaleChoices() ),
                 'data'                  => $currentLocale,
                 'mapped'                => false,
             ])
