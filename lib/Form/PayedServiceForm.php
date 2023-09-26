@@ -4,6 +4,7 @@ use Vankosoft\ApplicationBundle\Form\AbstractForm;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -13,25 +14,26 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
-use Vankosoft\ApplicationBundle\Component\I18N;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType;
 
 class PayedServiceForm extends AbstractForm
 {
+    /** @var string */
     protected $categoryClass;
-    
-    protected $requestStack;
     
     public function __construct(
         string $dataClass,
-        string $categoryClass,
-        RequestStack $requestStack
+        RequestStack $requestStack,
+        RepositoryInterface $localesRepository,
+        string $categoryClass
     ) {
         parent::__construct( $dataClass );
         
-        $this->requestStack     = $requestStack;
-        $this->categoryClass    = $categoryClass;
+        $this->requestStack         = $requestStack;
+        $this->localesRepository    = $localesRepository;
+        
+        $this->categoryClass        = $categoryClass;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -50,7 +52,7 @@ class PayedServiceForm extends AbstractForm
             ->add( 'locale', ChoiceType::class, [
                 'label'                 => 'vs_users_subscriptions.form.locale',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
-                'choices'               => \array_flip( \Vankosoft\ApplicationBundle\Component\I18N::LanguagesAvailable() ),
+                'choices'               => \array_flip( $this->fillLocaleChoices() ),
                 'data'                  => $currentLocale,
                 'mapped'                => false,
             ])
