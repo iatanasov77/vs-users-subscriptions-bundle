@@ -7,7 +7,7 @@ class PayedServicesSubscriptionPeriodsController extends AbstractCrudController
 {
     protected function customData( Request $request, $entity = NULL ): array
     {
-        
+        return [];
     }
     
     protected function prepareEntity( &$entity, &$form, Request $request )

@@ -1,3 +1,9 @@
+2.5.9	|	Release date: **27.09.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServicesSubscriptionPeriodsController .
+
+
 2.5.8	|	Release date: **26.09.2023**
 ============================================
 * Bug-Fixes:
