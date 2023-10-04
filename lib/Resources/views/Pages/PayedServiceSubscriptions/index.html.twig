@@ -18,7 +18,6 @@
                             <th width="50">N</th>
                             <th>{{ 'vs_users_subscriptions.template.payment_total_amount' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
                             <th>{{ 'vs_users_subscriptions.template.payed_service_subscription_user' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
-                            
                             <th>{{ 'vs_application.template.items_index_row_created' | trans( {},'VSApplicationBundle' ) }}</th>
                             <th width="150">{{ 'vs_users_subscriptions.template.action' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
                         </tr>
@@ -33,7 +32,7 @@
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-danger btnDeleteResource"
-                                        href="{{ path('vs_payment_order_delete', {'id': item.id}) }}" 
+                                        href="{{ path('vs_users_subscriptions_payed_service_subscriptions_delete', {'id': item.id}) }}" 
                                         data-csrfToken="{{ csrf_token( item.id ) }}" 
                                         title="{{ 'vs_application.template.items_index_row_action_delete' | trans( {},'VSApplicationBundle' ) }}"
                                     >
@@ -64,11 +63,11 @@
 
 {% block head_styles %}
     {{ parent() }}
-    {{ encore_entry_link_tags( 'js/orders' ) }}
+    {{ encore_entry_link_tags( 'js/payed-service-subscriptions' ) }}
 {% endblock %}
 
 {% block body_scripts %}
     {{ parent() }}
     
-    {{ encore_entry_script_tags( 'js/orders' ) }}
+    {{ encore_entry_script_tags( 'js/payed-service-subscriptions' ) }}
 {% endblock %}
