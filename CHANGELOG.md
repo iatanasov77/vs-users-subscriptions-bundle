@@ -1,3 +1,9 @@
+2.5.11	|	Release date: **04.10.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServiceSubscriptions Preview Page.
+
+
 2.5.10	|	Release date: **04.10.2023**
 ============================================
 * New Features:

@@ -158,6 +158,11 @@ class PayedServiceSubscription implements PayedServiceSubscriptionInterface
         return $this->payedService ? $this->payedService->getPrice() : 0.00;
     }
     
+    public function getTotalAmount()
+    {
+        return $this->payedService ? $this->payedService->getPrice() : 0.00;
+    }
+    
     public function getCurrencyCode()
     {
         return $this->payedService ? $this->payedService->getCurrencyCode() : 'EUR';
