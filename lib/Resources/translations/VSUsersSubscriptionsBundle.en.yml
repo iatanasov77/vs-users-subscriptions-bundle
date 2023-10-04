@@ -56,3 +56,6 @@ vs_users_subscriptions:
         attributes: Paid Service Attributes
         create_paid_service_subscription_period: Create a Paid Service Subscription Period
         edit_paid_service_subscription_period: Edit Paid Service Subscription Period
+        payed_service_subscriptions_index_title: Paid Service Subscriptions
+        payed_service_subscription_user: User
+        payment_total_amount: Total Amount
