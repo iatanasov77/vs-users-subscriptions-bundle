@@ -1,3 +1,9 @@
+2.5.10	|	Release date: **04.10.2023**
+============================================
+* New Features:
+  - Add PaidServiceSubscriptions Preview Page.
+
+
 2.5.9	|	Release date: **27.09.2023**
 ============================================
 * Bug-Fixes:

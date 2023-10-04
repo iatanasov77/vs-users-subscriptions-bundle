@@ -21,9 +21,6 @@ use Vankosoft\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedService;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 
-use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscription;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
-use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
 use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
 use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceCategoryRepository;
@@ -38,6 +35,11 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInt
 
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesSubscriptionPeriodsController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm;
+
+use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscription;
+use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface;
+use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceSubscriptionRepository;
+use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServiceSubscriptionsController;
 
 /**
  * This is the class that validates and merges configuration from your app/config files
@@ -171,6 +173,7 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( PayedServiceSubscriptionRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
+                                        ->scalarNode( 'controller' )->defaultValue( PayedServiceSubscriptionsController::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()

@@ -7,7 +7,7 @@ use Vankosoft\UsersBundle\Entity\UserActivity;
 use Vankosoft\UsersSubscriptionsBundle\Entity\PlanSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Entity\PackagePlan;
 
-class PayedServiceSubscriptionController extends AbstractController
+class PayedServiceSubscriptionsExtController extends AbstractController
 {
     public function subscribeAction( $planId, Request $request )
     {
@@ -36,8 +36,8 @@ class PayedServiceSubscriptionController extends AbstractController
             sprintf( 'User subscribed to the "%s". Payed with "%s"',
                 $paymentDetails->getPackagePlan()->getDescription(),
                 $paymentDetails->getPaymentMethod()
-                )
-            );
+            )
+        );
         
         $user = $this->getUser();
         $user->setSubscription( $subscription );
