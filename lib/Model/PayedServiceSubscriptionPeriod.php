@@ -201,6 +201,16 @@ class PayedServiceSubscriptionPeriod implements PayedServiceSubscriptionPeriodIn
         return $this;
     }
     
+    public function getSubscriptionCode(): ?string
+    {
+        return $this->payedService ? $this->payedService->getSubscriptionCode() : null;
+    }
+    
+    public function getSubscriptionPriority(): ?int
+    {
+        return $this->payedService ? $this->payedService->getSubscriptionPriority() : null;
+    }
+    
     /*
      * @NOTE: Decalared abstract in TranslatableTrait
      */

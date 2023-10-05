@@ -1,3 +1,9 @@
+2.5.12	|	Release date: **05.10.2023**
+============================================
+* New Features and Improvements:
+  - Update Paid Service Models.
+
+
 2.5.11	|	Release date: **04.10.2023**
 ============================================
 * Bug-Fixes:
