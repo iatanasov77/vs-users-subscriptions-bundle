@@ -7,9 +7,6 @@ interface PayedServiceSubscriptionPeriodInterface extends ResourceInterface
     public function getSubscriptionPeriod();
     public function getPayedService();
     
-    public function getPrice();
-    public function getCurrencyCode();
-    
     public function getTitle();
     public function getDescription();
 }

@@ -45,28 +45,4 @@ vs_users_subscriptions_payed_service_subscription_period:
                 ckeditor_removeButtons: '%vs_users_subscriptions.form.payed_service.ckeditor_removeButtons%'
     type: sylius.resource
 
-vs_users_subscriptions_payed_service_subscriptions:
-    resource: |
-        alias: vs_users_subscriptions.payed_service_subscriptions
-        except: ['create', 'update', 'show']
-        path: /paid-services-subscriptions
-        templates: "@VSUsersSubscriptions/Pages/PayedServiceSubscriptions"
-    type: sylius.resource
-    options:
-        expose: true
-    
-vs_users_subscriptions_payed_service_subscriptions_index:
-    path: /paid-services-subscriptions/
-    methods: [GET]
-    defaults:
-        _controller: vs_users_subscriptions.controller.payed_service_subscriptions::indexAction
-        _sylius:
-            paginate: 10
-            sortable: true
-            sorting:
-                createdAt: desc
-            filterable: true
-            template: "@VSUsersSubscriptions/Pages/PayedServiceSubscriptions/index.html.twig"
-    options:
-        expose: true
 

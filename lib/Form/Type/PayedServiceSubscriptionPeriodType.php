@@ -45,36 +45,7 @@ class PayedServiceSubscriptionPeriodType extends AbstractType
                 'placeholder'           => 'vs_users_subscriptions.form.subscription_period_placeholder',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
-            ->add( 'price', NumberType::class, [
-                'required'              => true,
-                'attr'                  => ['placeholder'   => 'vs_payment.form.price'],
-                'translation_domain'    => 'VSPaymentBundle',
-            ])
         ;
-        
-        $installedBundles   = $this->container->getParameter( 'kernel.bundles' );
-        if ( \array_key_exists( 'VSPaymentBundle', $installedBundles ) ) {
-            
-            $builder->add( 'currencyCode', EntityType::class, [
-                'label'                 => 'vs_payment.form.currency_label',
-                'required'              => true,
-                'class'                 => $this->container->getParameter( 'vs_payment.model.currency.class' ),
-                'choice_label'          => 'code',
-                'placeholder'           => 'vs_payment.form.currency_placeholder',
-                'translation_domain'    => 'VSPaymentBundle',
-            ]);
-            
-            $builder->get( 'currencyCode' )->addModelTransformer(
-                new CurrencyTransformer( $this->container->get( 'vs_payment.repository.currency' ) )
-            );
-        } else {
-            $builder->add( 'currencyCode', ChoiceType::class, [
-                'required'              => true,
-                'choices'               => \array_flip( SubscriptionPeriod::currencies() ),
-                'placeholder'           => 'vs_users_subscriptions.form.currency_placeholder',
-                'translation_domain'    => 'VSUsersSubscriptionsBundle',
-            ]);
-        }
     }
     
     public function configureOptions( OptionsResolver $resolver )

@@ -1,3 +1,10 @@
+2.5.13	|	Release date: **11.10.2023**
+============================================
+* New Features and Improvements:
+  - Remove Many Uneeded PaidSubscription Resources .
+  - Improve Paid Services Templates.
+
+
 2.5.12	|	Release date: **05.10.2023**
 ============================================
 * New Features and Improvements:

@@ -16,6 +16,7 @@
                     <thead>
                         <tr>
                             <th>{{ 'vs_users_subscriptions.template.title' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
+                            <th>{{ 'vs_users_subscriptions.template.subscription_periods' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
                             <th width="150" style="text-align: center">{{ 'vs_users_subscriptions.template.active' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
                             <th width="150">{{ 'vs_users_subscriptions.template.action' | trans( {},'VSUsersSubscriptionsBundle' ) }}</th>
                         </tr>
@@ -24,6 +25,13 @@
                     {% for item in items %}
                         <tr>
                             <td>{{ item.title }}</td>
+                            
+                            <td>
+                                {% for period in item.subscriptionPeriods %}
+                                    {{ period.subscriptionPeriod }}, 
+                                {% endfor %}
+                            </td>
+                            
                             <td style="text-align: center;">
                                 {% if item.enabled %}
                                 	<i class="fas fa-check" style="color: #82c91e;">

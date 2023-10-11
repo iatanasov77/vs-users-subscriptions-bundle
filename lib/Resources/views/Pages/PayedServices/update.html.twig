@@ -80,8 +80,8 @@
                             {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
                         </div>
               
-						<fieldset class="fieldset-project-attributes">
-                            <legend class="w-auto">{{ 'vs_users_subscriptions.template.subscription_periods' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+						<fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.subscription_periods' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
                             <div class="SubscriptionPeriodsContainer"
                                 data-prototype="{% apply escape %}{% include '@VSUsersSubscriptions/Pages/PayedServices/add-period-prototype.html.twig' with {'form': form.subscriptionPeriods.vars.prototype} %}{% endapply %}"
                             > 
@@ -92,8 +92,8 @@
                         </fieldset>
                         <div class="row">&nbsp;</div>
                         
-                        <fieldset class="fieldset-project-attributes">
-                            <legend class="w-auto">{{ 'vs_users_subscriptions.template.attributes' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+                        <fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.attributes' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
                             <div class="AttributesContainer"
                                 data-prototype="{% apply escape %}{% include '@VSUsersSubscriptions/Pages/PayedServices/add-attribute-prototype.html.twig' with {'form': form.attributes.vars.prototype} %}{% endapply %}"
                             > 
@@ -104,8 +104,8 @@
                         </fieldset>
                         <div class="row">&nbsp;</div>
                         
-                        <fieldset class="fieldset-project-attributes">
-                            <legend class="w-auto">{{ 'vs_users_subscriptions.template.paid_services_grouping' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
+                        <fieldset class="border border-dark rounded p-3">
+                            <legend class="w-auto float-none ps-2 pe-2">{{ 'vs_users_subscriptions.template.paid_services_grouping' | trans( {},'VSUsersSubscriptionsBundle' ) }}</legend>
                             
                             <div class="form-group">
                                 {{ form_label(form.subscriptionCode, null, {

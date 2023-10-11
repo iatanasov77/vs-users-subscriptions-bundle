@@ -15,16 +15,8 @@
                 <cascade-all/>
             </cascade>
         </many-to-one>
-        <one-to-many field="subscriptions" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionInterface" mapped-by="payedService" orphan-removal="true">
-            <cascade>
-                <cascade-all/>
-            </cascade>
-        </one-to-many>
         
         <field name="subscriptionPeriod" type="string" length="64" nullable="false" />
-        
-        <field name="price" type="decimal" scale="2" precision="8" nullable="false" />
-        <field name="currencyCode" column="currency_code" type="string" nullable="false" />
         
         <field name="title" type="string" length="64" nullable="true">
             <gedmo:translatable />
