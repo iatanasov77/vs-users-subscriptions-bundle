@@ -1,13 +1,9 @@
 <?php namespace Vankosoft\UsersSubscriptionsBundle\Model\Interfaces;
 
-use Symfony\Component\Security\Core\User\UserInterface as BaseUserInterface;
-use Sylius\Component\Resource\Model\ResourceInterface;
+use Vankosoft\UsersBundle\Model\UserInterface;
 use Doctrine\Common\Collections\Collection;
 
-interface SubscribedUserInterface extends BaseUserInterface, ResourceInterface
+interface SubscribedUserInterface extends UserInterface
 {
-    const SUBSCRIPTION_TYPE_NEWSLETTER  = 'newsletter_subscriptions';
-    const SUBSCRIPTION_TYPE_PAID        = 'paid_service_subscriptions';
-    
-    public function getSubscriptions( string $type ): Collection;
+    public function getNewsletterSubscriptions(): Collection;
 }
