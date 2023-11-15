@@ -84,4 +84,9 @@ class NewsletterSubscription implements NewsletterSubscriptionInterface
         
         return $this;
     }
+    
+    public function getExpiresAt()
+    {
+        return null;
+    }
 }
