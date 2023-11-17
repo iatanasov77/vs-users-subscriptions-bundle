@@ -1,3 +1,10 @@
+2.6.0	|	Release date: **17.11.2023**
+============================================
+* New Features and Improvements:
+  - Remove Currency Form Data Transformer.
+  - Improve Paid Services Index Page .
+
+
 2.5.15	|	Release date: **15.11.2023**
 ============================================
 * New Features and Improves:
