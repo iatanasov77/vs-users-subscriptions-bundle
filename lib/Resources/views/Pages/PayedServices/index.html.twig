@@ -28,7 +28,7 @@
                             
                             <td>
                                 {% for period in item.subscriptionPeriods %}
-                                    {{ period.subscriptionPeriod }}, 
+                                    {{ period.subscriptionPeriod }}{% if not loop.last %}, {% endif %}
                                 {% endfor %}
                             </td>
                             
