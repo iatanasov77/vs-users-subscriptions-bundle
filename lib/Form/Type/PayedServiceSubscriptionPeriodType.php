@@ -12,7 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Vankosoft\UsersSubscriptionsBundle\Component\PayedService\SubscriptionPeriod;
-use Vankosoft\UsersSubscriptionsBundle\Form\DataTransformer\CurrencyTransformer;
 
 class PayedServiceSubscriptionPeriodType extends AbstractType
 {
