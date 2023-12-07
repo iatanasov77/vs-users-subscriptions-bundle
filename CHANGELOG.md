@@ -1,3 +1,9 @@
+2.6.1	|	Release date: **07.12.2023**
+============================================
+* Bug-Fixes:
+  - Fix PayedServiceCategoryForm .
+
+
 2.6.0	|	Release date: **17.11.2023**
 ============================================
 * New Features and Improvements:
