@@ -1,6 +1,11 @@
 <div class="row">
 	<div class="col-lg-4">
-		{{ form_widget(form.name, {'attr': {'class': 'form-control fieldTitle'}}) }}
+		{% set nameAttrs    = ( form.name.vars.errors | length ) ?
+            {'attr': {'class': 'form-control fieldTitle is-invalid'} } :
+            {'attr': {'class': 'form-control fieldTitle'} }
+        %}
+        {{ form_widget(form.name, nameAttrs ) }}
+        <div class="invalid-feedback">{{ form_errors( form.name ) }}</div>
     </div>
     <div class="col-lg-4">
         {{ form_widget(form.value, {'attr': {'class': 'form-control fieldType'}}) }}
