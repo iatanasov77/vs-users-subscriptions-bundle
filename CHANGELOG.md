@@ -1,3 +1,10 @@
+2.6.2	|	Release date: **16.12.2023**
+============================================
+* Bug-Fixes and Improvements:
+  - Fix Some Templates.
+  - Add Validation in PayedServiceAttributeType for Attribute 'name' Field.
+
+
 2.6.1	|	Release date: **07.12.2023**
 ============================================
 * Bug-Fixes:
