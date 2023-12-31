@@ -1,3 +1,9 @@
+2.6.3	|	Release date: **31.12.2023**
+============================================
+* Bug-Fixes:
+  - Fix Some Deprecations.
+
+
 2.6.2	|	Release date: **16.12.2023**
 ============================================
 * Bug-Fixes and Improvements:
