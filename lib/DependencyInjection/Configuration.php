@@ -9,29 +9,23 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Resource\Factory\Factory;
 
 use Vankosoft\UsersSubscriptionsBundle\Controller\MailchimpAudienceController;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\MailchimpAudience;
 use Vankosoft\UsersSubscriptionsBundle\Form\MailchimpAudienceForm;
 
 //use Vankosoft\UsersSubscriptionsBundle\Controller\SubscriptionController;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\NewsletterSubscription;
 use Vankosoft\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedService;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface;
 use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceCategoryRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceAttribute;
-use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceAttributeInterface;
 
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesSubscriptionPeriodsController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm;
@@ -81,7 +75,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( MailchimpAudience::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( MailchimpAudienceInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'controller' )->defaultValue( MailchimpAudienceController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
@@ -98,7 +91,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( NewsletterSubscription::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( NewsletterSubscriptionInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( NewsletterSubscriptionForm::class )->cannotBeEmpty()->end()
@@ -114,7 +106,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceCategory::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceCategoryInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'controller' )->defaultValue( PayedServicesCategoryController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( PayedServiceCategoryForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( PayedServiceCategoryRepository::class )->cannotBeEmpty()->end()
@@ -131,7 +122,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedService::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'controller' )->defaultValue( PayedServicesController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( PayedServiceForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
@@ -148,7 +138,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceSubscriptionPeriod::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceSubscriptionPeriodInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'controller' )->defaultValue( PayedServicesSubscriptionPeriodsController::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( PayedServiceSubscriptionPeriodForm::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
@@ -166,7 +155,6 @@ class Configuration implements ConfigurationInterface
                                     ->addDefaultsIfNotSet()
                                     ->children()
                                         ->scalarNode( 'model' )->defaultValue( PayedServiceAttribute::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'interface' )->defaultValue( PayedServiceAttributeInterface::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
