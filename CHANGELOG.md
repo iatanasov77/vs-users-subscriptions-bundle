@@ -1,3 +1,9 @@
+2.6.4	|	Release date: **31.01.2024**
+============================================
+* New Features and Improvements:
+  - Move AdminPanel Default Theme User Subscription Pages Assets From Application Bundle.
+
+
 2.6.3	|	Release date: **31.12.2023**
 ============================================
 * Bug-Fixes:
