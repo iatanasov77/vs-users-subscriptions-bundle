@@ -17,15 +17,6 @@ services:
             - "@request_stack"
             - '@vs_application.repository.locale'
             
-    vs_users_subscriptions.resources.payed_service_category.form:
-        class: Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm
-        tags:
-            - { name: form.type }
-        arguments:
-            - '%vs_users_subscriptions.model.payed_service_category.class%'
-            - "@request_stack"
-            - '@vs_application.repository.locale'
-            
     vs_users_subscriptions.resources.payed_service.form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm
         tags:
@@ -34,7 +25,6 @@ services:
             - '%vs_users_subscriptions.model.payed_service.class%'
             - "@request_stack"
             - '@vs_application.repository.locale'
-            - '%vs_users_subscriptions.model.payed_service_category.class%'
             
     vs_users_subscriptions.resources.payed_service_subscription_period.edit_form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm

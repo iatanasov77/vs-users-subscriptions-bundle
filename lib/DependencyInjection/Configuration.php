@@ -18,11 +18,7 @@ use Vankosoft\UsersSubscriptionsBundle\Form\NewsletterSubscriptionForm;
 
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedService;
 
-use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceCategory;
-use Vankosoft\UsersSubscriptionsBundle\Repository\PayedServiceCategoryRepository;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceSubscriptionPeriod;
-use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceCategoryForm;
-use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesCategoryController;
 use Vankosoft\UsersSubscriptionsBundle\Controller\PayedServicesController;
 use Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceForm;
 use Vankosoft\UsersSubscriptionsBundle\Model\PayedServiceAttribute;
@@ -94,22 +90,6 @@ class Configuration implements ConfigurationInterface
                                         ->scalarNode( 'repository' )->defaultValue( EntityRepository::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                         ->scalarNode( 'form' )->defaultValue( NewsletterSubscriptionForm::class )->cannotBeEmpty()->end()
-                                    ->end()
-                                ->end()
-                            ->end()
-                        ->end()
-                        ->arrayNode( 'payed_service_category' )
-                            ->addDefaultsIfNotSet()
-                            ->children()
-                                ->variableNode( 'options' )->end()
-                                ->arrayNode( 'classes' )
-                                    ->addDefaultsIfNotSet()
-                                    ->children()
-                                        ->scalarNode( 'model' )->defaultValue( PayedServiceCategory::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'controller' )->defaultValue( PayedServicesCategoryController::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'form' )->defaultValue( PayedServiceCategoryForm::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'repository' )->defaultValue( PayedServiceCategoryRepository::class )->cannotBeEmpty()->end()
-                                        ->scalarNode( 'factory' )->defaultValue( Factory::class )->cannotBeEmpty()->end()
                                     ->end()
                                 ->end()
                             ->end()
