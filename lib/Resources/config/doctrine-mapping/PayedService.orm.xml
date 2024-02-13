@@ -10,7 +10,6 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="category" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceCategoryInterface" inversed-by="services" />
         <one-to-many field="subscriptionPeriods" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceSubscriptionPeriodInterface" mapped-by="payedService" orphan-removal="true">
             <cascade>
                 <cascade-all/>

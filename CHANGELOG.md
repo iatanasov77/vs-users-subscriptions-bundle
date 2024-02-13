@@ -1,3 +1,10 @@
+2.6.5	|	Release date: **13.02.2024**
+============================================
+* Bug-Fixes and Improvements:
+  - Fix Using 'items' property in resources.
+  - Remove PayedServiceCategory Resource .
+
+
 2.6.4	|	Release date: **31.01.2024**
 ============================================
 * New Features and Improvements:

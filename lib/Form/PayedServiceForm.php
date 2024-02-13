@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
@@ -25,15 +24,12 @@ class PayedServiceForm extends AbstractForm
     public function __construct(
         string $dataClass,
         RequestStack $requestStack,
-        RepositoryInterface $localesRepository,
-        string $categoryClass
+        RepositoryInterface $localesRepository
     ) {
         parent::__construct( $dataClass );
         
         $this->requestStack         = $requestStack;
         $this->localesRepository    = $localesRepository;
-        
-        $this->categoryClass        = $categoryClass;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -55,15 +51,6 @@ class PayedServiceForm extends AbstractForm
                 'choices'               => \array_flip( $this->fillLocaleChoices() ),
                 'data'                  => $currentLocale,
                 'mapped'                => false,
-            ])
-            
-            ->add( 'category', EntityType::class, [
-                'class'                 => $this->categoryClass,
-                'choice_label'          => 'name',
-                'required'              => true,
-                'label'                 => 'vs_users_subscriptions.template.category',
-                'placeholder'           => 'vs_users_subscriptions.template.category_placeholder',
-                'translation_domain'    => 'VSUsersSubscriptionsBundle',
             ])
             
             ->add( 'title', TextType::class, [
