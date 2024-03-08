@@ -1,3 +1,9 @@
+3.0.0	|	Release date: **08.03.2024**
+============================================
+* New Features:
+  - Rename a Model Trait and add ORM Attributes Mapping.
+
+
 2.6.5	|	Release date: **13.02.2024**
 ============================================
 * Bug-Fixes and Improvements:
