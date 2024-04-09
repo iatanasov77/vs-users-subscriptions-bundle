@@ -2,7 +2,14 @@
 	"name": "vankosoft/users-subscriptions-bundle",
     "type": "symfony-bundle",
     "description": "Symfony VSUsersSubscriptionsBundle",
-    "keywords": ["User management"],
+    "keywords": [
+        "symfony",
+        "vankosoft",
+        "application",
+        "extension",
+        "user",
+        "subscription"
+    ],
     "homepage": "https://github.com/iatanasov77/vs-users-subscriptions-bundle",
     "license": "MIT",
     "authors": [
