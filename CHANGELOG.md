@@ -1,3 +1,10 @@
+3.0.1	|	Release date: **12.05.2024**
+============================================
+* New Features:
+  - Update All Forms about New Symfony Interfaces.
+  - Use Twig Macros to Display Form Errors.
+
+
 3.0.0	|	Release date: **08.03.2024**
 ============================================
 * New Features:

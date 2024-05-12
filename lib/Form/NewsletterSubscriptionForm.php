@@ -11,7 +11,7 @@ use Gregwar\CaptchaBundle\Type\CaptchaType;
 
 class NewsletterSubscriptionForm extends AbstractType
 {
-    public function buildForm( FormBuilderInterface $builder, array $options )
+    public function buildForm( FormBuilderInterface $builder, array $options ): void
     {
         $builder
             ->add( 'tags', HiddenType::class, [
