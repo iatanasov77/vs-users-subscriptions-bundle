@@ -10,12 +10,12 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="user" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface" inversed-by="subscriptions">
+        <many-to-one field="user" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface" inversed-by="newsletterSubscriptions">
         	<join-column nullable="true" />
         </many-to-one>
         <field name="userEmail" column="user_email" type="string" length="64" nullable="false" />
         
-        <many-to-one field="mailchimpAudience" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface" inversed-by="subscriptions">
+        <many-to-one field="mailchimpAudience" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface" inversed-by="newsletterSubscriptions">
         	<join-column nullable="false" />
         </many-to-one>
         
