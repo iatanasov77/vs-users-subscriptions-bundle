@@ -1,3 +1,9 @@
+3.0.2	|	Release date: **04.06.2024**
+============================================
+* Bug-Fixes:
+  - Fixing Some Resource Mappings Errors.
+
+
 3.0.1	|	Release date: **12.05.2024**
 ============================================
 * New Features:
