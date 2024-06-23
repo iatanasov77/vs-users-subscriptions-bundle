@@ -1,3 +1,9 @@
+3.0.3	|	Release date: **23.06.2024**
+============================================
+* New Features:
+  - Add Some Missing Service Parameters.
+
+
 3.0.2	|	Release date: **04.06.2024**
 ============================================
 * Bug-Fixes:
