@@ -1,3 +1,9 @@
+3.0.5	|	Release date: **03.01.2025**
+============================================
+* New Features and Improvement:
+  - Add Default Value for 'mailchimp_api_key' config.
+
+
 3.0.4	|	Release date: **22.08.2024**
 ============================================
 * New Features:
