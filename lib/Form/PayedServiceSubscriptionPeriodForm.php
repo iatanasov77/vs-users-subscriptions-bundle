@@ -8,19 +8,40 @@ use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use daddl3\SymfonyCKEditor5WebpackViteBundle\Form\Ckeditor5TextareaType;
 
 class PayedServiceSubscriptionPeriodForm extends AbstractForm
 {
+    /**
+     * Which CkEditor Version to Use
+     * ------------------------
+     * CkEditor 4 provided by FOSCKEditorBundle OR
+     * CkEditor 5 provided by
+     *
+     * @var string
+     */
+    protected $useCkEditor;
+    
+    /** @var string */
+    protected $ckeditor5Editor;
+    
     public function __construct(
         string $dataClass,
         RequestStack $requestStack,
-        RepositoryInterface $localesRepository
+        RepositoryInterface $localesRepository,
+        
+        string $useCkEditor,
+        string $ckeditor5Editor
     ) {
         parent::__construct( $dataClass );
         
         $this->requestStack         = $requestStack;
         $this->localesRepository    = $localesRepository;
+        
+        $this->useCkEditor          = $useCkEditor;
+        $this->ckeditor5Editor      = $ckeditor5Editor;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -44,8 +65,20 @@ class PayedServiceSubscriptionPeriodForm extends AbstractForm
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
                 'required'              => false
             ])
+        ;
             
-            ->add( 'description', CKEditorType::class, [
+        if ( $this->useCkEditor == '5' ) {
+            $builder->add( 'description', Ckeditor5TextareaType::class, [
+                'label'                 => 'vs_users_subscriptions.form.description',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'required'              => false,
+                
+                'attr' => [
+                    'data-ckeditor5-config' => $this->ckeditor5Editor
+                ],
+            ]);
+        } else {
+            $builder->add( 'description', CKEditorType::class, [
                 'label'                 => 'vs_users_subscriptions.form.description',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
                 'required'              => false,
@@ -57,8 +90,8 @@ class PayedServiceSubscriptionPeriodForm extends AbstractForm
                     'extraPlugins'                      => array_map( 'trim', explode( ',', $options['ckeditor_extraPlugins'] ) ),
                     'removeButtons'                     => $options['ckeditor_removeButtons'],
                 ],
-            ])
-        ;
+            ]);
+        }
     }
     
     public function configureOptions( OptionsResolver $resolver ): void

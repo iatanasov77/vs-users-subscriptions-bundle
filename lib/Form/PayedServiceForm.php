@@ -10,8 +10,10 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use daddl3\SymfonyCKEditor5WebpackViteBundle\Form\Ckeditor5TextareaType;
 
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType;
 use Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceAttributeType;
@@ -21,15 +23,34 @@ class PayedServiceForm extends AbstractForm
     /** @var string */
     protected $categoryClass;
     
+    /**
+     * Which CkEditor Version to Use
+     * ------------------------
+     * CkEditor 4 provided by FOSCKEditorBundle OR
+     * CkEditor 5 provided by
+     *
+     * @var string
+     */
+    protected $useCkEditor;
+    
+    /** @var string */
+    protected $ckeditor5Editor;
+    
     public function __construct(
         string $dataClass,
         RequestStack $requestStack,
-        RepositoryInterface $localesRepository
+        RepositoryInterface $localesRepository,
+        
+        string $useCkEditor,
+        string $ckeditor5Editor
     ) {
         parent::__construct( $dataClass );
         
         $this->requestStack         = $requestStack;
         $this->localesRepository    = $localesRepository;
+        
+        $this->useCkEditor          = $useCkEditor;
+        $this->ckeditor5Editor      = $ckeditor5Editor;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -57,19 +78,6 @@ class PayedServiceForm extends AbstractForm
                 'label'                 => 'vs_users_subscriptions.form.name',
                 'translation_domain'    => 'VSUsersSubscriptionsBundle',
                 'required'              => true
-            ])
-            
-            ->add( 'description', CKEditorType::class, [
-                'label'                 => 'vs_users_subscriptions.form.description',
-                'translation_domain'    => 'VSUsersSubscriptionsBundle',
-                'config'                => [
-                    'uiColor'                           => $options['ckeditor_uiColor'],
-                    'extraAllowedContent'               => $options['ckeditor_extraAllowedContent'],
-                    
-                    'toolbar'                           => $options['ckeditor_toolbar'],
-                    'extraPlugins'                      => array_map( 'trim', explode( ',', $options['ckeditor_extraPlugins'] ) ),
-                    'removeButtons'                     => $options['ckeditor_removeButtons'],
-                ],
             ])
             
             ->add( 'subscriptionPeriods', CollectionType::class, [
@@ -103,6 +111,30 @@ class PayedServiceForm extends AbstractForm
                 'help'                  => 'vs_users_subscriptions.form.paid_service.subscription_priority_help'
             ])
         ;
+            
+        if ( $this->useCkEditor == '5' ) {
+            $builder->add( 'description', Ckeditor5TextareaType::class, [
+                'label'                 => 'vs_users_subscriptions.form.description',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                
+                'attr' => [
+                    'data-ckeditor5-config' => $this->ckeditor5Editor
+                ],
+            ]);
+        } else {
+            $builder->add( 'description', CKEditorType::class, [
+                'label'                 => 'vs_users_subscriptions.form.description',
+                'translation_domain'    => 'VSUsersSubscriptionsBundle',
+                'config'                => [
+                    'uiColor'                           => $options['ckeditor_uiColor'],
+                    'extraAllowedContent'               => $options['ckeditor_extraAllowedContent'],
+                    
+                    'toolbar'                           => $options['ckeditor_toolbar'],
+                    'extraPlugins'                      => array_map( 'trim', explode( ',', $options['ckeditor_extraPlugins'] ) ),
+                    'removeButtons'                     => $options['ckeditor_removeButtons'],
+                ],
+            ]);
+        }
     }
     
     public function configureOptions( OptionsResolver $resolver ): void
