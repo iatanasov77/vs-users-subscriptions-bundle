@@ -1,3 +1,9 @@
+3.0.7	|	Release date: **15.03.2025**
+============================================
+* Bug-Fixes:
+  - Fix Doctrine Mappings.
+
+
 3.0.6	|	Release date: **15.03.2025**
 ============================================
 * Bug-Fixes and Improvements:
