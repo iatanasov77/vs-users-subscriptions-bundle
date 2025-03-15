@@ -13,10 +13,11 @@
         <many-to-one field="user" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface" inversed-by="newsletterSubscriptions">
         	<join-column nullable="true" />
         </many-to-one>
+        
         <field name="userEmail" column="user_email" type="string" length="64" nullable="false" />
         
         <many-to-one field="mailchimpAudience" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\MailchimpAudienceInterface" inversed-by="newsletterSubscriptions">
-        	<join-column nullable="false" />
+        	<join-column name="mailchimp_audience_id" referenced-column-name="id" nullable="false" />
         </many-to-one>
         
         <field name="date" column="date" type="datetime" nullable="false">

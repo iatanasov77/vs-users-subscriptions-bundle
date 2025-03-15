@@ -9,7 +9,9 @@
             <generator strategy="AUTO" />
         </id>
         
-        <many-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" inversed-by="attributes" />
+        <many-to-one field="payedService" target-entity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\PayedServiceInterface" inversed-by="attributes" >
+            <join-column name="payed_service_id" referenced-column-name="id" nullable="false" />
+        </many-to-one>
         
         <field name="name" type="string" length="64" nullable="false" />
         <field name="value" type="string" length="64" nullable="false" />
