@@ -26,6 +26,8 @@ services:
             - '%vs_users_subscriptions.model.payed_service.class%'
             - "@request_stack"
             - '@vs_application.repository.locale'
+            - '%vs_cms.form.use_ckeditor%'
+            - '%vs_cms.form.decription_field.ckeditor5_editor%'
             
     vs_users_subscriptions.resources.payed_service_subscription_period.edit_form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\PayedServiceSubscriptionPeriodForm
@@ -35,6 +37,8 @@ services:
             - '%vs_users_subscriptions.model.payed_service_subscription_period.class%'
             - "@request_stack"
             - '@vs_application.repository.locale'
+            - '%vs_cms.form.use_ckeditor%'
+            - '%vs_cms.form.decription_field.ckeditor5_editor%'
             
     vs_users_subscriptions.resources.payed_service_subscription_period.form:
         class: Vankosoft\UsersSubscriptionsBundle\Form\Type\PayedServiceSubscriptionPeriodType

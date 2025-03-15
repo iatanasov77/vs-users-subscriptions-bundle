@@ -1,3 +1,9 @@
+3.0.8	|	Release date: **15.03.2025**
+============================================
+* New Features:
+  - Add to Use CkEditor 5 in Forms That have Wysywyg Editors.
+
+
 3.0.7	|	Release date: **15.03.2025**
 ============================================
 * Bug-Fixes:
