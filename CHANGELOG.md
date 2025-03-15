@@ -1,3 +1,10 @@
+3.0.6	|	Release date: **15.03.2025**
+============================================
+* Bug-Fixes and Improvements:
+  - Update Package Title and Description.
+  - Fix Some deprecation.
+
+
 3.0.5	|	Release date: **03.01.2025**
 ============================================
 * New Features and Improvement:
