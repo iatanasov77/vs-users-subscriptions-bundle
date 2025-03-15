@@ -1,6 +1,6 @@
-# vs-users-subscriptions-bundle
+# VankoSoft Symfony Application Extension - Users Subscriptions Bundle
 
-# Example User Entity
+## Example User Entity
 ```
 <?php namespace App\Entity\UserManagement;
 

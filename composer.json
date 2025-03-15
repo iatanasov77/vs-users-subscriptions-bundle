@@ -1,7 +1,7 @@
 {
 	"name": "vankosoft/users-subscriptions-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony VSUsersSubscriptionsBundle",
+    "description": "VankoSoft Symfony Application Extension - Users Subscriptions Bundle",
     "keywords": [
         "symfony",
         "vankosoft",
