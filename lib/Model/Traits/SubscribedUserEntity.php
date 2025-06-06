@@ -8,11 +8,7 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscriptionInterface;
 
 trait SubscribedUserEntity
 {
-    /**
-     * @var Collection|SubscriptionInterface[]
-     *
-     * @ORM\OneToMany(targetEntity="Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface", mappedBy="user")
-     */
+    /** @var Collection|SubscriptionInterface[] */
     #[ORM\OneToMany(targetEntity: "Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\NewsletterSubscriptionInterface", mappedBy: "user", cascade: ["persist", "remove"], orphanRemoval: true)]
     protected $newsletterSubscriptions;
     
