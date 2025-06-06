@@ -1,3 +1,9 @@
+3.1.0	|	Release date: **06.06.2025**
+============================================
+* New Features:
+  - Remove Annotations from All Model Traits.
+
+
 3.0.8	|	Release date: **15.03.2025**
 ============================================
 * New Features:
