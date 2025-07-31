@@ -1,3 +1,9 @@
+3.1.1	|	Release date: **31.07.2025**
+============================================
+* Bug-Fixes and Improvements:
+  - Change Assets References Paths.
+
+
 3.1.0	|	Release date: **06.06.2025**
 ============================================
 * New Features:
