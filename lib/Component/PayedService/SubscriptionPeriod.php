@@ -6,6 +6,8 @@ class SubscriptionPeriod
     
     const SUBSCRIPTION_PERIOD_WEEK          = 'Week';
     
+    const SUBSCRIPTION_PERIOD_WEEKEND       = 'Weekend'; // 2 Days ;)
+    
     /**
      * For SemiMonth, billing is done on the 1st and 15th of each month.
      */
@@ -28,6 +30,7 @@ class SubscriptionPeriod
         return [
             self::SUBSCRIPTION_PERIOD_DAY           => 'vs_users_subscriptions.form.period.day',
             self::SUBSCRIPTION_PERIOD_WEEK          => 'vs_users_subscriptions.form.period.week',
+            self::SUBSCRIPTION_PERIOD_WEEKEND       => 'vs_users_subscriptions.form.period.weekend',
             self::SUBSCRIPTION_PERIOD_SEMIMONTH     => 'vs_users_subscriptions.form.period.semimonth',
             self::SUBSCRIPTION_PERIOD_MONTH         => 'vs_users_subscriptions.form.period.month',
             self::SUBSCRIPTION_PERIOD_QUARTERYEAR   => 'vs_users_subscriptions.form.period.quarteryear',
