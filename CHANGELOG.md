@@ -1,3 +1,9 @@
+3.1.2	|	Release date: **05.08.2025**
+============================================
+* New Features:
+  - Add a New Period in Paid Service Subscription Periods.
+
+
 3.1.1	|	Release date: **31.07.2025**
 ============================================
 * Bug-Fixes and Improvements:
