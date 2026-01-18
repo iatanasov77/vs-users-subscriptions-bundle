@@ -1,3 +1,9 @@
+3.1.4	|	Release date: **18.01.2026**
+============================================
+* New Features:
+  - Add New Changes of AbstractCrudController in all Controllers that Extend it.
+
+
 3.1.3	|	Release date: **20.08.2025**
 ============================================
 * New Features:
