@@ -10,7 +10,7 @@ class PayedServicesSubscriptionPeriodsController extends AbstractCrudController
         return [];
     }
     
-    protected function prepareEntity( &$entity, &$form, Request $request )
+    protected function prepareEntity( &$entity, &$form, Request $request ): void
     {
         
     }

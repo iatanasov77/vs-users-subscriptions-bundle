@@ -13,7 +13,7 @@ class PayedServicesController extends AbstractCrudController
         ];
     }
     
-    protected function prepareEntity( &$entity, &$form, Request $request )
+    protected function prepareEntity( &$entity, &$form, Request $request ): void
     {
         $paidServiceSlug    = $this->get( 'vs_application.slug_generator' )->generate( $entity->getTitle() );
         

@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class NewsletterSubscriptionController extends AbstractCrudController
 {
-    protected function prepareEntity( &$entity, &$form, Request $request )
+    protected function prepareEntity( &$entity, &$form, Request $request ): void
     {
         $entity->setPreferedLocale( $request->getLocale() );
     }

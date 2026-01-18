@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MailchimpAudienceController extends AbstractCrudController
 {
-    protected function prepareEntity( &$entity, &$form, Request $request )
+    protected function prepareEntity( &$entity, &$form, Request $request ): void
     {
         //$entity->setPreferedLocale( $request->getLocale() );
         $formPost   = $request->request->get( 'mailchimp_audience_form' );
