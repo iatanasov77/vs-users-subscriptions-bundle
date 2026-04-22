@@ -27,7 +27,7 @@
             <gedmo:translatable />
         </field>
         
-        <field name="paidServicePeriodCode" column="paid_service_period_code" type="string" nullable="false">
+        <field name="paidServicePeriodCode" column="paid_service_period_code" type="string" length="255" nullable="false">
             <options>
                 <option name="comment">The Code Used To Find The Subscription Period in Fixture Factory when Creating Pricing Plans.</option>
             </options>
